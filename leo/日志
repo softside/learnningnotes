@@ -61,4 +61,4 @@ news_id = GenericComment.objects.filter(content_type__pk=69).values('object_id')
 得出的结果只有id和统计数据。
 
 generic_relation中，event不能作为filter的关键字。
-
+this line has changed??
