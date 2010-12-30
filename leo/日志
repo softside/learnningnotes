@@ -1,0 +1,64 @@
+有了问题一定要认真的看code，这个才是最方便快捷的方法，
+今天就为了一个问题，可恶的调整了半天，
+结果是view前面有个@required_staff设置的，
+自然跳转到admin页面，可怜我还以为是修改django文件的问题，
+还有另外一个问题，
+就是django文件的createsuperuser命令似乎把值存错了地方了，，，
+
+CommonMixin的意义在于：提供了一些方法；
+先说save(),这就是为一直想写没写出来的东西阿,他从一些类中抽象出共用的方法:就是创建时间和修改时间,,
+然后admin_page,
+
+return '/admin/%s/%s/%s' % (cls._meta.app_label,cls._meta.object_name.lower(),self.id)
+看的出对python的理解是多摩的深刻阿.
+
+突然就想明白了,,,
+
+记录一个问题,一个同事把class写成def,然后半天找不到原因..
+
+
+class PostForm(forms.ModelForm):
+    class Meta:
+        model = Post
+        fields = ('text', 'user', 'thread')
+
+    def clean_text(self):
+        text = self.cleaned_data['text']
+        if not text or not text.strip():
+            raise forms.ValidationError(u'回复内容不能为空')
+        return text
+class CommentForm(forms.Form):
+    name = forms.CharField(
+                widget=forms.TextInput(attrs={'class':'special'}))
+    url = forms.URLField()
+    comment = forms.CharField(
+               widget=forms.TextInput(attrs={'size':'40'}))
+这个东西的意义在于验证，这是一个多么有爱的问题阿，
+以前从来没有写过，原来这么简单阿
+这个方法的返回值是一定要的，就是我们最后要的结果，
+
+
+from django.db.models import Count
+theanswer = Item.objects.values('category').annotate(Count('category'))
+hornor = Award.objects.values('user').annotate(h_count=Count('user')).order_by('-h_count‘）
+通过这个返回的结果是一个dict。对应的只有user的id和对应userid的个数（h_count）,如何通过hack django，是的到的是一个
+user的对象而不只是user的id
+
+
+依然是关于统计的问题：
+另一个样例（投票统计）：
+表a(work)，保存的是一个一个的vote对象，
+表b(vote_work)，保存的是一个一个记录，描述投票这个动作（时间，投票人，投票对象，etc）
+
+
+obj_list=work.objects.annotate(num=Count("vote_work")).order_by('-num')[:100] 
+上述语句中的vote_work是vote_work这个model中ForeignKey中指定的related_name,这是一种情况。
+
+
+另一个统计的例子：
+这个就是通用的评论模块：
+news_id = GenericComment.objects.filter(content_type__pk=69).values('object_id').annotate(more=Count('object_id'))
+得出的结果只有id和统计数据。
+
+generic_relation中，event不能作为filter的关键字。
+
