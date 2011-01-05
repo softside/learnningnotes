@@ -371,7 +371,7 @@
 <v t="newlife.20101223112128.1769"><vh>renewObjectsAMF</vh></v>
 </v>
 </v>
-<v t="newlife.20101223141853.1784"><vh>service</vh>
+<v t="newlife.20101223141853.1784" a="E"><vh>service</vh>
 <v t="newlife.20101223141853.1788"><vh>getSysNoticeAMF</vh></v>
 <v t="newlife.20101223141853.1787"><vh>getIndexAdsAMF</vh></v>
 <v t="newlife.20101220143820.1445"><vh>getUserInfoAMF</vh>
@@ -383,14 +383,14 @@
 <v t="newlife.20101220143820.1452"><vh>get_member</vh></v>
 <v t="newlife.20101223141853.1823"><vh>login_sns_user</vh></v>
 </v>
-<v t="newlife.20101220143820.1395"><vh>getGiftsCountAMF</vh>
+<v t="newlife.20101220143820.1395" a="E"><vh>getGiftsCountAMF</vh>
 <v t="newlife.20101223141853.1834"><vh>get_valid_temp_bag_info_ids</vh></v>
 <v t="newlife.20101220143820.1505"><vh>get_limit_my_temp_bag_info_ids</vh></v>
 </v>
 <v t="newlife.20101220143820.1384" a="E"><vh>getDragonsInBagAMF</vh>
 <v t="newlife.20101220143820.1473"><vh>get_my_fish_ids_in_tank</vh></v>
 <v t="newlife.20101220143820.1461"><vh>get_my_fishes</vh></v>
-<v t="newlife.20101220143820.1460"><vh>get_my_fish</vh>
+<v t="newlife.20101220143820.1460" a="E"><vh>get_my_fish</vh>
 <v t="newlife.20101224111641.1945"><vh>get_fish_with_stylecolor</vh></v>
 <v t="newlife.20101224111641.1947"><vh>get_fish</vh></v>
 </v>
@@ -446,17 +446,17 @@
 <v t="newlife.20101224111641.2002"><vh>class Meta</vh></v>
 </v>
 </v>
-<v t="newlife.20101224111641.2003" a="E"><vh>@file /home/newlife/ddl_server/ddl_server/sns_ddl/apps/webservice/dragon.py</vh>
-<v t="newlife.20101224111641.2004"><vh>dragon declarations</vh></v>
-<v t="newlife.20101224111641.2005"><vh>getDragonsInBagAMF</vh></v>
-<v t="newlife.20101224111641.2006"><vh>upgradeDragonAMF</vh></v>
-<v t="newlife.20101224111641.2007"><vh>moveDragonToTankAMF</vh></v>
-<v t="newlife.20101224111641.2008"><vh>moveDragonToBagAMF</vh></v>
-<v t="newlife.20101224111641.2009"><vh>saleDragonAMF</vh></v>
-<v t="newlife.20101224111641.2010"><vh>buyDragonPositionAMF</vh></v>
-<v t="newlife.20101224111641.2011"><vh>growthPotionAMF</vh></v>
-<v t="newlife.20101224111641.2012"><vh>dragonPowerAMF</vh></v>
-<v t="newlife.20101224111641.2013"><vh>memberPowerAMF</vh></v>
+<v t="newlife.20110104172722.2064" a="E"><vh>@file /home/newlife/ddl_server/ddl_server/sns_ddl/apps/webservice/dragon.py</vh>
+<v t="newlife.20110104172722.2065"><vh>dragon declarations</vh></v>
+<v t="newlife.20110104172722.2066"><vh>getDragonsInBagAMF</vh></v>
+<v t="newlife.20110104172722.2067"><vh>upgradeDragonAMF</vh></v>
+<v t="newlife.20110104172722.2068"><vh>moveDragonToTankAMF</vh></v>
+<v t="newlife.20110104172722.2069"><vh>moveDragonToBagAMF</vh></v>
+<v t="newlife.20110104172722.2070"><vh>saleDragonAMF</vh></v>
+<v t="newlife.20110104172722.2071"><vh>buyDragonPositionAMF</vh></v>
+<v t="newlife.20110104172722.2072"><vh>growthPotionAMF</vh></v>
+<v t="newlife.20110104172722.2073"><vh>dragonPowerAMF</vh></v>
+<v t="newlife.20110104172722.2074"><vh>memberPowerAMF</vh></v>
 </v>
 </vnodes>
 <tnodes>
@@ -4534,7 +4534,7 @@ class Card(models.Model):
 </t>
 <t tx="newlife.20101220143820.1575">class Meta:
     db_table = 'ddl_cardgamelevelinfo'</t>
-<t tx="newlife.20101221161857.1671">@doc
+<t tx="newlife.20101221161857.1671"> @doc
 时刻要记住，缓存，
 但存在缓存的时候，一些平时考虑问题的规则要发生变化，</t>
 <t tx="newlife.20101221161857.1672">@doc
@@ -8223,13 +8223,14 @@ def get_deform_levels(self):
 
 
 </t>
-<t tx="newlife.20101224111641.2003">@language python
+<t tx="newlife.20110104172722.2064">@language python
 @tabwidth -4
 @others
 @ignore</t>
-<t tx="newlife.20101224111641.2004"># -*- coding: utf-8 -*-
+<t tx="newlife.20110104172722.2065"># -*- coding: utf-8 -*-
 
 from datetime import timedelta, datetime
+from django.core.cache import cache
 from global_constants import DEFAULT_PET_TIME
 from apps.system.helper import login_member
 from apps.members.cache import *
@@ -8238,7 +8239,7 @@ from apps.shops.cache import get_shop_product
 from apps.tasks.helper import check_done_task, update_my_normal_task
 
 </t>
-<t tx="newlife.20101224111641.2005">#获取背包龙
+<t tx="newlife.20110104172722.2066">#获取背包龙
 def getDragonsInBagAMF(request, skey):
     member = login_member(request, skey)
     fish_list = []
@@ -8267,15 +8268,14 @@ def getDragonsInBagAMF(request, skey):
                 }
         fish_list.append(temp)
     dragon_position = [DEFAULT_SYS_MAX_BAGS, member.shell_bags, member.pearl_bags]
-    task_list = ''
-    rewards = ''
+    fish_list.sort(lambda x,y: -1*cmp(x['power'], y['power']))
     return {'list':fish_list,
             'dragon_position':dragon_position,
-            'task_list':task_list,
-            'rewards':rewards,}
+            'task_list':'',
+            'rewards':'',}
 
 </t>
-<t tx="newlife.20101224111641.2006">#点击升级
+<t tx="newlife.20110104172722.2067">#点击升级
 def upgradeDragonAMF(request, skey, my_fish_id):
     member = login_member(request, skey)
 
@@ -8292,7 +8292,8 @@ def upgradeDragonAMF(request, skey, my_fish_id):
     task_incubate = ''
     reward_upgrade = ''
     task_upgrade = ''
-    has_finished = has_finished_fish(member.id, my_fish.style, my_fish.star)
+    reward_exchange = ''
+    task_exchange = ''
 
     if my_fish.has_deformed:
         # 蛋变龙需要移动到鱼缸中
@@ -8309,6 +8310,7 @@ def upgradeDragonAMF(request, skey, my_fish_id):
             my_fish.style = '_'.join([my_fish.base_style, str(my_fish.color), str(my_fish.level+1)])
             my_fish.my_fish_tank_id = 0
             my_fish.exp = 0.0
+            my_fish.hungry = 0
             my_fish.last_power_time = datetime.now() - timedelta(0, 18000)
             my_fish.save()
             # 更新用户鱼缸中和塑料袋中的缓存
@@ -8349,13 +8351,27 @@ def upgradeDragonAMF(request, skey, my_fish_id):
                 'power':my_fish.get_power(),
                 'can_be_potion':my_fish.can_be_used_potion(),
                 'property': get_fish_property(my_fish.star, my_fish.level, my_fish.color),
-                'has_finished':has_finished,
+                'has_finished':has_finished_fish(member.id, my_fish.style, my_fish.star),
                 'almanac_name':my_fish.almanac_name,
                 }
         # 处理图鉴
         if isopen_new_almanac(member, my_fish):
             open_new_almanac = True
             get_exp, open_all = update_member_almanac_exp(member, my_fish)
+
+        reward_new, task_new = check_done_task(member, 't022', my_fish.style, 1)
+        mark_first = cache.get("MARK_FIRST", 0)
+        if mark_first == 0:
+            cache.set("MARK_FIRST", 1)
+            my_fishes = get_my_all_fishes(member)
+            for my_fish in my_fishes:
+                reward_old, task_old = check_done_task(member, 't022', my_fish.style, 1)
+                if reward_old:
+                    reward_new = reward_old
+                    task_new = task_old
+        if reward_new:
+            reward_exchange = reward_new
+            task_exchange = task_new
 
     #do task
     reward_almanac = ''
@@ -8365,7 +8381,7 @@ def upgradeDragonAMF(request, skey, my_fish_id):
         reward_almanac, task_almanac = check_done_task(member, 't019', my_fish.style,
                 1, my_fish.family, my_fish.p_type, my_fish.star)
 
-    if has_finished:
+    if open_all:
         reward_all_almanac, task_all_almanac = check_done_task(member, 't020', my_fish.base_style, 1)
 
     if reward_almanac:
@@ -8384,11 +8400,33 @@ def upgradeDragonAMF(request, skey, my_fish_id):
         #进化
         rewards = reward_upgrade
         task_list = update_my_normal_task(member.id, task_upgrade)
+        #兑换
+    elif reward_exchange:
+        rewards = reward_exchange
+        task_dict = {task_exchange.style_1:task_exchange.num_1,
+                     task_exchange.style_2:task_exchange.num_2,
+                     task_exchange.style_3:task_exchange.num_3,
+                     } 
+        #兑换任务完成，删除任务要求的龙
+        my_fishes = get_my_all_fishes(member)
+        for k, v in task_dict.items():
+            temp = [ my_fish for my_fish in my_fishes if k and my_fish.style == k ]
+            if temp:
+                for my_fish in temp[:v]:
+                    if my_fish.my_fish_tank_id == 0:
+                        delete_a_member_fish_in_bag(member, my_fish.id)
+                    elif my_fish.my_fish_tank_id &gt; 0:
+                        delete_a_member_fish_in_tank(member, my_fish.my_fish_tank_id, my_fish.id)
+
+        task_list = update_my_normal_task(member.id, task_exchange)
+    if task_list and task_list["type"] == "t022":
+        cache.delete("MARK_FIRST")
 
     level, remain_exp, next_level_exp = get_almanac_level_info(member.id)   
     ret = {'level':level,
             'remain_exp':remain_exp,
             'next_level_exp':next_level_exp,
+            'shells':member.shells,
             'open_new_almanac':open_new_almanac,
             'my_fish':fish_info,
             'get_exp':get_exp,
@@ -8399,7 +8437,7 @@ def upgradeDragonAMF(request, skey, my_fish_id):
     return ret
 
 </t>
-<t tx="newlife.20101224111641.2007">#移动龙到龙窝
+<t tx="newlife.20110104172722.2068">#移动龙到龙窝
 def moveDragonToTankAMF(request, skey, my_fish_id, my_tank_id):
     member = login_member(request, skey)
 
@@ -8450,7 +8488,7 @@ def moveDragonToTankAMF(request, skey, my_fish_id, my_tank_id):
             'task_list':task_list,}
 
 </t>
-<t tx="newlife.20101224111641.2008">#移动龙到背包
+<t tx="newlife.20110104172722.2069">#移动龙到背包
 def moveDragonToBagAMF(request, skey, my_fish_id):
     member = login_member(request, skey)
 
@@ -8493,7 +8531,7 @@ def moveDragonToBagAMF(request, skey, my_fish_id):
             'task_list':task_list,}
 
 </t>
-<t tx="newlife.20101224111641.2009">#卖出龙
+<t tx="newlife.20110104172722.2070">#卖出龙
 def saleDragonAMF(request, skey, my_fish_id):
     member = login_member(request, skey)
 
@@ -8508,6 +8546,9 @@ def saleDragonAMF(request, skey, my_fish_id):
         if my_fish.style != 'd4_l_2':
             return {'error':'can not sale', 'rewards':'', 'task_list':''}
 
+    if level &lt; 4:
+        return {'error':'can not sale', 'rewards':'', 'task_list':''}
+
     get_shells = my_fish.sell_price()
     if my_fish.my_fish_tank_id == 0:
         delete_a_member_fish_in_bag(member, my_fish.id)
@@ -8519,9 +8560,9 @@ def saleDragonAMF(request, skey, my_fish_id):
     member.save()
 
     #do task
-    rewards, my_task = check_done_task(member, 't010', my_fish.style, 1, my_fish.family, my_fish.p_type, my_fish.star)
+    rewards, my_task = check_done_task(member, 't010', my_fish.style, 1)
     if rewards:
-            task_list = update_my_normal_task(member.id, my_task)
+        task_list = update_my_normal_task(member.id, my_task)
     else:
         task_list = ''
     return {'shells':member.shells,
@@ -8530,7 +8571,7 @@ def saleDragonAMF(request, skey, my_fish_id):
             'task_list':task_list,}
 
 </t>
-<t tx="newlife.20101224111641.2010"># 买背包格数
+<t tx="newlife.20110104172722.2071"># 买背包格数
 def buyDragonPositionAMF(request, skey, type):
     member = login_member(request, skey)
 
@@ -8574,11 +8615,12 @@ def buyDragonPositionAMF(request, skey, type):
             'task_list':task_list}
 
 </t>
-<t tx="newlife.20101224111641.2011">#使用成长药水
+<t tx="newlife.20110104172722.2072">#使用成长药水
 def growthPotionAMF(request, skey, my_fish_id, style):
     member = login_member(request, skey)
 
     my_fish_id = int(my_fish_id)
+    level, remain_exp, next_level_exp = get_almanac_level_info(member.id)
     # 取得当前目标鱼    
     my_fish = get_my_fish(member.id, my_fish_id)
     # 鱼不在缸里
@@ -8588,7 +8630,7 @@ def growthPotionAMF(request, skey, my_fish_id, style):
     if my_fish.has_deformed:
         return {'error':'need deformed', 'rewards':'', 'task_list':''}
     # 已经对这条鱼使用过道具
-    if level&gt;2  and not my_fish.can_be_used_potion():
+    if level &gt; 3 and not my_fish.can_be_used_potion():
         return {'error':'already used', 'rewards':'', 'task_list':''}
     # 取得用户当前的道具
     my_item = get_or_create_my_item(member.id, style)
@@ -8622,7 +8664,7 @@ def growthPotionAMF(request, skey, my_fish_id, style):
     if isopen_new_almanac(member, my_fish):
         open_new_almanac = True
         get_exp, open_all = update_member_almanac_exp(member, my_fish)
-    has_finished = has_finished_fish(member.id, my_fish.style, my_fish.star)
+
     fish_info = {
             'id':my_fish.id,
             'name':my_fish.get_display_name(),
@@ -8640,10 +8682,9 @@ def growthPotionAMF(request, skey, my_fish_id, style):
             'has_deformed':my_fish.has_deformed,
             'can_be_potion':my_fish.can_be_used_potion(),
             'property': get_fish_property(my_fish.star, my_fish.level, my_fish.color),
-            'has_finished':has_finished,
+            'has_finished':has_finished_fish(member.id, my_fish.style, my_fish.star),
             'almanac_name':my_fish.almanac_name,
             }
-
     #do task
     reward_almanac = ''
     task_list = ''
@@ -8652,7 +8693,7 @@ def growthPotionAMF(request, skey, my_fish_id, style):
         reward_almanac, task_almanac = check_done_task(member, 't019', my_fish.style,
                 1, my_fish.family, my_fish.p_type, my_fish.star)
 
-    if has_finished:
+    if open_all:
         reward_all_almanac, task_all_almanac = check_done_task(member, 't020', my_fish.base_style, 1) 
 
     if reward_almanac:
@@ -8671,6 +8712,7 @@ def growthPotionAMF(request, skey, my_fish_id, style):
             'remain_exp':remain_exp,
             'next_level_exp':next_level_exp,
             'open_new_almanac':open_new_almanac,
+            'shells':member.shells,
             'my_dragon':fish_info,
             'get_exp':get_exp,
             'open_all':open_all,
@@ -8679,7 +8721,7 @@ def growthPotionAMF(request, skey, my_fish_id, style):
             }
 
 </t>
-<t tx="newlife.20101224111641.2012">def dragonPowerAMF(request, skey, my_fish_id, style): 
+<t tx="newlife.20110104172722.2073">def dragonPowerAMF(request, skey, my_fish_id, style): 
     member = login_member(request, skey)
 
     my_fish_id = int(my_fish_id)
@@ -8724,7 +8766,7 @@ def growthPotionAMF(request, skey, my_fish_id, style):
             'task_list':task_list}
 
 </t>
-<t tx="newlife.20101224111641.2013">#给玩家恢复体力道具
+<t tx="newlife.20110104172722.2074">#给玩家恢复体力道具
 def memberPowerAMF(request, skey, style): 
     member = login_member(request, skey)
 
@@ -8744,7 +8786,13 @@ def memberPowerAMF(request, skey, style):
                 'rewards':'',
                 'task_list':'',
                 }
-    if member.get_power() == MEMBER_MAX_POWER:
+    level, remain_exp, next_level_exp = get_almanac_level_info(member.id)
+    if level in [1, 2, 3, 4]:
+        power = member.get_power(is_grow=False)
+    else:
+        power = member.get_power()
+
+    if power == MEMBER_MAX_POWER:
         return {'error':'power is full',
                 'rewards':'',
                 'task_list':'',}
@@ -8755,7 +8803,7 @@ def memberPowerAMF(request, skey, style):
     my_item.save()
 
     #给玩家加体力
-    member.last_power_time = datatime.now()
+    member.last_power_time = datetime.now()
     member.power = MEMBER_MAX_POWER
     member.save()
 

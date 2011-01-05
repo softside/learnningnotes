@@ -465,7 +465,9 @@ exit;</t>
 
 this file is not wriiten by myself.
 
-it is just for practising the use of leo.</t>
+it is just for practising the use of leo.
+
+and this scripts is about perl</t>
 <t tx="newlife.20101202163036.1287">@doc
 
 Perl is a great language for many things, but one thing it really shines at is in making small programs for system administration. There is a huge library of components for system administration that you can use from Perl, and it is easy to do a lot with a small script.
