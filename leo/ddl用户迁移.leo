@@ -20,8 +20,8 @@
 <v t="newlife.20110106110632.1280" a="E"><vh>实施方案</vh>
 <v t="newlife.20110106110632.1281"><vh>backend</vh></v>
 <v t="newlife.20110106110632.1282"><vh>seetings</vh></v>
-<v t="newlife.20110106110632.1283"><vh>register</vh>
-<v t="newlife.20110106110632.1285"><vh>@file /home/newlife/ddl_server/ddl_server/sns_ddl/users/views.py</vh>
+<v t="newlife.20110106110632.1283" a="E"><vh>register</vh>
+<v t="newlife.20110106110632.1285" a="E"><vh>@file /home/newlife/ddl_server/ddl_server/sns_ddl/users/views.py</vh>
 <v t="newlife.20110106110632.1287"><vh>index</vh></v>
 <v t="newlife.20110106110632.1288" a="M"><vh>register</vh></v>
 <v t="newlife.20110106110632.1289"><vh>ajax_register</vh></v>
@@ -35,6 +35,25 @@
 <v t="newlife.20110106110632.1297" a="M"><vh>reset_password</vh></v>
 <v t="newlife.20110106110632.1298"><vh>users_invite</vh></v>
 <v t="newlife.20110106110632.1299" a="M"><vh>disableUserAMF</vh></v>
+</v>
+<v t="newlife.20110107111036.1320" a="E"><vh>@file /home/newlife/ddl_server/ddl_server/sns_ddl/users/forms.py</vh>
+<v t="newlife.20110107111036.1322" a="E"><vh>class ForgotPasswordForm</vh>
+<v t="newlife.20110107111036.1323" a="M"><vh>clean_username</vh></v>
+</v>
+<v t="newlife.20110107111036.1324" a="E"><vh>class RegForm</vh>
+<v t="newlife.20110107111036.1325" a="M"><vh>clean_username</vh></v>
+<v t="newlife.20110107111036.1326"><vh>clean_password2</vh></v>
+<v t="newlife.20110107111036.1327"><vh>clean_nickname</vh></v>
+<v t="newlife.20110107111036.1328"><vh>clean_true_name</vh></v>
+<v t="newlife.20110107111036.1329" a="M"><vh>clean_identity_card_code</vh></v>
+</v>
+<v t="newlife.20110107111036.1330" a="E"><vh>class BasicForm</vh>
+<v t="newlife.20110107111036.1331"><vh>class Meta</vh></v>
+</v>
+<v t="newlife.20110107111036.1332" a="E"><vh>class JustForFunForm</vh>
+<v t="newlife.20110107111036.1333"><vh>clean_true_name</vh></v>
+<v t="newlife.20110107111036.1334" a="M"><vh>clean_identity_card_code</vh></v>
+</v>
 </v>
 </v>
 <v t="newlife.20110106110632.1300" a="E"><vh>问题</vh>
@@ -326,13 +345,16 @@ class ModelBackend(object):
 </t>
 <t tx="newlife.20110106110632.1282">AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
-    'user.ppy_auth_backend.ModelBackend'
+    'user.ppy_auth_backend.ddlModelBackend'
 )
 @doc
 
 其实第一行的部分可以省略，因为不走ddl的认证部分。
 
-my_object.save(using='legacy_users')</t>
+my_object.save(using='legacy_users')
+
+鉴于这个处理，
+仅对于ppy官网有效，所以我们的对象是固定的，</t>
 <t tx="newlife.20110106110632.1283">注册的部分，
 注册的用户直接写入ppy数据库，
 </t>
@@ -706,6 +728,182 @@ class Meta:
 同是这个表，在不同的数据库里名字是不一样的，
 
 做法就是。ddl中这行去了！
+</t>
+<t tx="newlife.20110107111036.1320">@language python
+@tabwidth -4
+@others
+@ignore</t>
+<t tx="newlife.20110107111036.1322">class ForgotPasswordForm(forms.Form):
+    username = forms.EmailField(label="Email")
+
+    @others
+</t>
+<t tx="newlife.20110107111036.1323">def clean_username(self):
+    username = self.cleaned_data["username"]
+    try:
+        user = User.objects.get(username=username)
+        return username
+    except User.DoesNotExist:
+        raise forms.ValidationError("账号不存在")
+
+
+</t>
+<t tx="newlife.20110107111036.1324">class RegForm(forms.Form):
+    username = forms.EmailField(label="Email")
+    password1 = forms.CharField(label="Password", widget=forms.PasswordInput)
+    password2 = forms.CharField(label="Password confirmation", widget=forms.PasswordInput)
+    nickname = forms.CharField(label="Nick name")
+    true_name = forms.CharField(label="True name", required=False)
+    identity_card_code = forms.CharField(label="Card code", required=False)
+    inviter_email = forms.CharField(required=False, widget=forms.HiddenInput)
+
+    @others
+</t>
+<t tx="newlife.20110107111036.1325">def clean_username(self):
+    username = self.cleaned_data["username"]
+    try:
+        User.objects.get(username=username)
+    except User.DoesNotExist:
+        return username
+    raise forms.ValidationError("该邮箱已经被注册。")
+
+</t>
+<t tx="newlife.20110107111036.1326">def clean_password2(self):
+    password1 = self.cleaned_data.get("password1", "")
+    password2 = self.cleaned_data["password2"]
+    if password1 != password2:
+        raise forms.ValidationError('两次密码输入不一致，请重新输入。')
+    return password2
+
+</t>
+<t tx="newlife.20110107111036.1327">def clean_nickname(self):
+    nickname = self.cleaned_data["nickname"]
+    GM_re = re.compile(r'^GM\d+',re.IGNORECASE)
+    if re.match(GM_re, nickname) or isWordByFilted(nickname):
+        raise forms.ValidationError('非法昵称')
+    if len(nickname)&gt;7:
+        raise forms.ValidationError('昵称应小于7个英文字母或汉字')
+    elif len(UserProfile.objects.filter(nickname__iexact=nickname.lower())) &gt; 0:
+        raise forms.ValidationError('昵称已被用')
+    else:
+        return nickname
+
+</t>
+<t tx="newlife.20110107111036.1328">def clean_true_name(self):
+    true_name = self.cleaned_data["true_name"]
+    if len(true_name) &lt; 2 and len(true_name) != 0:
+        raise forms.ValidationError('姓名不得小于2个英文字母或中文汉字。')
+    else:
+        return true_name 
+
+</t>
+<t tx="newlife.20110107111036.1329">def clean_identity_card_code(self):
+    identity_card_code = self.cleaned_data['identity_card_code']
+    if len(identity_card_code) == 15:
+        bs = '19' + identity_card_code[6:12]
+        code_re = re.compile(r'^[1-9](\d{14})$')
+        if not re.match(code_re, identity_card_code):
+            raise forms.ValidationError('非法的身份证号码。')
+        try:
+            date(int(bs[0:4]), int(bs[4:6]), int(bs[6:8]))
+        except ValueError:
+            raise forms.ValidationError('非法身份证号')
+\\-4#            if len(UserProfile.objects.filter(identity_card_code=identity_card_code)) &gt; 0:
+\\-4#                raise forms.ValidationError('身份证号码已被用')
+        return identity_card_code
+    elif len(identity_card_code) == 18:
+        bs = identity_card_code[6:14]
+        code_re = re.compile(r'^[1-9](\d{16})(\d|X|x)$')
+        if not re.match(code_re, identity_card_code):
+            raise forms.ValidationError('非法的身份证号码。')
+        try:
+            date(int(bs[0:4]), int(bs[4:6]), int(bs[6:8]))
+        except ValueError:
+            raise forms.ValidationError('非法的身份证号码。')
+        wi = [7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2]
+        varify_code = ['1', '0', 'X', '9', '8', '7', '6', '5', '4', '3', '2']
+        input_code = 0
+        for i in range(0, 17):
+            input_code += wi[i] * int(identity_card_code[i])
+        if str(varify_code[input_code%11]) != identity_card_code[17]:
+            raise forms.ValidationError('非法的身份证号码。')
+\\-4#            if len(UserProfile.objects.filter(identity_card_code=identity_card_code)) &gt; 0:
+\\-4#                raise forms.ValidationError('身份证号码已被用')
+        return identity_card_code
+    elif len(identity_card_code) == 0:
+        return identity_card_code
+    else:
+        raise forms.ValidationError('非法的身份证号码。')
+
+
+</t>
+<t tx="newlife.20110107111036.1330">class BasicForm(forms.Form):
+#    gender = forms.ChoiceField(choices=GENDERS, required=False, widget=forms.RadioSelect)
+#    birthday = forms.DateField(required=False,widget=forms.DateTimeInput)
+    city = forms.CharField(max_length=20, required=False)
+    address = forms.CharField(max_length=200, required=False)
+    msn = forms.CharField(max_length=50, required=False)
+    qq = forms.CharField(max_length=20, required=False)
+    gtalk = forms.CharField(max_length=50, required=False)
+    mobile = forms.CharField(max_length=20, required=False)
+    description = forms.CharField(required=False, max_length=300, widget=forms.Textarea({'rows':4}))
+    @others
+</t>
+<t tx="newlife.20110107111036.1331">\\-4#    post_code = forms.CharField(max_length=20, required=False)
+\\-4#    only_friends = forms.BooleanField(required=False)
+
+class Meta:
+    model = UserProfile
+
+
+</t>
+<t tx="newlife.20110107111036.1332">class JustForFunForm(forms.Form):
+    true_name = forms.CharField(label="True name")
+    identity_card_code = forms.CharField(label="Card code")
+
+    @others
+</t>
+<t tx="newlife.20110107111036.1333">def clean_true_name(self):
+    true_name = self.cleaned_data["true_name"]
+    if len(true_name) &lt; 2:
+        raise forms.ValidationError('姓名不得小于2个英文字母或中文汉字。')
+    else:
+        return true_name 
+
+</t>
+<t tx="newlife.20110107111036.1334">def clean_identity_card_code(self):
+    identity_card_code = self.cleaned_data['identity_card_code']
+    if len(identity_card_code) == 15:
+        bs = '19' + identity_card_code[6:12]
+        code_re = re.compile(r'^[1-9](\d{14})$')
+        if not re.match(code_re, identity_card_code):
+            raise forms.ValidationError('非法的身份证号码。')
+        try:
+            date(int(bs[0:4]), int(bs[4:6]), int(bs[6:8]))
+        except ValueError:
+            raise forms.ValidationError('非法身份证号')
+\\-4#            if len(UserProfile.objects.filter(identity_card_code=identity_card_code)) &gt; 0:
+\\-4#                raise forms.ValidationError('身份证号码已被用')
+        return identity_card_code
+    elif len(identity_card_code) == 18:
+        bs = identity_card_code[6:14]
+        code_re = re.compile(r'^[1-9](\d{16})(\d|X|x)$')
+        if not re.match(code_re, identity_card_code):
+            raise forms.ValidationError('非法的身份证号码。')
+        try:
+            date(int(bs[0:4]), int(bs[4:6]), int(bs[6:8]))
+        except ValueError:
+            raise forms.ValidationError('非法的身份证号码。')
+        wi = [7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2]
+        varify_code = ['1', '0', 'X', '9', '8', '7', '6', '5', '4', '3', '2']
+        input_code = 0
+        for i in range(0, 17):
+            input_code += wi[i] * int(identity_card_code[i])
+        if str(varify_code[input_code%11]) != identity_card_code[17]:
+            raise forms.ValidationError('非法的身份证号码。')
+        return identity_card_code
+    else:
+        raise forms.ValidationError('非法的身份证号码。')
 </t>
 </tnodes>
 </leo_file>
