@@ -9,9 +9,10 @@
 <preferences/>
 <find_panel_settings/>
 <vnodes>
-<v t="newlife.20101230182444.1268"><vh>haskell趣学指南</vh></v>
+<v t="wjl.20110108014513.1259"><vh>@chapters</vh></v>
+<v t="newlife.20101230182444.1268" a="E"><vh>haskell趣学指南</vh>
 <v t="newlife.20101230182444.1269"><vh>about</vh></v>
-<v t="newlife.20110107114607.1271" a="E"><vh>类型和类型类</vh>
+<v t="newlife.20110107114607.1271"><vh>类型和类型类</vh>
 <v t="newlife.20110107114607.1273"><vh>相信类型</vh></v>
 <v t="newlife.20110107114607.1274"><vh>类型变量</vh></v>
 <v t="newlife.20110107114607.1272"><vh>类型类</vh></v>
@@ -20,6 +21,9 @@
 <v t="newlife.20110107114607.1276"><vh>类型匹配</vh></v>
 </v>
 <v t="newlife.20110107114607.1270"><vh>递归</vh></v>
+</v>
+<v t="wjl.20110108014513.1260"><vh>yaht</vh></v>
+<v t="wjl.20110108014513.1261"><vh>chap3</vh></v>
 </vnodes>
 <tnodes>
 <t tx="newlife.20101230182444.1268">http://fleurer-lee.com/lyah/chapters.htm：中文版地址
@@ -170,6 +174,26 @@ factorial::(Integral)=&gt;a-&gt;a
 factorial 0=1
 factorial n = n*factorial(n-1)
 
-这是说明模式的</t>
+ghci&gt; let xs = [(1,3), (4,3), (2,4), (5,3), (5,6), (3,1)]   
+ghci&gt; [a+b | (a,b) &lt;- xs]   
+[4,7,6,8,11,4]
+对list本身也可以使使用模式匹配，像x:xs这样的模式可以将list的头部绑定为x，尾部绑定为xs。如果这个list只有一个元素，那么xs就是一个空list。</t>
+<t tx="wjl.20110108014513.1259"></t>
+<t tx="wjl.20110108014513.1260"></t>
+<t tx="wjl.20110108014513.1261">库函数：
+  Char.isLower
+  Char.isUpper
+  
+foldr:"r" 表示右
+    接收3个参数：一个函数，一个初始值，一个list
+    
+    foldr (-) 1 [4,8,5]
+==&gt; 4 - (foldr (-) 1 [8,5])
+==&gt; 4 - (8 - foldr (-) 1 [5])
+==&gt; 4 - (8 - (5 - 1))
+==&gt; 4 - 4
+==&gt; 1
+
+foldl： "l"表示左     </t>
 </tnodes>
 </leo_file>

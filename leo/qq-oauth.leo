@@ -9,11 +9,12 @@
 <preferences/>
 <find_panel_settings/>
 <vnodes>
+<v t="wjl.20110117235658.1869"><vh>@chapters</vh></v>
 <v t="newlife.20110117110751.1267" a="E"><vh>qq-oauth验证</vh>
 <v t="newlife.20110117110751.1268"><vh>文档</vh></v>
 <v t="newlife.20110117110751.1879"><vh>urls</vh></v>
-<v t="newlife.20110117110751.1867" a="E"><vh>views</vh>
-<v t="newlife.20110117110751.1868" a="E"><vh>@file /home/newlife/ppy_office/ppy_official/users/helper_sina.py</vh>
+<v t="newlife.20110117110751.1867"><vh>views</vh>
+<v t="newlife.20110117110751.1868"><vh>@file /home/newlife/ppy_office/ppy_official/users/helper_sina.py</vh>
 <v t="newlife.20110117110751.1869"><vh>helper_sina declarations</vh></v>
 <v t="newlife.20110117110751.1870"><vh>update_sina_accesstoken</vh></v>
 <v t="newlife.20110117110751.1871"><vh>is_send_feed</vh></v>
@@ -23,7 +24,7 @@
 <v t="newlife.20110117110751.1877"><vh>sina_upload</vh></v>
 </v>
 </v>
-<v t="newlife.20110117110751.1269"><vh>oauth_library</vh>
+<v t="newlife.20110117110751.1269" a="E"><vh>oauth_library</vh>
 <v t="newlife.20110117110751.1569"><vh>@file /home/newlife/ppy_office/ppy_official/thirdparty/weibopy/api.py</vh>
 <v t="newlife.20110117110751.1570"><vh>api declarations</vh></v>
 <v t="newlife.20110117110751.1571"><vh>class API</vh>
@@ -376,9 +377,33 @@
 <v t="newlife.20110117110751.1866"><vh>import_simplejson</vh></v>
 </v>
 </v>
-<v t="newlife.20110117110751.1880" a="E"><vh>流程</vh>
+<v t="newlife.20110117110751.1880"><vh>流程</vh>
 <v t="newlife.20110117110751.1874"><vh>get_user_authorize</vh></v>
-<v t="newlife.20110117110751.1875"><vh>get_access_token</vh></v>
+<v t="newlife.20110117110751.1875"><vh>get_access_token</vh>
+<v t="wjl.20110119224651.1871" a="E"><vh>@file /home/wjl/ppy/ppy_official/users/helper_tencent.py</vh>
+<v t="wjl.20110119224651.1872"><vh>helper_tencent declarations</vh></v>
+<v t="wjl.20110119224651.1873"><vh>get_request_token</vh></v>
+<v t="wjl.20110119224651.1874"><vh>get_user_authorize</vh></v>
+<v t="wjl.20110119224651.1875"><vh>get_access_token</vh></v>
+<v t="wjl.20110119224651.1876"><vh>tencent_upload</vh></v>
+<v t="wjl.20110119224651.1889"><vh>get_member_bindblog_info</vh></v>
+</v>
+<v t="wjl.20110119224651.1877" a="E"><vh>@file /home/wjl/ppy/ppy_official/users/helper_sina.py</vh>
+<v t="wjl.20110119224651.1878"><vh>helper_sina declarations</vh></v>
+<v t="wjl.20110119224651.1879"><vh>update_sina_accesstoken</vh></v>
+<v t="wjl.20110119224651.1880"><vh>is_send_feed</vh></v>
+<v t="wjl.20110119224651.1881"><vh>send_user_feed</vh></v>
+<v t="wjl.20110119224651.1882"><vh>get_request_token</vh></v>
+<v t="wjl.20110119224651.1883"><vh>get_user_authorize</vh></v>
+<v t="wjl.20110119224651.1884"><vh>get_access_token</vh></v>
+<v t="wjl.20110119224651.1885"><vh>sina_bind_newfeed</vh></v>
+<v t="wjl.20110119224651.1886"><vh>sina_upload</vh></v>
+</v>
+</v>
+</v>
+<v t="wjl.20110119224651.1890" a="E"><vh>任务估计</vh>
+<v t="wjl.20110119224651.1891"><vh>1，上传数据</vh></v>
+<v t="wjl.20110119224651.1892"><vh>2，js调用</vh></v>
 </v>
 </v>
 </vnodes>
@@ -3980,5 +4005,478 @@ users.helper_sina.get_user_authorize
 返回处理的页面
 
 users.helper_sina.get_access_token</t>
+<t tx="wjl.20110117235658.1869"></t>
+<t tx="wjl.20110119224651.1871">@language python
+@tabwidth -4
+@others
+@ignore
+</t>
+<t tx="wjl.20110119224651.1872"># -*- coding: utf-8 -*-
+
+import hashlib, time
+import urllib, urllib2,httplib
+import pickle
+
+from django.conf import settings
+from django.core.cache import cache
+from django.utils import simplejson
+from django.http import HttpResponseRedirect, HttpResponse
+from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from apps.members.cache import get_member_by_sns_id
+from apps.members.helper import register_member
+from users.models import *
+from users.cache import *
+from users.helper_sina import update_sina_accesstoken, is_send_feed
+
+from thirdparty.weibopy import oauth
+
+APP_KEY = '051cc73533344b74b234c4504fb8868d'
+APP_SECRET = '1aae7458103e4ee3bb1bf740f6954aee'
+
+REQUEST_TOKEN_URL = 'https://open.t.qq.com/cgi-bin/request_token'
+AUTHORIZATION_URL = 'https://open.t.qq.com/cgi-bin/authorize'
+ACCESS_TOKEN_URL = 'https://open.t.qq.com/cgi-bin/access_token'
+USER_URL = 'http://open.t.qq.com/api/user/info'
+POST_NEW_FEED_URL = 'http://open.t.qq.com/api/t/add_pic'
+
+</t>
+<t tx="wjl.20110119224651.1873">def get_request_token():
+    consumer = oauth.OAuthConsumer(APP_KEY, APP_SECRET)
+    sigmethod = oauth.OAuthSignatureMethod_HMAC_SHA1()
+    oauth_request = oauth.OAuthRequest.from_consumer_and_token(
+                    oauth_consumer = consumer,
+                    callback = '%s/tencent_login/authorize' % (settings.SITE_URL),
+                    http_url= REQUEST_TOKEN_URL,
+    )
+    oauth_request.sign_request(sigmethod, consumer, None)
+    resp = urllib2.urlopen(oauth_request.to_url())
+    ret = resp.read()
+    fs = oauth.OAuthToken.from_string(ret)
+    result = str(fs)
+    ra = result.split('&amp;')
+    token = {}
+    for item in ra:
+        key,value = item.split('=')
+        if key in ['oauth_token_secret', 'oauth_token']:
+            token[key] = value
+    return token
+
+
+</t>
+<t tx="wjl.20110119224651.1874">#下面是 url 使用的方法
+def get_user_authorize(request, sync=False):
+    token = get_request_token()
+    is_sync = request.GET.get('sync_tencent', None)
+    cache.set(token['oauth_token'],token['oauth_token_secret'])
+    oauth_callback = '%s/tencent_login/authorize/' % (settings.SITE_URL)
+    if is_sync or sync:
+        oauth_callback += '?sync_tencent=' + is_sync
+
+    params = {'oauth_token':token['oauth_token'],
+              'oauth_token_secret':token['oauth_token_secret'],
+              'oauth_callback': oauth_callback
+    }
+    data = urllib.urlencode(params)
+    url = '%s?%s'%(AUTHORIZATION_URL,data)
+
+    return HttpResponseRedirect(url)
+
+
+</t>
+<t tx="wjl.20110119224651.1875">def get_access_token(request):
+    verifier = request.GET['oauth_verifier']
+    oauth_token = request.GET['oauth_token']
+
+    is_sync = request.GET.get('sync_tencent', None)
+    oauth_token_secret = cache.get(oauth_token)
+    cache.delete(oauth_token)
+
+    #取得 access token
+    consumer = oauth.OAuthConsumer(APP_KEY, APP_SECRET)
+    request_token = oauth.OAuthToken(key=oauth_token, secret=str(oauth_token_secret))
+    oauth_request = oauth.OAuthRequest.from_consumer_and_token(
+                oauth_consumer = consumer,
+                token = request_token,
+                http_url = ACCESS_TOKEN_URL,
+                verifier = str(verifier),
+    )
+    sigmethod = oauth.OAuthSignatureMethod_HMAC_SHA1()
+    oauth_request.sign_request(sigmethod, consumer, request_token)
+    resp = urllib2.urlopen(oauth_request.to_url())
+    ret = resp.read()
+    access_token = oauth.OAuthToken.from_string(ret)
+
+    #取用户id
+    access_token = oauth.OAuthToken(access_token.key, access_token.secret)
+    oauth_request = oauth.OAuthRequest.from_consumer_and_token(
+                oauth_consumer = consumer,
+                token = access_token,
+                http_url = USER_URL,
+                verifier = str(verifier),
+                parameters = {'format':'json'},
+    )
+    sigmethod = oauth.OAuthSignatureMethod_HMAC_SHA1()
+    oauth_request.sign_request(sigmethod, consumer, access_token)
+    url = oauth_request.to_url()
+    resp = urllib2.urlopen(url)
+    ret = resp.read()
+    result = simplejson.loads(ret)
+
+    #检查返回结果
+    if result.get('ret',-1) != 0:
+        return HttpResponseRedirect('/')
+
+    user_info = result.get('data',{})
+    tencent_user_id = user_info.get('name','')
+    tencent_user_nickname = user_info.get('nick','')
+    tencent_user_avatar = user_info.get('head','')
+
+    if not tencent_user_id:
+        return HttpResponseRedirect('/')
+
+    if not is_sync:
+        ppy_user = 'qq_%s' % tencent_user_id
+        user = User.objects.filter(username=ppy_user)
+        if user: #login for sina users
+            user = authenticate(username=ppy_user, password=hashlib.md5(ppy_user).hexdigest())
+            if user.is_active:
+                login(request, user)
+        else:
+            # is bind blog user, go to login page.
+            BindedSinaIds = BindBlog.objects.filter(blog_id=str(tencent_user_id), blog_type='qq')
+            if BindedSinaIds:
+                return HttpResponseRedirect('/game/')
+
+            #add new user
+            ppy_realname = tencent_user_nickname
+            user = User(username=ppy_user, is_active=True)
+            user.set_password(hashlib.md5(ppy_user).hexdigest())
+            user.save()
+
+            profile = UserProfile(user_id=user.id, nickname=ppy_realname, true_name=ppy_realname,
+                                  identity_card_code='5555555555')
+            profile.save()
+
+            user = authenticate(username=ppy_user, password=hashlib.md5(ppy_user).hexdigest())
+            if user.is_active:
+                login(request, user)
+    else:
+        user = User.objects.get(id=request.user.id)
+
+    if tencent_user_id:
+        update_sina_accesstoken(user.id, tencent_user_id, access_token, bool(is_sync))
+
+    if is_sync:
+        return HttpResponseRedirect('/users/sync')
+
+    # 获取用户
+    member = get_member_by_sns_id(user.id)
+    if member is None:
+        member = register_member('', user.id)
+
+    return HttpResponseRedirect('/game/')
+
+
+</t>
+<t tx="wjl.20110119224651.1876">#发tencent微博
+@login_required
+def tencent_upload(request):
+    content = request.POST.get('content', None)
+    image = request.POST.get('image', None)
+    if not content:
+        return HttpResponse('no content')
+    bbinfo = get_member_bindblog_info(sns_id)
+    if not bbinfo:
+        return HttpResponse('no bbinfo')
+    if not bbinfo.allowed:
+        return('disabled feed')
+
+    try:
+        at = str(bbinfo.access_token)
+        access_token = pickle.loads(at)
+    except:
+        return HttpResponse('access_token error')
+    try:
+        content = content.encode('utf-8')
+        auth = OAuthHandler(APP_KEY, APP_SECRET)
+        auth.setToken(access_token.get('key',''), access_token.get('secret',''))
+        api = API(auth)
+        #整个流程就是这里，前面的是找到access_token,
+        if image:
+            real_img = '%s%s' % (settings.MEDIA_ROOT, image)
+            ret = api.upload(real_img, content)
+        else:
+            ret = api.update_status(content)
+
+        r = HttpResponse('success')
+        return r
+    except WeibopError,ex:
+        return HttpResponse('send error:%s' % str(ex))
+    except:
+        import sys
+        return HttpResponse('send error:%s' % str(sys.exc_info()))
+    
+
+</t>
+<t tx="wjl.20110119224651.1877">@language python
+@tabwidth -4
+@others
+@ignore</t>
+<t tx="wjl.20110119224651.1878"># -*- coding: utf-8 -*-
+
+import hashlib, time
+import urllib, urllib2,httplib
+import pickle
+
+from django.conf import settings
+from django.core.cache import cache
+from django.http import HttpResponseRedirect, HttpResponse
+from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from apps.members.cache import get_member_by_sns_id
+from apps.members.helper import register_member
+from users.models import *
+from users.cache import *
+
+from thirdparty.weibopy.api import API
+from thirdparty.weibopy import oauth
+from thirdparty.weibopy.auth import OAuthHandler
+from thirdparty.weibopy.error import WeibopError
+
+APP_KEY = '2803109225'
+APP_SECRET = 'ca9d9587ce4cce614f93efb44da0a90c'
+#APP_KEY = '923681121'
+#APP_SECRET = 'b1fe311ebb599dc2092c996a838f4d65'
+
+REQUEST_TOKEN_URL = 'http://api.t.sina.com.cn/oauth/request_token'
+AUTHORIZATION_URL = 'http://api.t.sina.com.cn/oauth/authorize'
+ACCESS_TOKEN_URL = 'http://api.t.sina.com.cn/oauth/access_token'
+POST_NEW_FEED_URL = 'http://api.t.sina.com.cn/statuses/upload.json'
+
+</t>
+<t tx="wjl.20110119224651.1879">#保存access_token
+def update_sina_accesstoken(user_id, sina_id, access_token, must_save=False):
+    try:
+        ats = pickle.dumps({'key':access_token.key, 'secret':access_token.secret})
+        bb, created = BindBlog.objects.get_or_create(user_id=user_id, blog_type='sina')
+        bb.access_token = ats
+        bb.blog_id = sina_id
+        if created or must_save:
+            bb.allowed = True
+        bb.save()
+    except:
+        pass
+
+
+</t>
+<t tx="wjl.20110119224651.1880">def is_send_feed(sns_id):
+    bbinfo = get_member_bindblog_info(sns_id)
+    if not bbinfo:
+        return False
+    if bbinfo.allowed:
+        return True
+    else:
+        return False
+
+</t>
+<t tx="wjl.20110119224651.1881">def send_user_feed(sns_id, content='', image=None):
+    if not content:
+        return HttpResponse('no content')
+
+    bbinfo = get_member_bindblog_info(sns_id)
+    if not bbinfo:
+        return HttpResponse('no bbinfo')
+    if not bbinfo.allowed:
+        return('disabled feed')
+
+    try:
+        at = str(bbinfo.access_token)
+        access_token = pickle.loads(at)
+    except:
+        return HttpResponse('access_token error')
+    try:
+        content = content.encode('utf-8')
+        auth = OAuthHandler(APP_KEY, APP_SECRET)
+        auth.setToken(access_token.get('key',''), access_token.get('secret',''))
+        api = API(auth)
+        if image:
+            real_img = '%s%s' % (settings.MEDIA_ROOT, image)
+            ret = api.upload(real_img, content)
+        else:
+            ret = api.update_status(content)
+
+        r = HttpResponse('success')
+        return r
+    except WeibopError,ex:
+        return HttpResponse('send error:%s' % str(ex))
+    except:
+        import sys
+        return HttpResponse('send error:%s' % str(sys.exc_info()))
+
+</t>
+<t tx="wjl.20110119224651.1882">def get_request_token():
+    consumer = oauth.OAuthConsumer(APP_KEY, APP_SECRET)
+    sigmethod = oauth.OAuthSignatureMethod_PLAINTEXT()
+    oauth_request = oauth.OAuthRequest.from_consumer_and_token(
+                    oauth_consumer = consumer,
+                    callback = '%s/sina_login/authorize' % (settings.SITE_URL),
+                    http_url= REQUEST_TOKEN_URL
+                    )
+    oauth_request.sign_request(sigmethod, consumer, None)
+
+    resp = urllib2.urlopen(urllib2.Request(REQUEST_TOKEN_URL, headers=oauth_request.to_header()))
+    ret = resp.read()
+    result = str(oauth.OAuthToken.from_string(ret))
+    if result[:18] == 'oauth_token_secret':
+        token = {'oauth_token':result[-32:],
+                 'oauth_token_secret':result[19:51]}
+    else:
+        token = {'oauth_token':result[12:44],
+                 'oauth_token_secret':result[-32:]}
+
+    return token
+
+</t>
+<t tx="wjl.20110119224651.1883">#下面是 url 使用的方法
+def get_user_authorize(request, sync=False):
+    token = get_request_token()
+    is_sync = request.GET.get('sync_sina', None)
+    cache.set(token['oauth_token'],token['oauth_token_secret'])
+    oauth_callback = '%s/sina_login/authorize/' % (settings.SITE_URL)
+    if is_sync or sync:
+        oauth_callback += '?sync_sina=' + is_sync
+
+    params = {
+              'oauth_token':token['oauth_token'],
+              'oauth_token_secret':token['oauth_token_secret'],
+              'oauth_callback': oauth_callback
+             }
+    data = urllib.urlencode(params)
+    url = '%s?%s'%(AUTHORIZATION_URL,data)
+
+    return HttpResponseRedirect(url)
+
+</t>
+<t tx="wjl.20110119224651.1884">def get_access_token(request):
+    verifier = request.GET['oauth_verifier']
+    oauth_token = request.GET['oauth_token']
+    is_sync = request.GET.get('sync_sina', None)
+    oauth_token_secret = cache.get(oauth_token)
+    cache.delete(oauth_token)
+
+    consumer = oauth.OAuthConsumer(APP_KEY, APP_SECRET)
+    request_token = oauth.OAuthToken(key=oauth_token, secret=str(oauth_token_secret))
+    url = ACCESS_TOKEN_URL
+
+    oauth_request = oauth.OAuthRequest.from_consumer_and_token(
+                oauth_consumer = consumer,
+                token = request_token, http_url=url,
+                verifier = str(verifier)
+                )
+    sigmethod = oauth.OAuthSignatureMethod_HMAC_SHA1()
+    oauth_request.sign_request(sigmethod, consumer, request_token)
+
+    resp = urllib2.urlopen(urllib2.Request(url, headers=oauth_request.to_header()))
+    ret = resp.read()
+    access_token = oauth.OAuthToken.from_string(ret)
+
+    auth = OAuthHandler(APP_KEY, APP_SECRET)
+    auth.setToken(access_token.key, access_token.secret)
+    api = API(auth)
+    sina_user_info = api.verify_credentials()
+    if not is_sync:
+        ppy_user = 'sina_%s' % sina_user_info.id
+        user = User.objects.filter(username=ppy_user)
+        if user: #login for sina users
+            user = authenticate(username=ppy_user, password=hashlib.md5(ppy_user).hexdigest())
+            if user.is_active:
+                login(request, user)
+        else:
+            # is bind blog user, go to login page.
+            BindedSinaIds = BindBlog.objects.filter(blog_id=str(sina_user_info.id), blog_type='sina')
+            if BindedSinaIds:
+                return HttpResponseRedirect('/game/')
+
+            #add new user
+            ppy_realname = sina_user_info.name
+            user = User(username=ppy_user, is_active=True)
+            user.set_password(hashlib.md5(ppy_user).hexdigest())
+            user.save()
+
+            profile = UserProfile(user_id=user.id, nickname=ppy_realname, true_name=ppy_realname,
+                                  identity_card_code='22222222')
+            profile.save()
+
+            user = authenticate(username=ppy_user, password=hashlib.md5(ppy_user).hexdigest())
+            if user.is_active:
+                login(request, user)
+    else:
+        user = User.objects.get(id=request.user.id)
+
+    if sina_user_info.id:
+        update_sina_accesstoken(user.id, sina_user_info.id, access_token, bool(is_sync))
+
+    if is_sync:
+        return HttpResponseRedirect('/users/sync')
+    # 获取用户
+    member = get_member_by_sns_id(user.id)
+    if member is None:
+        member = register_member('', user.id)
+
+    return HttpResponseRedirect('/game/')
+
+</t>
+<t tx="wjl.20110119224651.1885">@login_required
+def sina_bind_newfeed(request):
+    flag = request.POST.get('e', None)
+    if flag is None:
+        return HttpResponse('data error')
+
+    bbinfo = get_member_bindblog_info(request.user.id)
+    if not bbinfo:
+        return HttpResponse('no bbinfo')
+
+    flag = (flag=='True')
+    if flag != bbinfo.allowed:
+        bbinfo.allowed = flag
+        bbinfo.save()
+
+    return HttpResponse('success')
+
+</t>
+<t tx="wjl.20110119224651.1886">@login_required
+def sina_upload(request):
+    content = request.POST.get('content', None)
+    image = request.POST.get('image', None)
+
+    return send_user_feed(request.user.id, content, image)
+</t>
+<t tx="wjl.20110119224651.1889">from users.constants import *
+
+def get_member_bindblog_info(sns_id):
+    key = CACHE_SINA_USER_INFO % (sns_id)
+    bb = cache.get(key)
+
+    if bb is None:
+        bbs = BindBlog.objects.filter(user_id=sns_id, blog_type='sina')
+        if bbs:
+            bb = bbs[0]
+            cache.set(key, bb)
+        else:
+            return None
+
+    return bb
+
+</t>
+<t tx="wjl.20110119224651.1890"></t>
+<t tx="wjl.20110119224651.1891">post提交数据，
+就是urlencode，，</t>
+<t tx="wjl.20110119224651.1892">flash里触发send_user_feeds
+根据用户的id判断要调用的url，
+这个还是在js里，，
+</t>
 </tnodes>
 </leo_file>
