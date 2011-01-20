@@ -10,7 +10,7 @@
 <find_panel_settings/>
 <vnodes>
 <v t="newlife.20101221161857.1671"><vh>@chapters</vh></v>
-<v t="newlife.20101217182433.1267" a="E"><vh>目标</vh>
+<v t="newlife.20101217182433.1267"><vh>目标</vh>
 <v t="newlife.20101221161857.1672"><vh>架构说明书</vh></v>
 <v t="newlife.20101217182433.1269" a="E"><vh>搭建本地开发环境</vh>
 <v t="newlife.20101221174231.1675"><vh>svn地址</vh></v>
@@ -25,13 +25,13 @@
 <v t="newlife.20101222104201.1702" a="E"><vh>系统特色</vh>
 <v t="newlife.20101222104201.1703"><vh>缓存</vh></v>
 <v t="newlife.20101222104201.1705"><vh>单元测试</vh></v>
-<v t="newlife.20101222104201.1704"><vh>分表</vh>
+<v t="newlife.20101222104201.1704" a="E"><vh>分表</vh>
 <v t="newlife.20101222104201.1709" a="E"><vh>class MultiDB</vh>
 <v t="newlife.20101222104201.1710"><vh>save</vh></v>
 <v t="newlife.20101222104201.1711"><vh>delete</vh></v>
 <v t="newlife.20101222104201.1712"><vh>class Meta</vh></v>
 </v>
-<v t="newlife.20101222104201.1777"><vh>class MyFishInstance</vh>
+<v t="newlife.20101222104201.1777" a="E"><vh>class MyFishInstance</vh>
 <v t="newlife.20101222104201.1778"><vh>can_be_used_potion</vh></v>
 <v t="newlife.20101222104201.1779"><vh>_get_base_style</vh></v>
 <v t="newlife.20101222104201.1780"><vh>_get_color</vh></v>
@@ -371,7 +371,7 @@
 <v t="newlife.20101223112128.1769"><vh>renewObjectsAMF</vh></v>
 </v>
 </v>
-<v t="newlife.20101223141853.1784" a="E"><vh>service</vh>
+<v t="newlife.20101223141853.1784"><vh>service</vh>
 <v t="newlife.20101223141853.1788"><vh>getSysNoticeAMF</vh></v>
 <v t="newlife.20101223141853.1787"><vh>getIndexAdsAMF</vh></v>
 <v t="newlife.20101220143820.1445"><vh>getUserInfoAMF</vh>
@@ -446,7 +446,7 @@
 <v t="newlife.20101224111641.2002"><vh>class Meta</vh></v>
 </v>
 </v>
-<v t="newlife.20110104172722.2064" a="E"><vh>@file /home/newlife/ddl_server/ddl_server/sns_ddl/apps/webservice/dragon.py</vh>
+<v t="newlife.20110104172722.2064"><vh>@file /home/newlife/ddl_server/ddl_server/sns_ddl/apps/webservice/dragon.py</vh>
 <v t="newlife.20110104172722.2065"><vh>dragon declarations</vh></v>
 <v t="newlife.20110104172722.2066"><vh>getDragonsInBagAMF</vh></v>
 <v t="newlife.20110104172722.2067"><vh>upgradeDragonAMF</vh></v>
@@ -457,6 +457,38 @@
 <v t="newlife.20110104172722.2072"><vh>growthPotionAMF</vh></v>
 <v t="newlife.20110104172722.2073"><vh>dragonPowerAMF</vh></v>
 <v t="newlife.20110104172722.2074"><vh>memberPowerAMF</vh></v>
+</v>
+<v t="newlife.20110111133232.2064"><vh>@file /home/newlife/ddl_server/ddl_server/sns_ddl/apps/webservice/task.py</vh>
+<v t="newlife.20110111133232.2065"><vh>task declarations</vh></v>
+<v t="newlife.20110111133232.2066"><vh>getTaskStatusAMF</vh></v>
+<v t="newlife.20110111133232.2067"><vh>getNPCAMF</vh></v>
+<v t="newlife.20110111133232.2068"><vh>refreshTaskAMF</vh></v>
+</v>
+<v t="newlife.20110111133232.2069"><vh>回答几个问题</vh>
+<v t="newlife.20110111133232.2070"><vh>问题列表</vh></v>
+</v>
+<v t="newlife.20110112112028.2078"><vh>@file /home/newlife/ddl_server/ddl_server/sns_ddl/apps/webservice/dragon.py</vh>
+<v t="newlife.20110112112028.2079"><vh>dragon declarations</vh></v>
+<v t="newlife.20110112112028.2080"><vh>getDragonsInBagAMF</vh></v>
+<v t="newlife.20110112112028.2081"><vh>upgradeDragonAMF</vh></v>
+<v t="newlife.20110112112028.2082"><vh>moveDragonToTankAMF</vh></v>
+<v t="newlife.20110112112028.2083"><vh>moveDragonToBagAMF</vh></v>
+<v t="newlife.20110112112028.2084"><vh>saleDragonAMF</vh></v>
+<v t="newlife.20110112112028.2085"><vh>buyDragonPositionAMF</vh></v>
+<v t="newlife.20110112112028.2086"><vh>growthPotionAMF</vh></v>
+<v t="newlife.20110112112028.2087"><vh>dragonPowerAMF</vh></v>
+<v t="newlife.20110112112028.2088"><vh>feedOneDragonAMF</vh></v>
+</v>
+<v t="newlife.20110114161707.2100" a="E"><vh>@file /home/newlife/ppy_office/ppy_official/users/helper_sina.py</vh>
+<v t="newlife.20110114161707.2101"><vh>helper_sina declarations</vh></v>
+<v t="newlife.20110114161707.2102"><vh>update_sina_accesstoken</vh></v>
+<v t="newlife.20110114161707.2103"><vh>is_send_feed</vh></v>
+<v t="newlife.20110114161707.2104"><vh>send_user_feed</vh></v>
+<v t="newlife.20110114161707.2105"><vh>get_request_token</vh></v>
+<v t="newlife.20110114161707.2106"><vh>get_user_authorize</vh></v>
+<v t="newlife.20110114161707.2107"><vh>get_access_token</vh></v>
+<v t="newlife.20110114161707.2108"><vh>sina_bind_newfeed</vh></v>
+<v t="newlife.20110114161707.2109"><vh>sina_upload</vh></v>
 </v>
 </vnodes>
 <tnodes>
@@ -8818,6 +8850,1042 @@ def memberPowerAMF(request, skey, style):
             'rewards':rewards,
             'task_list':task_list}
 
+</t>
+<t tx="newlife.20110111133232.2064">@language python
+@tabwidth -4
+@others
+@ignore</t>
+<t tx="newlife.20110111133232.2065"># -*- coding: utf-8 -*-
+
+from datetime import datetime
+from django.conf import settings
+from apps.system.lock import *
+from apps.system.helper import login_member
+from apps.products.helper import get_product_bystyle
+from apps.tasks.cache import *
+from apps.members.helper import *
+from apps.tasks.helper import *
+
+</t>
+<t tx="newlife.20110111133232.2066">#获取任务进度
+def getTaskStatusAMF(request, skey, my_task_id):
+    my_task_id = my_task_id.split('_')[-1]
+    my_task_id = int(my_task_id)
+    member = login_member(request, skey)
+
+    try:
+        my_task = get_my_task(member.id, my_task_id)
+    except:
+        return {'error': 'task is not exist', 'rewards':'', 'task_list':''}
+
+    rewards = ''
+    task_list = ''
+    task_ret = ''
+    if my_task.type == "t019":
+        #开图鉴
+        my_alf_fish_styles, _ = get_my_almanac_fish_styles(member.id)
+        for alf_fish in my_alf_fish_styles:
+            reward, task = check_done_task(member, 't019', alf_fish)
+            if reward:
+                rewards = reward
+                task_ret = task
+                break
+    elif my_task.type == "t020":
+        #开全图鉴
+        my_alf_fish_styles, _ = get_my_almanac_fish_styles(member.id)
+        fish_base_style = {}
+        for fish_style in my_alf_fish_styles:
+            fish_base_style.setdefault(fish_style.split('_')[0], []).append(fish_style)
+        for base_style, fish_styles in fish_base_style.items():
+            alf_fish_colors = get_almanac_family_code_fish_colors(base_style)
+            fish = get_fish_with_stylecolor(fish_styles[0])
+            deform_levels = fish.get_deform_levels()
+            max_deform_times = str(len(deform_levels))
+            alf_fish_styles = ['_'.join([base_style, alf_color, max_deform_times]) for alf_color in alf_fish_colors]
+            #是否开了一套图鉴
+            if fish_styles.sort(key=lambda i:i) == alf_fish_styles.sort(key=lambda i:i):
+                reward, task = check_done_task(member, 't020', base_style)
+                if reward:
+                    rewards = reward
+                    task_ret = task
+                    break
+    elif my_task.type == "t022":
+        #兑换
+        my_fishes = get_my_all_fishes(member)
+        for fish in my_fishes:
+            reward, task = check_done_task(member, 't022', fish.style)
+            if reward:
+                rewards = reward
+                task_ret = task
+                break
+
+        if rewards:
+            task_dict = {task_ret.style_1:task_ret.num_1,
+                         task_ret.style_2:task_ret.num_2,
+                         task_ret.style_3:task_ret.num_3,
+                         } 
+            #兑换任务完成，删除任务要求的龙
+            for k, v in task_dict.items():
+                temp = [ my_fish for my_fish in my_fishes if k and my_fish.style == k ]
+                if temp:
+                    for my_fish in temp[:v]:
+                        if my_fish.my_fish_tank_id == 0:
+                            delete_a_member_fish_in_bag(member, my_fish.id)
+                        elif my_fish.my_fish_tank_id &gt; 0:
+                            delete_a_member_fish_in_tank(member, my_fish.my_fish_tank_id, my_fish.id)
+
+    if rewards:
+        task_list = update_my_normal_task(member.id, task_ret)
+    else: 
+        rewards = get_task_rewards_info(my_task)
+    status_name = get_task_progress(my_task)
+
+    return {'name': status_name,
+            'task_id':my_task.categary+"_"+my_task.group_code+'_'+str(my_task.seq),
+            'rewards': rewards,
+            'task_list':task_list,
+            }
+</t>
+<t tx="newlife.20110111133232.2067">#获取NPC以及任务
+def getNPCAMF(request, skey):
+    member = login_member(request, skey)
+
+    my_tasks = get_my_all_tasks(member.id)
+    my_task_list = []
+    current_time = datetime.now()
+    for my_task in my_tasks:
+        if my_task.status in ['NO', 'OK']:
+            #get task rewards information
+            if my_task.categary=='a':
+                end_time = my_task.end_time and my_task.end_time.strftime('%Y-%m-%d') or ''
+            else:
+                end_time = ''
+            temp = {'task_id':my_task.categary+"_"+str(my_task.id),
+                    'style':my_task.npc_style,
+                    'remain_time':end_time,
+                    }
+            my_task_list.append(temp)
+    rewards = ''
+    return {'task_list':my_task_list,
+            'rewards':rewards}
+
+
+</t>
+<t tx="newlife.20110111133232.2068">#重新刷临时任务
+def refreshTaskAMF(request, skey, my_task_id):
+    my_task_id = int(my_task_id)
+    member = login_member(request, skey)
+
+    key = CACHE_KEY_REFRESH_RANDOM_TASK_LOCK % member.id
+    if is_locked(key):
+        return {'error': 'memory is locked', 'rewards':'', 'task_list':''}
+
+    set_mem_lock(key, 5)
+
+    my_random_task_ids = get_my_random_task_ids(member.id)
+    if my_task_id not in my_random_task_ids:
+        return {'error':'data error', 'rewards':'', 'task_list':''}
+
+    if member.pearls &lt; REFRESH_RANDOM_TASH_FEE:
+        return {'error': 'not enough pearls', 'rewards':'', 'task_list':''}
+
+    my_task = refresh_one_my_random_task(member.id, my_task_id)
+    if not my_task:
+        return {'error':'not refresh task', 'rewards':'', 'task_list':''}
+
+    #收费
+    member.pearls -= REFRESH_RANDOM_TASH_FEE
+    member.save()
+
+    #取任务奖励信息
+    taskrewards = get_task_rewards(my_task.task_id)
+    trs = []
+    for taskreward in taskrewards:
+        name = ''
+        if taskreward.reward_type == ['s', 'g', 'x']:
+            name = taskreward.reward_style
+        elif taskreward.reward_type in ['a','c','d','e','p','n']:
+            product = get_product_bystyle(taskreward.reward_style)
+            if product:
+                name = product.name
+        temp = {'type':taskreward.reward_type, 'name':name, 'style':taskreward.reward_style,
+            'num':taskreward.reward_num, 'months':taskreward.reward_val}
+        trs.append(temp)
+
+    ret = { 'shells':member.shells,
+            'pearls':member.pearls,
+            'score':member.score,
+            'id':my_task.id,
+            'style':my_task.type,
+            'type':my_task.categary,
+            'status':my_task.status,
+            'rewards':trs
+            }
+
+    return ret
+
+</t>
+<t tx="newlife.20110111133232.2069"></t>
+<t tx="newlife.20110111133232.2070">1，我都有几条鱼（龙）：
+
+2,对龙的统计改放在什么地方？
+
+    </t>
+<t tx="newlife.20110112112028.2078">@language python
+@tabwidth -4
+@others
+@ignore</t>
+<t tx="newlife.20110112112028.2079"># -*- coding: utf-8 -*-
+
+from datetime import timedelta, datetime
+from django.core.cache import cache
+from apps.system.helper import login_member
+from apps.members.constants import LEVEL_UP_EXP
+from apps.members.cache import *
+from apps.members.helper import *
+from apps.shops.cache import get_shop_product
+from apps.tasks.helper import check_done_task, update_my_normal_task
+
+</t>
+<t tx="newlife.20110112112028.2080">#获取背包龙
+def getDragonsInBagAMF(request, skey):
+    member = login_member(request, skey)
+    fish_list = []
+
+    my_fish_ids_in_bag = get_my_fish_ids_in_bag(member.id)
+    my_fishes = get_my_fishes(member.id, my_fish_ids_in_bag)
+    my_fishes = calculate_my_fishes_in_bag(my_fishes)
+    for my_fish in my_fishes:
+        temp = {
+                'id':my_fish.id,
+                'name':my_fish.get_display_name(),
+                'style':my_fish.get_display_style(),
+                'star':my_fish.star,
+                'family':my_fish.family,
+                'is_highest_level':my_fish.is_highest_level(),
+                'hungry':my_fish.hungry,
+                'level':my_fish.level,
+                'next_deformed_level': my_fish.next_deform_level(),
+                'exp':my_fish.exp,
+                'power':my_fish.get_power(),
+                'max_exp':LEVEL_UP_EXP,
+                'can_be_potion':my_fish.can_be_used_potion(),
+                'property': get_fish_property(my_fish.star, my_fish.level, my_fish.color),
+                'has_finished':has_finished_fish(member.id, my_fish.style, my_fish.star),
+                }
+        fish_list.append(temp)
+    dragon_position = [DEFAULT_SYS_MAX_BAGS, member.shell_bags, member.pearl_bags]
+    fish_list.sort(lambda x,y: -1*cmp(x['power'], y['power']))
+    return {'list':fish_list,
+            'dragon_position':dragon_position,
+            'task_list':'',
+            'rewards':'',}
+
+</t>
+<t tx="newlife.20110112112028.2081">#点击升级
+def upgradeDragonAMF(request, skey, my_fish_id):
+    member = login_member(request, skey)
+
+    my_fish_id = int(my_fish_id)
+    my_fish = get_my_fish(member.id, my_fish_id)
+    if not my_fish:
+        return {'error':'fish does not exist', 'rewards':'', 'task_list':''}
+    open_new_almanac = False
+    get_exp = 0
+    get_fish_exp = 0
+    open_all = False
+    rewards = ''
+    task_list = ''
+    reward_incubate = ''
+    task_incubate = ''
+    reward_upgrade = ''
+    task_upgrade = ''
+    reward_exchange = ''
+    task_exchange = ''
+
+    if my_fish.has_deformed:
+        # 蛋变龙需要移动到鱼缸中
+        if my_fish.level == 1:
+            my_fish_ids_in_bag = get_my_fish_ids_in_bag(member.id)
+            if len(my_fish_ids_in_bag) &gt;= member.current_bags():
+                return {'error':'out of bags', 'rewards':'', 'task_list':''}
+            my_fish_tank = get_my_fish_tank(member.id, my_fish.my_fish_tank_id)
+            if not my_fish_tank:
+                return {'error':'fish tank does not exist', 'rewards':'', 'task_list':''}
+
+            my_fish_ids_in_tank = get_my_fish_ids_in_tank(member.id, my_fish_tank.id)
+            my_fish.has_deformed = False
+            my_fish.style = '_'.join([my_fish.base_style, str(my_fish.color), str(my_fish.level+1)])
+            my_fish.my_fish_tank_id = 0
+            my_fish.exp = 0.0
+            my_fish.hungry = 0
+            my_fish.last_power_time = datetime.now() - timedelta(0, 18000)
+            my_fish.save()
+            # 更新用户鱼缸中和塑料袋中的缓存
+            if my_fish.id in my_fish_ids_in_tank:
+                my_fish_ids_in_tank.remove(my_fish.id)
+            update_my_fish_ids_in_tank(member.id, my_fish_tank.id, my_fish_ids_in_tank)
+            if my_fish.id not in my_fish_ids_in_bag:
+                my_fish_ids_in_bag.append(my_fish.id)
+            update_my_fish_ids_in_bag(member.id, my_fish_ids_in_bag)
+
+            # 处理图鉴
+            if isopen_new_almanac(member, my_fish):
+                open_new_almanac = True
+                get_fish_exp, get_exp, open_all = update_member_almanac_exp(member, my_fish)
+
+            # 此时用户经验包括 升级龙的经验，但不能包括 任务中产生的经验
+            level, remain_exp, next_level_exp = get_almanac_level_info(member.id)
+            member_shells = member.shells
+            member_pearls = member.pearls
+
+            #do task
+            reward, task = check_done_task(member, 't009', my_fish.style, 1)
+            if reward:
+                reward_incubate = reward
+                task_incubate = task
+
+        else:
+            my_fish.has_deformed = False
+            my_fish.style = '_'.join([my_fish.base_style, str(my_fish.color), str(my_fish.level+1)])
+            my_fish.exp = 0.0
+            my_fish.last_power_time = datetime.now() - timedelta(0, 18000)
+            my_fish.save()
+
+            # 处理图鉴
+            if isopen_new_almanac(member, my_fish):
+                open_new_almanac = True
+                get_fish_exp, get_exp, open_all = update_member_almanac_exp(member, my_fish)
+
+            # 此时用户经验包括 升级龙的经验，但不能包括 任务中产生的经验
+            level, remain_exp, next_level_exp = get_almanac_level_info(member.id)
+            member_shells = member.shells
+            member_pearls = member.pearls
+
+            #do task
+            reward, task = check_done_task(member, 't015', my_fish.style, 1, my_fish.family, my_fish.p_type, my_fish.star)
+            if reward:
+                reward_upgrade = reward
+                task_upgrade = task
+
+        fish_info = {
+                'id':my_fish.id,
+                'name':my_fish.get_display_name(),
+                'style':my_fish.get_display_style(),
+                'star':my_fish.star,
+                'family':my_fish.family,
+                'is_highest_level':my_fish.is_highest_level(),
+                'hungry':my_fish.hungry,
+                'level':my_fish.level,
+                'next_deformed_level': my_fish.next_deform_level(),
+                'exp':my_fish.exp,
+                'max_exp':LEVEL_UP_EXP,
+                'power':my_fish.get_power(),
+                'can_be_potion':my_fish.can_be_used_potion(),
+                'property': get_fish_property(my_fish.star, my_fish.level, my_fish.color),
+                'has_finished':has_finished_fish(member.id, my_fish.style, my_fish.star),
+                'almanac_name':my_fish.almanac_name,
+                }
+
+        reward_exchange, task_exchange = check_done_task(member, 't022', my_fish.style, 1)
+    #没有变形的情况
+    else:
+        level, remain_exp, next_level_exp = get_almanac_level_info(member.id)
+
+    reward_almanac = ''
+    reward_all_almanac = ''
+
+    if open_new_almanac:
+        reward_almanac, task_almanac = check_done_task(member, 't019', my_fish.style,
+                1, my_fish.family, my_fish.p_type, my_fish.star)
+
+    if open_all:
+        reward_all_almanac, task_all_almanac = check_done_task(member, 't020', my_fish.base_style, 1)
+
+    if reward_almanac:
+        #开图鉴
+        rewards = reward_almanac
+        task_list = update_my_normal_task(member.id, task_almanac)
+    elif reward_all_almanac:
+        #开全图鉴
+        rewards = reward_all_almanac
+        task_list = update_my_normal_task(member.id, task_all_almanac)
+    elif reward_incubate:
+        #孵蛋
+        rewards = reward_incubate
+        task_list = update_my_normal_task(member.id, task_incubate)
+    elif reward_upgrade:
+        #进化
+        rewards = reward_upgrade
+        task_list = update_my_normal_task(member.id, task_upgrade)
+        #兑换
+    elif reward_exchange:
+        rewards = reward_exchange
+        task_dict = {task_exchange.style_1:task_exchange.num_1,
+                     task_exchange.style_2:task_exchange.num_2,
+                     task_exchange.style_3:task_exchange.num_3,
+                     } 
+        #兑换任务完成，删除任务要求的龙
+        my_fishes = get_my_all_fishes(member)
+        for k, v in task_dict.items():
+            temp = [ my_fish for my_fish in my_fishes if k and my_fish.style == k ]
+            if temp:
+                for my_fish in temp[:v]:
+                    if my_fish.my_fish_tank_id == 0:
+                        delete_a_member_fish_in_bag(member, my_fish.id)
+                    elif my_fish.my_fish_tank_id &gt; 0:
+                        delete_a_member_fish_in_tank(member, my_fish.my_fish_tank_id, my_fish.id)
+
+        task_list = update_my_normal_task(member.id, task_exchange)
+
+    ret = {'level':level,
+            'remain_exp':remain_exp,
+            'next_level_exp':next_level_exp,
+            'pearls':member_pearls,
+            'shells':member_shells,
+            'open_new_almanac':open_new_almanac,
+            'my_fish':fish_info,
+            'get_exp':get_fish_exp,
+            'get_all_exp':get_exp-get_fish_exp,
+            'open_all':open_all,
+            'rewards':rewards,
+            'task_list':task_list,
+            }
+    return ret
+
+</t>
+<t tx="newlife.20110112112028.2082">#移动龙到龙窝
+def moveDragonToTankAMF(request, skey, my_fish_id, my_tank_id):
+    member = login_member(request, skey)
+
+    my_fish_id = int(my_fish_id)
+    my_tank_id = int(my_tank_id)
+    my_fish = get_my_fish(member.id, my_fish_id)
+    if not my_fish:
+        return {'error':'fish does not exist', 'rewards':'', 'task_list':''}
+    my_fish_tank = get_my_fish_tank(member.id, my_tank_id)
+    if not my_fish_tank:
+        return {'error':'fish tank does not exist', 'rewards':'', 'task_list':''}
+    #蛋应放到蛋窝，龙放到龙窝
+    if my_fish.level&gt;1 and not my_fish_tank.is_dragon_nest:
+        return {'error':'dragon can not put into egg nest', 'rewards':'', 'task_list':''}
+    elif my_fish.level==1 and not my_fish_tank.is_egg_nest:
+        return {'error':'dragon egg can not put into dragon nest', 'rewards':'', 'task_list':''}
+
+    my_fish_ids_in_bag = get_my_fish_ids_in_bag(member.id)
+    my_fish_ids_in_tank = get_my_fish_ids_in_tank(member.id, my_tank_id)
+    my_deco_ids_in_tank = get_my_deco_ids_in_tank(member.id, my_tank_id)
+    my_fish = calculate_my_fishes_in_bag([my_fish])[0]
+    # 鱼缸已经满了
+    if my_fish_tank.capacity &lt;= (len(my_deco_ids_in_tank)+len(my_fish_ids_in_tank)):
+        return {'error':'out of capacity', 'rewards':'', 'task_list':''}
+    # 移动鱼
+    my_fish.my_fish_tank_id = my_fish_tank.id
+    my_fish.save()
+    # 更新用户鱼缸中和塑料袋中鱼的缓存
+    if my_fish.id in my_fish_ids_in_bag:
+        my_fish_ids_in_bag.remove(my_fish.id)
+    update_my_fish_ids_in_bag(member.id, my_fish_ids_in_bag)
+    if my_fish.id not in my_fish_ids_in_tank:
+        my_fish_ids_in_tank.append(my_fish.id)
+    update_my_fish_ids_in_tank(member.id, my_fish_tank.id, my_fish_ids_in_tank)
+
+    #do task
+    task_list = ''
+    if my_fish.level==1:
+        rewards, my_task = check_done_task(member,'t004',my_fish.style, 1, my_fish.family, my_fish.p_type, my_fish.star)
+        if rewards:
+            task_list = update_my_normal_task(member.id, my_task)
+    else:
+        rewards, my_task = check_done_task(member,'t005',my_fish.style, 1, my_fish.family, my_fish.p_type, my_fish.star)
+        if rewards:
+            task_list = update_my_normal_task(member.id, my_task)
+    return {'status':'success',
+            'rewards':rewards,
+            'task_list':task_list,}
+
+</t>
+<t tx="newlife.20110112112028.2083">#移动龙到背包
+def moveDragonToBagAMF(request, skey, my_fish_id):
+    member = login_member(request, skey)
+
+    my_fish_id = int(my_fish_id)
+    my_fish = get_my_fish(member.id, my_fish_id)
+    if not my_fish:
+        return {'error':'fish does not exist', 'rewards':'', 'task_list':''}
+    # 判断用户背包是否已经满了
+    my_fish_ids_in_bag = get_my_fish_ids_in_bag(member.id)
+    if len(my_fish_ids_in_bag) &gt;= member.current_bags():
+        return {'error':'out of bags', 'rewards':'', 'task_list':''}
+
+    my_fish_tank = get_my_fish_tank(member.id, my_fish.my_fish_tank_id)
+    if not my_fish_tank:
+        return {'error':'fish tank does not exist', 'rewards':'', 'task_list':''}
+    my_fish = caculate_my_fish_in_tank(member.id, my_fish_tank, my_fish)
+    my_fish_ids_in_tank = get_my_fish_ids_in_tank(member.id, my_fish_tank.id)
+    my_fish.my_fish_tank_id = 0
+    my_fish.save()
+    # 更新用户鱼缸中和塑料袋中的缓存
+    if my_fish.id in my_fish_ids_in_tank:
+        my_fish_ids_in_tank.remove(my_fish.id)
+    update_my_fish_ids_in_tank(member.id, my_fish_tank.id, my_fish_ids_in_tank)
+    if my_fish.id not in my_fish_ids_in_bag:
+        my_fish_ids_in_bag.append(my_fish.id)
+    update_my_fish_ids_in_bag(member.id, my_fish_ids_in_bag)
+
+    #do task
+    task_list = ''
+    if my_fish.level==1:
+        rewards, my_task = check_done_task(member,'t004',my_fish.style, 1, my_fish.family, my_fish.p_type, my_fish.star)
+        if rewards:
+            task_list = update_my_normal_task(member.id, my_task)
+    else:
+        rewards, my_task = check_done_task(member,'t005',my_fish.style, 1, my_fish.family, my_fish.p_type, my_fish.star)
+        if rewards:
+            task_list = update_my_normal_task(member.id, my_task)
+    return {'status':'success',
+            'rewards':rewards,
+            'task_list':task_list,}
+
+</t>
+<t tx="newlife.20110112112028.2084">#卖出龙
+def saleDragonAMF(request, skey, my_fish_id):
+    member = login_member(request, skey)
+
+    my_fish_id = int(my_fish_id)
+    # 兑换用户的鱼   
+    my_fish = get_my_fish(member.id, my_fish_id)
+    if my_fish is None:
+        return {'error':'fish does not exist', 'rewards':'', 'task_list':''}
+
+    level, remain_exp, next_level_exp = get_almanac_level_info(member.id)
+    if level == 4:
+        if my_fish.style != 'd4_l_2':
+            return {'error':'can not sale', 'rewards':'', 'task_list':''}
+
+    if level &lt; 4:
+        return {'error':'can not sale', 'rewards':'', 'task_list':''}
+
+    get_shells = my_fish.sell_price()
+    if my_fish.my_fish_tank_id == 0:
+        delete_a_member_fish_in_bag(member, my_fish.id)
+    elif my_fish.my_fish_tank_id &gt; 0:
+        delete_a_member_fish_in_tank(member, my_fish.my_fish_tank_id, my_fish.id)
+    else:
+        return {'error':'can not sale', 'rewards':'', 'task_list':''}
+    member.shells += get_shells
+    member.save()
+
+    #do task
+    rewards, my_task = check_done_task(member, 't010', my_fish.style, 1)
+    if rewards:
+        task_list = update_my_normal_task(member.id, my_task)
+    else:
+        task_list = ''
+    return {'shells':member.shells,
+            'get_shells':get_shells,
+            'rewards':rewards,
+            'task_list':task_list,}
+
+</t>
+<t tx="newlife.20110112112028.2085"># 买背包格数
+def buyDragonPositionAMF(request, skey, type):
+    member = login_member(request, skey)
+
+    max_pearl_bags, max_shell_bags = DEFAULT_MEMBER_MAX_BAGS.split('_')
+    task_list = ''
+    if type == 'pearl':
+        if member.pearl_bags &gt;= max_pearl_bags:
+            return {'error':'pearl position full', 'rewards':'', 'task_list':''}
+        sell_pearls = int(pow(member.pearl_bags, 0.8)*10)
+        if member.pearls &lt; sell_pearls:
+            return {'error':'pearl limited', 'rewards':'', 'task_list':''}
+        member.pearl_bags += 1
+        member.pearls -= sell_pearls
+        member.save()
+
+        #do task
+        rewards, my_task = check_done_task(member, 't012', '')
+        if rewards:
+            task_list = update_my_normal_task(member.id, my_task)
+    elif type == 'shell':
+        if member.shell_bags &gt;= max_shell_bags:
+            return {'error':'shell position full', 'rewards':'', 'task_list':''}
+        sell_shells = int(pow(member.shell_bags+1, 2)*50)
+        if member.shells &lt; sell_shells:
+            return {'error':'shell limited', 'rewards':'', 'task_list':''}
+        member.shell_bags += 1
+        member.shells -= sell_shells
+        member.save()
+
+        #do task
+        rewards, my_task = check_done_task(member, 't012', '')
+        if rewards:
+            task_list = update_my_normal_task(member.id, my_task)
+    else:
+        return {'error':'parameter error', 'rewards':'', 'task_list':''}
+
+    return {'status':'success', 
+            'shells':member.shells, 
+            'pearls':member.pearls,
+            'rewards':rewards,
+            'task_list':task_list}
+
+</t>
+<t tx="newlife.20110112112028.2086">#使用成长药水
+def growthPotionAMF(request, skey, my_fish_id, style):
+    member = login_member(request, skey)
+
+    my_fish_id = int(my_fish_id)
+    level, remain_exp, next_level_exp = get_almanac_level_info(member.id)
+    # 取得当前目标鱼    
+    my_fish = get_my_fish(member.id, my_fish_id)
+    # 鱼不在缸里
+    if my_fish.my_fish_tank_id&lt;=0:
+        return {'error':'data error(-10000)', 'rewards':'', 'task_list':''}
+    #需要变形了
+    if my_fish.has_deformed:
+        return {'error':'need deformed', 'rewards':'', 'task_list':''}
+    # 已经对这条鱼使用过道具
+    if level &gt; 3 and not my_fish.can_be_used_potion():
+        return {'error':'already used', 'rewards':'', 'task_list':''}
+    # 取得用户当前的道具
+    my_item = get_or_create_my_item(member.id, style)
+    if not (my_fish and my_item):
+        return {'error': 'data error(-10001)', 'rewards':'', 'task_list':''}
+    # 道具类型错误
+    if my_item.item_type != 'GPO':
+        return {'error':'data error(-10002)', 'rewards':'', 'task_list':''}
+    # 道具不够
+    if my_item.total_num &lt;= 0:
+        product = get_shop_product(my_item.style)
+        return {'error':'not enough item',
+                'price':product.price,
+                'name':my_item.name,
+                'rewards':'',
+                'task_list':'',
+               }
+
+    #减道具,设置道具使用时间
+    now = datetime.now()
+    my_item.total_num -= 1
+    my_item.last_used = now
+    my_item.save()
+
+    #给鱼加成长
+    my_fish = use_physic_for_fish(member, my_fish, my_item)
+    # 处理图鉴
+    open_new_almanac = False
+    open_all = False
+    get_exp = 0
+    if isopen_new_almanac(member, my_fish):
+        open_new_almanac = True
+        get_fish_exp, get_exp, open_all = update_member_almanac_exp(member, my_fish)
+
+    fish_info = {
+            'id':my_fish.id,
+            'name':my_fish.get_display_name(),
+            'style':my_fish.get_display_style(),
+            'star':my_fish.star,
+            'family':my_fish.family,
+            'is_highest_level':my_fish.is_highest_level(),
+            'hungry':my_fish.hungry,
+            'level':my_fish.level,
+            'next_deformed_level': my_fish.next_deform_level(),
+            'exp':my_fish.exp,
+            'max_exp':LEVEL_UP_EXP,
+            'power':my_fish.get_power(),
+            'has_deformed':my_fish.has_deformed,
+            'can_be_potion':my_fish.can_be_used_potion(),
+            'property': get_fish_property(my_fish.star, my_fish.level, my_fish.color),
+            'has_finished':has_finished_fish(member.id, my_fish.style, my_fish.star),
+            'almanac_name':my_fish.almanac_name,
+            }
+
+    level, remain_exp, next_level_exp = get_almanac_level_info(member.id)
+
+    #do task
+    reward_almanac = ''
+    task_list = ''
+    reward_all_almanac = ''
+    if open_new_almanac:
+        reward_almanac, task_almanac = check_done_task(member, 't019', my_fish.style,
+                1, my_fish.family, my_fish.p_type, my_fish.star)
+
+    if open_all:
+        reward_all_almanac, task_all_almanac = check_done_task(member, 't020', my_fish.base_style, 1) 
+
+    if reward_almanac:
+        rewards = reward_almanac
+        task_list = update_my_normal_task(member.id, task_almanac)
+    elif reward_all_almanac:
+        rewards = reward_all_almanac
+        task_list = update_my_normal_task(member.id, task_all_almanac)
+    else:
+        rewards, my_task = check_done_task(member, 't002', style, 1)
+        if rewards:
+            task_list = update_my_normal_task(member.id, my_task)
+
+    return {'level':level,
+            'remain_exp':remain_exp,
+            'next_level_exp':next_level_exp,
+            'open_new_almanac':open_new_almanac,
+            'shells':member.shells,
+            'my_dragon':fish_info,
+            'get_exp':get_exp,
+            'open_all':open_all,
+            'rewards':rewards,
+            'task_list':task_list,
+            }
+
+</t>
+<t tx="newlife.20110112112028.2087">def dragonPowerAMF(request, skey, my_fish_id, style): 
+    member = login_member(request, skey)
+
+    my_fish_id = int(my_fish_id)
+    # 取得当前目标鱼    
+    my_fish = get_my_fish(member.id, my_fish_id)
+    # 取得用户当前的道具
+    my_item = get_or_create_my_item(member.id, style)
+    if not (my_fish and my_item):
+        return {'error': 'data error(-10001)', 'rewards':'', 'task_list':''}
+    # 道具类型错误
+    if my_item.item_type != 'POW':
+        return {'error':'data error(-10002)', 'rewards':'', 'task_list':''}
+    if my_fish.level == 1:
+        return {'error':'not use item', 'rewards':'', 'task_list':''}
+    # 道具不够
+    if my_item.total_num &lt;= 0:
+        product = get_shop_product(my_item.style)
+        return {'error':'not enough item',
+                'price':product.price,
+                'name':my_item.name,
+                'rewards':'',
+                'task_list':'',
+                }
+    level = get_almanac_level_info(member.id)[0]
+    if level &gt; 4:
+        power = my_fish.get_power()
+        if power == DRAGON_MAX_POWER:
+            return {'error':'power is full',
+                    'rewards':'',
+                    'task_list':'',
+                    }
+    #减道具,设置道具使用时间
+    my_item.total_num -= 1
+    my_item.last_used = datetime.now()
+    my_item.save()
+
+    #给鱼加体力
+    my_fish.last_power_time = (my_fish.last_power_time or datetime.now()) - timedelta(hours=DRAGON_MAX_POWER) 
+    my_fish.save()
+
+    #do task
+    rewards, my_task = check_done_task(member, 't002', style, 1)
+    if rewards:
+        task_list = update_my_normal_task(member.id, my_task)
+    else:
+        task_list = ''
+    return {'status':'success',
+            'rewards':rewards,
+            'task_list':task_list}
+
+</t>
+<t tx="newlife.20110112112028.2088">def feedOneDragonAMF(request, skey, my_tank_id, my_fish_id):
+    member = login_member(request, skey)
+
+    my_tank_id = int(my_tank_id)
+    my_fish_id = int(my_fish_id)
+
+    my_fish = get_my_fish(member.id, my_fish_id)
+    my_fish_tank = get_my_fish_tank(member.id, my_tank_id)
+    if my_fish.my_fish_tank_id != my_fish_tank.id:
+        return {'error':'data error(-10001)', 'rewards':'', 'task_list':''}
+
+    reward_all_almanac = ''
+    task_all_almanac = ''
+    my_fish = caculate_my_fish_in_tank(member.id, my_fish_tank, my_fish)
+    my_fish.hungry = 96.0
+    my_fish.save()
+    has_finished = has_finished_fish(member.id, my_fish.style, my_fish.star)
+    if has_finished:
+        reward, task = check_done_task(member, 't020', my_fish.base_style, 1)
+        if reward:
+            reward_all_almanac = reward
+            task_all_almanac = task
+
+    fish_info = {
+        'id':my_fish.id,
+        'name':my_fish.get_display_name(),
+        'style':my_fish.get_display_style(),
+        'star':my_fish.star,
+        'family':my_fish.family,
+        'is_highest_level':my_fish.is_highest_level(),
+        'hungry':my_fish.hungry,
+        'level':my_fish.level,
+        'next_deformed_level': my_fish.next_deform_level(),
+        'has_deformed': my_fish.has_deformed,
+        'exp':my_fish.exp,
+        'power':my_fish.get_power(),
+        'max_exp':LEVEL_UP_EXP,
+        'has_finished':has_finished,
+        'can_be_potion':my_fish.can_be_used_potion()
+    }
+
+    #do task
+    task_list = ''
+    if reward_all_almanac:
+        rewards = reward_all_almanac
+        task_list = update_my_normal_task(member.id, task_all_almanac)
+    elif my_fish_tank.is_dragon_nest:
+        rewards, my_task = check_done_task(member, 't007', '', 1)
+        if rewards:
+            task_list = update_my_normal_task(member.id, my_task)
+    elif my_fish_tank.is_egg_nest:
+        rewards, my_task = check_done_task(member, 't006', '', 1)
+        if rewards:
+            task_list = update_my_normal_task(member.id, my_task)
+
+    return {'dragon':fish_info,
+            'task_list':task_list,
+            'rewards': rewards,}
+
+
+</t>
+<t tx="newlife.20110114161707.2100">@language python
+@tabwidth -4
+@others
+@ignore 
+</t>
+<t tx="newlife.20110114161707.2101"># -*- coding: utf-8 -*-
+
+import hashlib, time
+import urllib, urllib2,httplib
+import pickle
+
+from django.conf import settings
+from django.core.cache import cache
+from django.http import HttpResponseRedirect, HttpResponse
+from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from apps.members.cache import get_member_by_sns_id
+from apps.members.helper import register_member
+from users.models import *
+from users.cache import *
+
+from thirdparty.weibopy.api import API
+from thirdparty.weibopy import oauth
+from thirdparty.weibopy.auth import OAuthHandler
+from thirdparty.weibopy.error import WeibopError
+
+APP_KEY = '2803109225'
+APP_SECRET = 'ca9d9587ce4cce614f93efb44da0a90c'
+#APP_KEY = '923681121'
+#APP_SECRET = 'b1fe311ebb599dc2092c996a838f4d65'
+
+REQUEST_TOKEN_URL = 'http://api.t.sina.com.cn/oauth/request_token'
+AUTHORIZATION_URL = 'http://api.t.sina.com.cn/oauth/authorize'
+ACCESS_TOKEN_URL = 'http://api.t.sina.com.cn/oauth/access_token'
+POST_NEW_FEED_URL = 'http://api.t.sina.com.cn/statuses/upload.json'
+
+</t>
+<t tx="newlife.20110114161707.2102">#保存access_token
+def update_sina_accesstoken(user_id, sina_id, access_token, must_save=False):
+    try:
+        ats = pickle.dumps({'key':access_token.key, 'secret':access_token.secret})
+        bb, created = BindBlog.objects.get_or_create(user_id=user_id, blog_type='sina')
+        bb.access_token = ats
+        bb.blog_id = sina_id
+        if created or must_save:
+            bb.allowed = True
+        bb.save()
+    except:
+        pass
+
+
+</t>
+<t tx="newlife.20110114161707.2103">def is_send_feed(sns_id):
+    bbinfo = get_member_bindblog_info(sns_id)
+    if not bbinfo:
+        return False
+    if bbinfo.allowed:
+        return True
+    else:
+        return False
+
+</t>
+<t tx="newlife.20110114161707.2104">def send_user_feed(sns_id, content='', image=None):
+    if not content:
+        return HttpResponse('no content')
+
+    bbinfo = get_member_bindblog_info(sns_id)
+    if not bbinfo:
+        return HttpResponse('no bbinfo')
+    if not bbinfo.allowed:
+        return('disabled feed')
+
+    try:
+        at = str(bbinfo.access_token)
+        access_token = pickle.loads(at)
+    except:
+        return HttpResponse('access_token error')
+    try:
+        content = content.encode('utf-8')
+        auth = OAuthHandler(APP_KEY, APP_SECRET)
+        auth.setToken(access_token.get('key',''), access_token.get('secret',''))
+        api = API(auth)
+        if image:
+            real_img = '%s%s' % (settings.MEDIA_ROOT, image)
+            ret = api.upload(real_img, content)
+        else:
+            ret = api.update_status(content)
+
+        r = HttpResponse('success')
+        return r
+    except WeibopError,ex:
+        return HttpResponse('send error:%s' % str(ex))
+    except:
+        import sys
+        return HttpResponse('send error:%s' % str(sys.exc_info()))
+
+</t>
+<t tx="newlife.20110114161707.2105">def get_request_token():
+    consumer = oauth.OAuthConsumer(APP_KEY, APP_SECRET)
+    sigmethod = oauth.OAuthSignatureMethod_PLAINTEXT()
+    oauth_request = oauth.OAuthRequest.from_consumer_and_token(
+                    oauth_consumer = consumer,
+                    callback = '%s/sina_login/authorize' % (settings.SITE_URL),
+                    http_url= REQUEST_TOKEN_URL
+                    )
+    oauth_request.sign_request(sigmethod, consumer, None)
+
+    resp = urllib2.urlopen(urllib2.Request(REQUEST_TOKEN_URL, headers=oauth_request.to_header()))
+    ret = resp.read()
+    result = str(oauth.OAuthToken.from_string(ret))
+    if result[:18] == 'oauth_token_secret':
+        token = {'oauth_token':result[-32:],
+                 'oauth_token_secret':result[19:51]}
+    else:
+        token = {'oauth_token':result[12:44],
+                 'oauth_token_secret':result[-32:]}
+
+    return token
+
+</t>
+<t tx="newlife.20110114161707.2106">#下面是 url 使用的方法
+def get_user_authorize(request, sync=False):
+    token = get_request_token()
+    is_sync = request.GET.get('sync_sina', None)
+    cache.set(token['oauth_token'],token['oauth_token_secret'])
+    oauth_callback = '%s/sina_login/authorize/' % (settings.SITE_URL)
+    if is_sync or sync:
+        oauth_callback += '?sync_sina=' + is_sync
+
+    params = {
+              'oauth_token':token['oauth_token'],
+              'oauth_token_secret':token['oauth_token_secret'],
+              'oauth_callback': oauth_callback
+             }
+    data = urllib.urlencode(params)
+    url = '%s?%s'%(AUTHORIZATION_URL,data)
+
+    return HttpResponseRedirect(url)
+
+</t>
+<t tx="newlife.20110114161707.2107">def get_access_token(request):
+    verifier = request.GET['oauth_verifier']
+    oauth_token = request.GET['oauth_token']
+    is_sync = request.GET.get('sync_sina', None)
+    oauth_token_secret = cache.get(oauth_token)
+    cache.delete(oauth_token)
+
+    consumer = oauth.OAuthConsumer(APP_KEY, APP_SECRET)
+    request_token = oauth.OAuthToken(key=oauth_token, secret=str(oauth_token_secret))
+    url = ACCESS_TOKEN_URL
+
+    oauth_request = oauth.OAuthRequest.from_consumer_and_token(
+                oauth_consumer = consumer,
+                token = request_token, http_url=url,
+                verifier = str(verifier)
+                )
+    sigmethod = oauth.OAuthSignatureMethod_HMAC_SHA1()
+    oauth_request.sign_request(sigmethod, consumer, request_token)
+
+    resp = urllib2.urlopen(urllib2.Request(url, headers=oauth_request.to_header()))
+    ret = resp.read()
+    access_token = oauth.OAuthToken.from_string(ret)
+
+    auth = OAuthHandler(APP_KEY, APP_SECRET)
+    auth.setToken(access_token.key, access_token.secret)
+    api = API(auth)
+    sina_user_info = api.verify_credentials()
+    if not is_sync:
+        ppy_user = 'sina_%s' % sina_user_info.id
+        user = User.objects.filter(username=ppy_user)
+        if user: #login for sina users
+            user = authenticate(username=ppy_user, password=hashlib.md5(ppy_user).hexdigest())
+            if user.is_active:
+                login(request, user)
+        else:
+            # is bind blog user, go to login page.
+            BindedSinaIds = BindBlog.objects.filter(blog_id=str(sina_user_info.id), blog_type='sina')
+            if BindedSinaIds:
+                return HttpResponseRedirect('/game/')
+
+            #add new user
+            ppy_realname = sina_user_info.name
+            user = User(username=ppy_user, is_active=True)
+            user.set_password(hashlib.md5(ppy_user).hexdigest())
+            user.save()
+
+            profile = UserProfile(user_id=user.id, nickname=ppy_realname, true_name=ppy_realname,
+                                  identity_card_code='22222222')
+            profile.save()
+
+            user = authenticate(username=ppy_user, password=hashlib.md5(ppy_user).hexdigest())
+            if user.is_active:
+                login(request, user)
+    else:
+        user = User.objects.get(id=request.user.id)
+
+    if sina_user_info.id:
+        update_sina_accesstoken(user.id, sina_user_info.id, access_token, bool(is_sync))
+
+    if is_sync:
+        return HttpResponseRedirect('/users/sync')
+    # 获取用户
+    member = get_member_by_sns_id(user.id)
+    if member is None:
+        member = register_member('', user.id)
+
+    return HttpResponseRedirect('/game/')
+
+</t>
+<t tx="newlife.20110114161707.2108">@login_required
+def sina_bind_newfeed(request):
+    flag = request.POST.get('e', None)
+    if flag is None:
+        return HttpResponse('data error')
+
+    bbinfo = get_member_bindblog_info(request.user.id)
+    if not bbinfo:
+        return HttpResponse('no bbinfo')
+
+    flag = (flag=='True')
+    if flag != bbinfo.allowed:
+        bbinfo.allowed = flag
+        bbinfo.save()
+
+    return HttpResponse('success')
+
+</t>
+<t tx="newlife.20110114161707.2109">@login_required
+def sina_upload(request):
+    content = request.POST.get('content', None)
+    image = request.POST.get('image', None)
+
+    return send_user_feed(request.user.id, content, image)
 </t>
 </tnodes>
 </leo_file>

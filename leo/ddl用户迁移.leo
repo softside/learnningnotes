@@ -10,14 +10,14 @@
 <find_panel_settings/>
 <vnodes>
 <v t="newlife.20110105104941.1267"><vh>about</vh></v>
-<v t="newlife.20110105104941.1268" a="E"><vh>登录流程</vh>
+<v t="newlife.20110105104941.1268"><vh>登录流程</vh>
 <v t="newlife.20110105104941.1269"><vh>login</vh></v>
 </v>
-<v t="newlife.20110105104941.1270" a="E"><vh>备选方案</vh>
+<v t="newlife.20110105104941.1270"><vh>备选方案</vh>
 <v t="newlife.20110105104941.1273"><vh>先决条件</vh></v>
 <v t="newlife.20110105104941.1274"><vh>custom_backend</vh></v>
 </v>
-<v t="newlife.20110106110632.1280" a="E"><vh>实施方案</vh>
+<v t="newlife.20110106110632.1280"><vh>实施方案</vh>
 <v t="newlife.20110106110632.1281"><vh>backend</vh></v>
 <v t="newlife.20110106110632.1282"><vh>seetings</vh></v>
 <v t="newlife.20110106110632.1283" a="E"><vh>register</vh>
@@ -61,6 +61,7 @@
 </v>
 <v t="newlife.20110106110632.1302"><vh>TODO</vh></v>
 </v>
+<v t="newlife.20110119164337.1348"><vh>qq_oauth</vh></v>
 </vnodes>
 <tnodes>
 <t tx="newlife.20110105104941.1267">需要处理的事:
@@ -904,6 +905,8 @@ class Meta:
         return identity_card_code
     else:
         raise forms.ValidationError('非法的身份证号码。')
+</t>
+<t tx="newlife.20110119164337.1348">信心，是最重要的因素，首先你要相信自己可以做到！
 </t>
 </tnodes>
 </leo_file>

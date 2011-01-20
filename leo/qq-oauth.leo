@@ -10,7 +10,7 @@
 <find_panel_settings/>
 <vnodes>
 <v t="wjl.20110117235658.1869"><vh>@chapters</vh></v>
-<v t="newlife.20110117110751.1267" a="E"><vh>qq-oauth验证</vh>
+<v t="newlife.20110117110751.1267"><vh>qq-oauth验证</vh>
 <v t="newlife.20110117110751.1268"><vh>文档</vh></v>
 <v t="newlife.20110117110751.1879"><vh>urls</vh></v>
 <v t="newlife.20110117110751.1867"><vh>views</vh>
@@ -24,7 +24,7 @@
 <v t="newlife.20110117110751.1877"><vh>sina_upload</vh></v>
 </v>
 </v>
-<v t="newlife.20110117110751.1269" a="E"><vh>oauth_library</vh>
+<v t="newlife.20110117110751.1269"><vh>oauth_library</vh>
 <v t="newlife.20110117110751.1569"><vh>@file /home/newlife/ppy_office/ppy_official/thirdparty/weibopy/api.py</vh>
 <v t="newlife.20110117110751.1570"><vh>api declarations</vh></v>
 <v t="newlife.20110117110751.1571"><vh>class API</vh>
@@ -343,9 +343,9 @@
 <v t="newlife.20110117110751.1837"><vh>parse</vh></v>
 </v>
 </v>
-<v t="newlife.20110117110751.1838"><vh>@file /home/newlife/ppy_office/ppy_official/thirdparty/weibopy/streaming.py</vh>
+<v t="newlife.20110117110751.1838" a="E"><vh>@file /home/newlife/ppy_office/ppy_official/thirdparty/weibopy/streaming.py</vh>
 <v t="newlife.20110117110751.1839"><vh>streaming declarations</vh></v>
-<v t="newlife.20110117110751.1840"><vh>class StreamListener</vh>
+<v t="newlife.20110117110751.1840" a="E"><vh>class StreamListener</vh>
 <v t="newlife.20110117110751.1841"><vh>__init__</vh></v>
 <v t="newlife.20110117110751.1842"><vh>on_data</vh></v>
 <v t="newlife.20110117110751.1843"><vh>on_status</vh></v>
@@ -408,7 +408,29 @@
 </v>
 </vnodes>
 <tnodes>
-<t tx="newlife.20110117110751.1267"></t>
+<t tx="newlife.20110117110751.1267">通过这次的工作，我深刻的意识，
+
+状态，需要不断的保持，不能闲啊，一定要保持旺盛的斗志，我就是前一段时间太闲了，
+导致学习和工作的状态持续下滑，
+
+看看现在连一个简单的去qq_oauth登录都做不出来，一方面，这个东西以前确实没做过，
+还有对http请求这块也不熟，所以才造成这样的后果，
+再有就是这个库写的那叫一个恶心啊
+任何的学习都不会是轻而易举的。
+
+这是在逼我啊，，
+看来要我从头研究一边这个傻逼的oauth库。。。。
+
+干！！！
+
+OAuth规范定义了三种传递OAuth参数方式：
+1.header中
+2.url中
+3.post form中
+然而进行POST，PUT，DELETE请求时，腾讯微博暂时不支持使用在OAuth中传递OAuth参数。因此你只能选择在url中传递OAuth参数。
+所以我传post的时候咋传啊
+
+</t>
 <t tx="newlife.20110117110751.1268">http://open.t.qq.com/resource.php?i=1,2
 
 1.获取未授权的Request Token(temporary credentials)
