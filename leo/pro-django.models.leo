@@ -11,11 +11,43 @@
 <vnodes>
 <v t="wjl.20100906023207.1322"><vh>@chapters</vh></v>
 <v t="wjl.20100906023207.1321"><vh>preface</vh></v>
+<v t="newlife.20110210151240.1276"><vh>models</vh>
 <v t="wjl.20100906023207.1323"><vh>how Django Process Model Classes </vh></v>
 <v t="wjl.20100906234257.1249"><vh>Setting Attributes on MOdels</vh></v>
 <v t="wjl.20100906023207.1324"><vh>Common Field Methods</vh></v>
+</v>
+<v t="newlife.20110210151240.1277" a="E"><vh>forms</vh>
+<v t="newlife.20110210151240.1278"><vh>about</vh></v>
+</v>
 </vnodes>
 <tnodes>
+<t tx="newlife.20110210151240.1276"></t>
+<t tx="newlife.20110210151240.1277"></t>
+<t tx="newlife.20110210151240.1278">关于django的forms：
+先说程序结构：
+class Form(BaseForm):
+    "A collection of Fields, plus their associated data."
+    # This is a separate class from BaseForm in order to abstract the way                                                                                                        
+    # self.fields is specified. This class (Form) is the one that does the                                                                                                       
+    # fancy metaclass stuff purely for the semantic sugar -- it allows one                                                                                                       
+    # to define a form using declarative syntax.                                                                                                                                 
+    # BaseForm itself has no way of designating self.fields.                                                                                                                     
+    __metaclass__ = DeclarativeFieldsMetaclass
+父类BaseForm,元类DeclarativeFieldsMetaclass，够简单吧。
+
+DeclarativeFieldsMetaclass
+这个类中只是定义了一个__new__的方法，我们知道__new__是在创建对象前就执行的，返回的是当前对象的一个实例；而相对__init__则是在对象创建以后才执行的，没有返回值。
+
+下面这是BaseForm的注释：
+    # This is the main implementation of all the Form logic. Note that this               
+    # class is different than Form. See the comments by the Form class for more           
+    # information. Any improvements to the form API should be made to *this*              
+    # class, not to the Form class. 
+BaseForm是Form的所有的逻辑的只要实现，这个类和Form不一样，所有关于form API的改进都应该从这个类中实现而不是Form这个类。
+看BaseForm都是怎么实现Form的功能的，
+
+Form的元类中定义的__new__的方法，这个方法的主要作用就是把form的字段（Filed）转换到一个字典中。
+</t>
 <t tx="wjl.20100906023207.1321">数据是大部分 web 应用的核心， django 提供各种数据结构和持久化选择的支持。 models 是传统 mvc 的主要方面， django 支持的很好。 Models 是所有需要通过 request, session, 甚至服务端来保存数据的应用的核心部分。
 
 django 的 models 被定义为标准的 python 类，还有自动支持的丰富的特性。暗地里，一个 orm 支持这些类以及这些类的实例去访问数据库。没有这个 orm ，开发者需要直接处理数据库，用 sql 语句，标准的访问数据库内容的方式。
