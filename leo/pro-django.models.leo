@@ -17,6 +17,7 @@
 <v t="wjl.20100906023207.1324"><vh>Common Field Methods</vh></v>
 </v>
 <v t="newlife.20110210151240.1277" a="E"><vh>forms</vh>
+<v t="wjl.20110210202653.1257"><vh>intro</vh></v>
 <v t="newlife.20110210151240.1278"><vh>about</vh></v>
 </v>
 </vnodes>
@@ -47,6 +48,27 @@ BaseForm是Form的所有的逻辑的只要实现，这个类和Form不一样，�
 看BaseForm都是怎么实现Form的功能的，
 
 Form的元类中定义的__new__的方法，这个方法的主要作用就是把form的字段（Filed）转换到一个字典中。
+
+
+关于通过两种方式获得的field
+In [15]: form.fields.get('username')
+Out[15]: &lt;django.forms.fields.RegexField object at 0x9fb72cc&gt;
+
+
+In [16]: form['username']
+Out[16]: &lt;django.forms.forms.BoundField object at 0x9fb778c&gt;
+
+这个东西为啥要这么设计。
+
+In [17]: print form['username']
+&lt;input id="id_username" type="text" name="username" maxlength="30" /&gt;
+
+这里出现了2个field类，
+django.forms.forms.BoundField和django.forms.fields.RegexField从这两个类所处的位置就可以看出他们不同的地位，
+#TODO 因为forms和models都用到了
+
+
+
 </t>
 <t tx="wjl.20100906023207.1321">数据是大部分 web 应用的核心， django 提供各种数据结构和持久化选择的支持。 models 是传统 mvc 的主要方面， django 支持的很好。 Models 是所有需要通过 request, session, 甚至服务端来保存数据的应用的核心部分。
 
@@ -72,5 +94,30 @@ sql 语句的主要作用是描述和访问存储在关系数据库中的关系�
 <t tx="wjl.20100906234257.1249">PYTHON 对于在不知道对象名字的情况下给对象赋值和取值提供了有用的工具。但是 getattr()和 setattr()代表了标准的访问对象数据的方法， django 的一个处理 model 属性的钩子需要一些额外的处理， Django 提供了一个类方法， add_to_class(), 对于所有的 model ，这个应该是 setattr()的替代品。
 
 add_to_class()的语法和语义和传统的函数有些差别，他确实是一个类方法，不是 built- in 或者 moudule- levelde, 这就意味着第一个参数不是被明确指定的而是模糊的，这个方法检查了提供给 contribute_to_class()方法的值。，并且当他存在的时候调用他。另外，标准的 setattr()函数用来给 model 增加 value 。这2个方法是互斥的。当 add_to_class 被调用的时候只有一个会被调用。还有一点非常重要的是，这个不仅在 django 内部适用。当应用需要给 model 怎加一个对象作为属性的时候，他必须调用 add_to_class.这样， django 开发者就可以传递任何对象给 model ，并且确定这个对象就像 model 定义的一样直接赋给 model 。</t>
+<t tx="wjl.20110210202653.1257">  /home/wjl/Django-1.2/django/forms:
+  总用量 172
+  drwxr-xr-x  3 wjl wjl  4096 2010-05-18 02:02 .
+  drwxr-xr-x 17 wjl wjl  4096 2011-01-09 01:07 ..
+  drwxr-xr-x  2 wjl wjl  4096 2010-05-18 02:02 extras
+  -rw-r--r--  1 wjl wjl 34827 2010-03-28 00:43 fields.py
+  -rw-r--r--  1 wjl wjl 14277 2010-03-28 07:03 formsets.py
+  -rw-r--r--  1 wjl wjl 21198 2010-03-28 00:43 forms.py
+  -rw-r--r--  1 wjl wjl   414 2010-01-05 11:56 __init__.py
+  -rw-r--r--  1 wjl wjl 43157 2010-05-04 22:00 models.py
+  -rw-r--r--  1 wjl wjl  1983 2010-01-05 11:56 util.py
+  -rw-r--r--  1 wjl wjl 29401 2010-04-28 11:02 widgets.py
+观察forms包的分类，具体就是上面几个类了，现在具体的说说每个类都是干啥用的，
+
+__init__.py：啥都没干，就是导入一些需要用到的类，方便我们用的时候。直接导入froms，不用逐个导入需要的类。
+
+froms.py :这个文件中最重要的了就是Form这个类，其他的就是辅助这个类，
+          就是我们平常创建自己的form的时候：
+          class ForgotPasswordForm(forms.Form):
+          这个类是所有自定义form的父类。
+
+models.py:这个是处理ModelForm的，基本的结构和Form这个类是相似的，都是继承实现逻辑的父类，指定元类。
+          class articleForm(forms.ModelForm):
+
+fields.py:这个就是我们处理form是的各种类型，这个类型和Model的类型有点像，但是数量要少，</t>
 </tnodes>
 </leo_file>
