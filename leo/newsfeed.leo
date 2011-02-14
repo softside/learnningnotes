@@ -10,20 +10,21 @@
 <find_panel_settings/>
 <vnodes>
 <v t="newlife.20110211142831.1267"><vh>新鲜事平台</vh></v>
-<v t="newlife.20110211142831.1268"><vh>前期准备</vh>
+<v t="newlife.20110211142831.1268" a="E"><vh>前期准备</vh>
 <v t="newlife.20110211142831.1269"><vh>需要处理的平台信息</vh></v>
 <v t="newlife.20110211142831.1271"><vh>当前流程</vh>
 <v t="newlife.20110211142831.1285"><vh>baidu</vh></v>
 <v t="newlife.20110212113018.1282"><vh>sohu</vh></v>
 </v>
+<v t="newlife.20110214113902.1345"><vh>分析</vh></v>
 </v>
-<v t="newlife.20110212113018.1285" a="E"><vh>优先</vh>
-<v t="newlife.20110211142831.1270" a="E"><vh>sina微博</vh>
+<v t="newlife.20110212113018.1285"><vh>优先</vh>
+<v t="newlife.20110211142831.1270"><vh>sina微博</vh>
 <v t="newlife.20110211142831.1274"><vh>get_member_bindblog_info</vh></v>
 <v t="newlife.20110211142831.1278" a="M"><vh>is_send_feed</vh></v>
 </v>
 <v t="newlife.20110212113018.1284"><vh>kaixin</vh></v>
-<v t="newlife.20110212113018.1283" a="E"><vh>renren</vh>
+<v t="newlife.20110212113018.1283"><vh>renren</vh>
 <v t="newlife.20110212113018.1286" a="O"><vh>/bubblefish/paopaoyu/apps/sns/sns_api_renren.py</vh>
 <v t="newlife.20110212113018.1287"><vh>sns_api_renren declarations</vh></v>
 <v t="newlife.20110212113018.1288"><vh>_generate_base_params</vh></v>
@@ -52,8 +53,14 @@
 <v t="newlife.20110212113018.1310"><vh>send_openStage_feed</vh></v>
 <v t="newlife.20110212113018.1311"><vh>send_feed_auto</vh></v>
 </v>
+<v t="newlife.20110214113902.1342" a="E"><vh>/bubblefish/paopaoyu/templates/sns/renren_feeds.js</vh>
+<v t="newlife.20110214113902.1343"><vh>renren_feeds declarations</vh></v>
+<v t="newlife.20110214113902.1344"><vh>feedCallback</vh></v>
 </v>
 </v>
+</v>
+<v t="newlife.20110214113902.1346"><vh>需求</vh></v>
+<v t="newlife.20110214113902.1347"><vh>问题</vh></v>
 </vnodes>
 <tnodes>
 <t tx="newlife.20110211142831.1267">这个东西是啥目前还不清楚：
@@ -512,5 +519,177 @@ import random
 
 
 </t>
+<t tx="newlife.20110214113902.1342">@language javascript
+@tabwidth -4
+@others
+@ignore
+
+function sendUserFeed(feedType, sns_id, style, val){
+    var feedSettings;
+    var images = [{"src":"{{ media_url }}images/newfeed/login.gif",
+        "href":"{{ sns_url }}"}];
+    var content;
+    var title_name = ["", ""];
+    var body_data = "";
+
+    if(feedType == "login") {
+        var contentArray = [["","带着精良的装备和战斗小队顺着神秘的泡泡海洋漩涡，潜入了那片远古归墟。", "", "", "尾随进去……"], ["泡泡海洋的温暖麻木了", "的战斗神经，突然一阵洋流袭来，潘多拉海域的斗士危险了！", "", "", "前去增援！"], ["全球变暖使极地冰川地区海平面急速上升，", "的使命—保护即将灭绝的鱼儿。", "", "", "加入战斗……"], ["","潜入泡泡鱼海洋，终于在暗黑的海底见识到了剧毒海怪石头鱼！", "", "", "我想看看……"], ["一条褐色的长长的东西从海底洞穴里撞了出来，嗖一下把","卷走了！", "", "", "那是什么……"], ["","一头扎进了海里，蹬了一下腿，嗖，没影了……", "", "", "潜入深海……"], ["巨大的章鱼那双小眼睛在泡泡鱼海底环顾了一圈，盯上了正在潜水的","……", "", "", "前去帮忙……"], ["","背着先进的潜水设备开始了深海冒险，身后的模糊的巨大黑影紧紧地跟着TA……", "", "", "跟着游进去……"]];
+
+        var index = Math.floor(Math.random()*10)%8;
+        title_name = ["", "进入了泡泡鱼游戏，玩的不亦乐乎。"];
+        content = contentArray[index];
+        body_data = "&lt;a href='{{ sns_url }}'&gt;"+content[4]+"&lt;/a&gt;";
+        images = [{"src":"{{ media_url }}images/newfeed/login.gif", "href":"{{ sns_url }}"}];
+    } else if(feedType == "uplevel") { 
+        title_name = ["", "，恭喜你华丽的升级了！"];
+        content = ["","华丽丽的升级了！开启更多游戏奖励！","","","快去TA那看看"];
+        body_data = "&lt;a href='{{ sns_url }}'&gt;"+content[4]+"&lt;/a&gt;";
+        images = [{"src":"{{ media_url }}images/newfeed/uplevel.gif", "href":"{{ sns_url }}"}];
+    } else if(feedType == "singlefish") {
+        title_name = ["", "图鉴打开了！"];
+        content = ["","打开了",val,"的图鉴，获得经验值！","看看我还缺什么。"];
+        body_data = "&lt;a href='{{ sns_url }}'&gt;"+content[4]+"&lt;/a&gt;";
+        images = [{"src":"{{ media_url }}images/newfeed/"+style+".gif", "href":"{{ sns_url }}"}];
+    } else if(feedType == "upfish") {
+        title_name = ["", "开启一枚"+val+"收藏图鉴！"];
+        content = ["","",val,"的图鉴收藏又增加了!","什么图鉴?"];
+        body_data = "&lt;a href='{{ sns_url }}'&gt;"+content[4]+"&lt;/a&gt;";
+        images = [{"src":"{{ media_url }}images/newfeed/"+style+".gif", "href":"{{ sns_url }}"}];
+    } else if(feedType == "allalmanac") {
+        title_name = ["", "全部图鉴打开了！"];
+        content = ["","开启了",val,"的全部图鉴，经验值加倍奖励，值得嘉奖哦！","我的哪些全开了。"];
+        body_data = "&lt;a href='{{ sns_url }}'&gt;"+content[4]+"&lt;/a&gt;";
+        images = [{"src":"{{ media_url }}images/newfeed/"+style+".gif", "href":"{{ sns_url }}"}];
+    } else if(feedType == "synthesis") {
+        title_name = ["合成开始了，", "需要大家的帮助！"];
+        content = ["","的开始合成",val, "！成功率貌似不太高哦。","大家来帮忙！"];
+        body_data = "&lt;a href='{{ sns_url }}?sns_id="+sns_id+"'&gt;"+content[4]+"&lt;/a&gt;";
+        images = [{"src":"{{ media_url }}images/newfeed/"+style+".gif", "href":"{{ sns_url }}?sns_id="+sns_id}];
+    } else if(feedType == "trollfish") {
+        title_name = ["", "的鱼缸开钓啦！"];
+        content = ["","的鱼缸新鲜开钓，快点快点，先到先得哦！","","","我要去钓！"];
+        body_data = "&lt;a href='{{ sns_url }}?sns_id="+sns_id+"'&gt;"+content[4]+"&lt;/a&gt;";
+        images = [{"src":"{{ media_url }}images/newfeed/trollfish.gif", "href":"{{ sns_url }}?sns_id="+sns_id}];
+    } else if(feedType == "wtb") {
+        title_name = ["", "下求购单，悬赏金额诱人哦！"];
+        content = ["","重金求鱼，有意者速速联络！过期不候哦……","","","我要卖鱼！"];
+        body_data = "&lt;a href='{{ sns_url }}?sns_id="+sns_id+"'&gt;"+content[4]+"&lt;/a&gt;";
+        images = [{"src":"{{ media_url }}images/newfeed/"+style+".gif", "href":"{{ sns_url }}?sns_id="+sns_id}];
+    } else if(feedType == "catchfish") {
+        title_name = ["", "捉到"+val+"了！"];
+        content = ["","不辞辛苦地捉到一条",val,"鱼，满心欢喜的带回小窝了。","捉的什么，我要看看！"];
+        body_data = "&lt;a href='{{ sns_url }}'&gt;"+content[4]+"&lt;/a&gt;";
+        images = [{"src":"{{ media_url }}images/newfeed/"+style+".gif", "href":"{{ sns_url }}"}];
+    } else if(feedType == "play") {
+        var title_array = {"2":["","成功闯出泡泡鱼“雌雄双煞”关卡！","1"], "3":["","成功闯出泡泡鱼“杜姆之巢”关卡！","2"], "4":["","成功闯出泡泡鱼“极地冰川”关卡！", "3"], "5":["","成功闯出泡泡鱼“潘多拉之森”关卡！", "4"], "6":["","成功闯出泡泡鱼“火海熔城”关卡！", "5"], "7":["","成功闯出泡泡鱼“下水管公主”关卡！", "6"], "1001":["","成功闯出泡泡鱼“PK嘉年华”关卡！", "1001"]};
+        var contentArray= {"2":["打败野心澎湃的红皇后、胆小懦弱的绿国王，昔日皇族没落了。","踏着它们的躯体直入“杜牧之巢”。","","", "扫除障碍长驱直入！"], "3":["妄想统治海洋的笨蛋杜姆，指挥喽啰兵在洞穴操练。","趁其不备躲过喽啰擒住贼王，毫不费力闯出关卡！","","", "看看杜姆的蠢样子……"], "4":["那是寒冷的海底冰川，传说中可以自我分裂的影鲨住在哪里。为了验证传说，","勇闯极地冰川，终于……","","", "看到了影鲨的真面目……"], "5":["海底学校驻扎在这片色彩斑斓的海域，校长刺甲龙与往日温和的样子有着很大的不同，", "闯入森林深处打败恶魔，很快发现了真相……","","", "那不是一个人！"], "6":["火域萨麦尔的火焰内丹，将海域变成了火海。烈焰燃烧着，熔岩蔓延在周围，慢慢鱼儿变成了钢筋铁骨。","找到了制服萨麦尔的方法！","","", "悄悄地向它靠近……"], "7":["桃子公主闷闷不乐，期盼着帅气的水管工再次出现！可身体逐渐庞大卡在水管里再也出不来了！","灵机一动想到解救桃子公主的办法！","","","闯出下水管迷宫！"], "1001":["","的在PK嘉年华里转了一圈又一圈，抱着一大堆前所未见的稀有收藏鱼欢乐的回家了！","","","进嘉年华看看！"]};
+        title_name = title_array[val];
+        content = contentArray[val];
+        img_val = title_name[2];
+        body_data = "&lt;a href='{{ sns_url }}'&gt;"+content[4]+"&lt;/a&gt;";
+        images = [{"src":"{{ media_url }}images/newfeed/boss_"+img_val+".gif", "href":"{{ sns_url }}"}];
+    } else if(feedType == "open") {
+        var title_array = {"1":["","打开了泡泡鱼“雌雄双煞”的关卡。"], "2":["","找到了泡泡鱼“杜牧之姆”的洞穴大门。"], "3":["","开启了泡泡鱼“极地冰川”的极寒海底世界。"], "4":["","推开了泡泡鱼“潘多拉之森”的远古大门。"], "5":["","打开了泡泡鱼新关卡“火海熔城”的海眼入口。"], "6":["","打开了泡泡鱼新关卡“下水管公主”的入口。"]};
+        var contentArray= {"1":["一对落魄的夫妻，满腹重振皇族的野心。要强的红皇后，懦弱的绿国王……结局怎样？","","","","深海探秘第一关开启了。"], "2":["不管怎样的家伙都有梦想！笨蛋杜姆和忠心耿耿的喽啰兵每天都在洞穴操练，妄想一举进攻拿下海洋控制权，更名为杜姆海洋！嘘，它们操练了……","","","","去洞穴看看。"], "3":["多年前，鱼儿游进了一片陌生的极寒海域，目睹一条鲨鱼突然分身！吓的拔腿就跑。此后，那里成了神秘地带，鱼儿们都不敢靠近那里，关于那里的传说也越来越多……","","","","游进去看个究竟。"], "4":["海洋学校就建立在这片幽暗的森林深处，偶有洋流通过。鱼宝宝很害怕走这条路。若干年前，海洋学校的校长是条很和蔼的鱼，突然某一天一切都改变了！","","","","究竟发生了什么?"], "5":["火域之主萨麦尔的魔爪控制着一切，火焰内丹使这里熔岩蔓延，鱼儿的身体变成铜筋铁骨，海底的温度直线上升,末日到了……","","","","救世主在哪里……"], "6":["缺爱的桃子公主误闯了狭窄的海底下水管，一个帅气的水管工拯救了险些被碾碎的她，从此桃子公主待在那久久不愿离去……","","","","进入下水管迷宫！"]};
+        title_name = title_array[val];
+        content = contentArray[val];
+        body_data = "&lt;a href='{{ sns_url }}'&gt;"+content[4]+"&lt;/a&gt;";
+        images = [{"src":"{{ media_url }}images/newfeed/boss_"+val+".gif", "href":"{{ sns_url }}"}];
+    } else {
+        return;
+    }
+
+    if(feedType=="synthesis" || feedType=="trollfish" || feedType=="wtb") {
+        title_1 = "&lt;a href='{{ sns_url }}?sns_id="+sns_id+"'&gt;"+title_name[0]+"&lt;/a&gt;";
+        title_2 = "&lt;a href='{{ sns_url }}?sns_id="+sns_id+"'&gt;"+title_name[1]+"&lt;/a&gt;";
+        content_1 = "&lt;a href='{{ sns_url }}?sns_id="+sns_id+"'&gt;"+content[0]+"&lt;/a&gt;";
+        content_2 = "&lt;a href='{{ sns_url }}?sns_id="+sns_id+"'&gt;"+content[1]+"&lt;/a&gt;";
+        content_3 = "&lt;a href='{{ sns_url }}?sns_id="+sns_id+"'&gt;"+content[2]+"&lt;/a&gt;";
+        content_4 = "&lt;a href='{{ sns_url }}?sns_id="+sns_id+"'&gt;"+content[3]+"&lt;/a&gt;";
+    } else {
+        title_1 = "&lt;a href='{{ sns_url }}'&gt;"+title_name[0]+"&lt;/a&gt;";
+        title_2 = "&lt;a href='{{ sns_url }}'&gt;"+title_name[1]+"&lt;/a&gt;";
+        content_1 = "&lt;a href='{{ sns_url }}'&gt;"+content[0]+"&lt;/a&gt;";
+        content_2 = "&lt;a href='{{ sns_url }}'&gt;"+content[1]+"&lt;/a&gt;";
+        content_3 = "&lt;a href='{{ sns_url }}'&gt;"+content[2]+"&lt;/a&gt;";
+        content_4 = "&lt;a href='{{ sns_url }}'&gt;"+content[3]+"&lt;/a&gt;";
+    }
+    feedSettings= {"template_bundle_id":"1",
+        "template_data":{
+            "images":images,
+            "t1":title_1,
+            "t2":title_2,
+            "c1":content_1,
+            "c2":content_2,
+            "c3":content_3,
+            "c4":content_4
+        },
+    "body_general":body_data,
+    "callback": feedCallback,
+    "user_message_prompt": "随便写点什么吧"
+    };
+
+    XN.Connect.showFeedDialog(feedSettings);
+};
+//--&gt;
+&lt;/script&gt;
+</t>
+<t tx="newlife.20110214113902.1343">
+&lt;script type="text/javascript"&gt;
+&lt;!--
+</t>
+<t tx="newlife.20110214113902.1344">function feedCallback(val) {}
+</t>
+<t tx="newlife.20110214113902.1345">现在的情况是这样的，</t>
+<t tx="newlife.20110214113902.1346">抽象：
+
+目标：目前处理的都是前台js发送信息的（这个是由对应的平台决定的）
+     一个发布新鲜事的model
+     最后决定是一定是生成js，原因你知道的。
+
+问题：如何生成最后的链接：
+     链接所需的数据：地址,参数，类型，
+     随机新鲜事，
+
+
+
+model:
+    content
+    title
+    link
+    sort --------&gt;这个分类是必须有的，分类决定啥？？
+    
+    
+ 
+ 
+业务场景：
+    登录：这个最简单了，没有啥，标准的内容，链接，
+    士气：好友点击链接，降低估计对手的能力，这个可就复杂了，这个链接需要表明对手，记录点击次数，
+    卡牌：
+    龙窝位：好友点击链接，增加计数，到达一定数量，开启龙窝位，这个链接需要表明是这个任务，记录点击数。
+    新手任务：依然要表明
+    清理：这个好像是借东西用的。表明是什么任务，还要计数。
+    
+    
+    其他：
+        求助,类似   士气.
+        邀请，新手任务？？
+
+
+最终的链接:            
+
+
+链接是个复杂的事情，
+   时效这个东西是后期处理的，要看这个属性放到什么地方。目前看来，链接这个东西要单独做个表，ms要放到链接上比较合适。
+   
+   现在就有一个问题了，这个平台的主题是啥，新鲜事？链接？</t>
+<t tx="newlife.20110214113902.1347">目前最大的问题就是新鲜事的定义。
+从统计学的角度描述就是新鲜事的类型不够，不能明确的定义这个东西。
+以前的新鲜事里的链接相对比较简单，最多就是一个简单的地址，指向官网或者平台的游戏，
+现在的问题，就是需要更加复杂的链接，这个链接的参数要由程序提供。
+
+比如说，我需要发布一个新鲜事，需要好友为我加油（这个类似于开心的停车位那个游戏），
+       这个时候我需要这个用户的id（这个ms需要去对方平台里找），这个时候还要判断这个用户是否开通这个游戏，这个那是相当的复杂啊。
+       </t>
 </tnodes>
 </leo_file>
