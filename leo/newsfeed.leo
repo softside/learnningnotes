@@ -9,22 +9,23 @@
 <preferences/>
 <find_panel_settings/>
 <vnodes>
+<v t="newlife.20110215113939.1354"><vh>文档</vh></v>
 <v t="newlife.20110211142831.1267"><vh>新鲜事平台</vh></v>
 <v t="newlife.20110211142831.1268" a="E"><vh>前期准备</vh>
 <v t="newlife.20110211142831.1269"><vh>需要处理的平台信息</vh></v>
-<v t="newlife.20110211142831.1271"><vh>当前流程</vh>
+<v t="newlife.20110211142831.1271" a="E"><vh>当前流程</vh>
 <v t="newlife.20110211142831.1285"><vh>baidu</vh></v>
 <v t="newlife.20110212113018.1282"><vh>sohu</vh></v>
 </v>
 <v t="newlife.20110214113902.1345"><vh>分析</vh></v>
 </v>
-<v t="newlife.20110212113018.1285"><vh>优先</vh>
-<v t="newlife.20110211142831.1270"><vh>sina微博</vh>
+<v t="newlife.20110212113018.1285" a="E"><vh>优先</vh>
+<v t="newlife.20110211142831.1270" a="E"><vh>sina微博</vh>
 <v t="newlife.20110211142831.1274"><vh>get_member_bindblog_info</vh></v>
 <v t="newlife.20110211142831.1278" a="M"><vh>is_send_feed</vh></v>
 </v>
 <v t="newlife.20110212113018.1284"><vh>kaixin</vh></v>
-<v t="newlife.20110212113018.1283"><vh>renren</vh>
+<v t="newlife.20110212113018.1283" a="E"><vh>renren</vh>
 <v t="newlife.20110212113018.1286" a="O"><vh>/bubblefish/paopaoyu/apps/sns/sns_api_renren.py</vh>
 <v t="newlife.20110212113018.1287"><vh>sns_api_renren declarations</vh></v>
 <v t="newlife.20110212113018.1288"><vh>_generate_base_params</vh></v>
@@ -42,7 +43,7 @@
 <v t="newlife.20110212113018.1300"><vh>check_user_score</vh></v>
 <v t="newlife.20110212113018.1301"><vh>check_is_fan</vh></v>
 </v>
-<v t="newlife.20110212113018.1302" a="EO"><vh>/bubblefish/paopaoyu/apps/sns/sns_msg_renren.py</vh>
+<v t="newlife.20110212113018.1302" a="O"><vh>/bubblefish/paopaoyu/apps/sns/sns_msg_renren.py</vh>
 <v t="newlife.20110212113018.1303"><vh>sns_msg_renren declarations</vh></v>
 <v t="newlife.20110212113018.1304"><vh>send_rank_feed</vh></v>
 <v t="newlife.20110212113018.1305"><vh>send_troll_feed</vh></v>
@@ -53,14 +54,20 @@
 <v t="newlife.20110212113018.1310"><vh>send_openStage_feed</vh></v>
 <v t="newlife.20110212113018.1311"><vh>send_feed_auto</vh></v>
 </v>
-<v t="newlife.20110214113902.1342" a="E"><vh>/bubblefish/paopaoyu/templates/sns/renren_feeds.js</vh>
+<v t="newlife.20110214113902.1342"><vh>/bubblefish/paopaoyu/templates/sns/renren_feeds.js</vh>
 <v t="newlife.20110214113902.1343"><vh>renren_feeds declarations</vh></v>
 <v t="newlife.20110214113902.1344"><vh>feedCallback</vh></v>
 </v>
 </v>
 </v>
-<v t="newlife.20110214113902.1346"><vh>需求</vh></v>
 <v t="newlife.20110214113902.1347"><vh>问题</vh></v>
+<v t="newlife.20110214113902.1346" a="E"><vh>分析model</vh>
+<v t="newlife.20110215113939.1357"><vh>关于奖励</vh></v>
+<v t="newlife.20110215113939.1359"><vh>链接目标</vh></v>
+<v t="newlife.20110215113939.1361"><vh>点击处理</vh></v>
+<v t="newlife.20110215113939.1360" a="M"><vh>结论</vh></v>
+</v>
+<v t="newlife.20110215113939.1358"><vh>需要沟通的需求</vh></v>
 </vnodes>
 <tnodes>
 <t tx="newlife.20110211142831.1267">这个东西是啥目前还不清楚：
@@ -138,7 +145,7 @@ def is_send_feed(sns_id):
 <t tx="newlife.20110212113018.1283">方针：尽量使用以前的方式，减少工作量/
 
 这个流程ms是这样的：
-   调用的接口位于paopaoyu/apps/sns/sns_api_renren.py中的send_app_feed()，然后正常的时候返回一个_post_api_request()这个函数返回的结果。
+   #调用的接口位于paopaoyu/apps/sns/sns_api_renren.py中的send_app_feed()，然后正常的时候返回一个_post_api_request()这个函数返回的结果。
    这个东西是各个平台不同的，各个单独处理的，而且是单独放各个平台的，
    现在要做一个新鲜事系统，现在的问题是这个系统要放到什么地方来做这个事情。
    其实新浪和人人的都再官网，这个其实问题不大，
@@ -151,7 +158,9 @@ def is_send_feed(sns_id):
         这个是通过js调用写的，这个其实是可以的，就是变量放到js里
     然后，就是各个应用平台，就是人人呗，
         构建新鲜事的源，     
-         </t>
+
+
+申请人人开发者，</t>
 <t tx="newlife.20110212113018.1284">没有</t>
 <t tx="newlife.20110212113018.1285"></t>
 <t tx="newlife.20110212113018.1286">@language python
@@ -641,55 +650,164 @@ function sendUserFeed(feedType, sns_id, style, val){
 <t tx="newlife.20110214113902.1344">function feedCallback(val) {}
 </t>
 <t tx="newlife.20110214113902.1345">现在的情况是这样的，</t>
-<t tx="newlife.20110214113902.1346">抽象：
-
-目标：目前处理的都是前台js发送信息的（这个是由对应的平台决定的）
+<t tx="newlife.20110214113902.1346">目标：目前处理的都是前台js发送信息的（这个是由对应的平台决定的）
      一个发布新鲜事的model
      最后决定是一定是生成js，原因你知道的。
 
 问题：如何生成最后的链接：
      链接所需的数据：地址,参数，类型，
      随机新鲜事，
-
-
-
 model:
     content
     title
+    pic
     link
     sort --------&gt;这个分类是必须有的，分类决定啥？？
-    
-    
- 
+    date --------&gt;表明链接有效时间 
  
 业务场景：
+    
     登录：这个最简单了，没有啥，标准的内容，链接，
     士气：好友点击链接，降低估计对手的能力，这个可就复杂了，这个链接需要表明对手，记录点击次数，
     卡牌：
     龙窝位：好友点击链接，增加计数，到达一定数量，开启龙窝位，这个链接需要表明是这个任务，记录点击数。
     新手任务：依然要表明
-    清理：这个好像是借东西用的。表明是什么任务，还要计数。
-    
+    清理：这个好像是借东西用的。表明是什么任务，还要计数。  
     
     其他：
         求助,类似   士气.
         邀请，新手任务？？
 
+        
 
-最终的链接:            
+
+更换新鲜事内容:
+
+关于奖励限制:
 
 
-链接是个复杂的事情，
-   时效这个东西是后期处理的，要看这个属性放到什么地方。目前看来，链接这个东西要单独做个表，ms要放到链接上比较合适。
-   
-   现在就有一个问题了，这个平台的主题是啥，新鲜事？链接？</t>
+</t>
 <t tx="newlife.20110214113902.1347">目前最大的问题就是新鲜事的定义。
 从统计学的角度描述就是新鲜事的类型不够，不能明确的定义这个东西。
 以前的新鲜事里的链接相对比较简单，最多就是一个简单的地址，指向官网或者平台的游戏，
 现在的问题，就是需要更加复杂的链接，这个链接的参数要由程序提供。
 
 比如说，我需要发布一个新鲜事，需要好友为我加油（这个类似于开心的停车位那个游戏），
-       这个时候我需要这个用户的id（这个ms需要去对方平台里找），这个时候还要判断这个用户是否开通这个游戏，这个那是相当的复杂啊。
+       这个时候我需要这个用户的id（这个ms需要去对方平台里找），这个时候还要判断这个用户是否开通这个游戏，
        </t>
+<t tx="newlife.20110215113939.1354">新鲜事
+1、 官网：玩家帐号如果与其他平台的帐号绑定或使用connect方式登录，在各新鲜事触发点会弹出发新鲜事的js窗口，用户点击后发到相应平台。
+
+    其他平台，目前就是sina，未来的qq微博。
+    这个connect是啥方式。
+
+2、 平台：在各新鲜事触发点会弹出发新鲜事的js窗口，用户点击后发到相应平台（登录新鲜事为后台调用restAPI直接发送）。
+
+
+3、 所有点击新鲜事接受奖励或帮助朋友的事件，
+    同一条新鲜事每个用户只能触发一次，
+    超过3天的新鲜事链接失效,
+    
+
+4、 每个用户每天作为新鲜事点击者获得奖励最多10次，----
+    作为新鲜事发出者获得奖励最多5次。   
+
+
+5、 用户点击新鲜事或接受好友帮助获得的奖励直接放入【礼物包】中。
+    这个奖励的机制是怎么确定？？比如点击几次发礼物，接受帮助几次发礼物，发啥？？
+
+6、 所有新鲜事见表19。</t>
+<t tx="newlife.20110215113939.1357">用户点击链接，
+
+实际的业务处理流程：
+    1，在lgoin中执行;
+    2，完成操作，
+    3，判断条件，发奖励。
+
+处理操作，
+这个流程ms比想象的要复杂：或许要放到view实现。
+
+
+结论：
+    点击新鲜事者奖励可以放到model中记录，、
+    发出新鲜事者，需要在view中实现
+
+
+</t>
+<t tx="newlife.20110215113939.1358">	任务新鲜事1	点击相关任务的【求助】按钮				发出新鲜事小窝的好友互助面板	
+	任务新鲜事2	点击相关任务的【求助】按钮				发出新鲜事小窝的好友互助面板	
+q:这个是做啥的？？
+   这个和任务系统相关，待定， 
+q:最后的新鲜事标记为灰色是什么意思？？
+   正在完善中，未完成
+
+
+q：链接有效期，求购，出售，这个应该是一直有效的。</t>
+<t tx="newlife.20110215113939.1359">最终的链接:
+链接是个复杂的事情，
+   时效这个东西是后期处理的，要看这个属性放到什么地方。目前看来，链接这个东西要单独做个表，ms要放到链接上比较合适。
+   
+   现在就有一个问题了，这个平台的主题是啥，新鲜事？链接？   
+   
+必须拆出一个表来描述是谁点击了这个链接，所以这个操作必须在用户登录完成所做的操作，所以表19中所描述的发出者获得奖励所需条件
+
+
+
+这个需要和前台沟通，传递参数，建立接口
+
+</t>
+<t tx="newlife.20110215113939.1360">#触发条件不做为属性放到model中，
+class NewsFeed(models.Model):
+    user  ----&gt;新鲜事发送者
+    sort -----&gt;新鲜事分类(外键 Feed_Sort)    
+    count_click -----&gt;这个数据来自于Click_Count中的数据统计，本来可以计算得出，计算方便
+    date_created ------&gt;记录发布日期，计算有效期，
+    valued ----&gt;  判断链接有效，判断基于事件的新鲜事，比如通关等等。
+    num_reward -----&gt;  user获取奖励所需次数，和count_click做比较，发送奖励后设置is_valued为false，
+    
+    def is_valued(self):
+        if self.value == True and now()- date_created &lt; 3day:
+            return True
+        else:
+            return False
+    def is_send(self):
+        if valued == True and count_click&gt;num_reward:
+            return True      
+
+
+
+
+记录用户点击次数的model,Click_Count：
+
+class Click_Count(models.Model):
+    user----&gt;   哪个用户点击新鲜事链接。
+    newsfeed-----&gt;   哪个新鲜事，
+    date_created ------&gt;
+    
+    class Meta:
+        unique_together = ("user","newsfeed")
+
+
+class  Feed_Sort(models.Model):
+    name ----&gt;就是消息分类
+    content ----&gt; 消息内容
+    pic----&gt;新鲜事图片
+    click_reward -------&gt; 点击用户获取的奖励
+    send_reward ------&gt;发布新鲜事用户获取奖励
+</t>
+<t tx="newlife.20110215113939.1361">处理，
+   #处理点击用户奖励
+   if Click_Count.get(user=user,feed=feed):
+       pass
+   else:
+       send_click_reward(feed,user)
+   #处理发送用户奖励
+   if  feed.is_send():
+       send_send_reward()
+       feed.valued = False
+
+
+
+</t>
 </tnodes>
 </leo_file>
