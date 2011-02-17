@@ -10,7 +10,7 @@
 <find_panel_settings/>
 <vnodes>
 <v t="newlife.20110215113939.1354"><vh>文档</vh></v>
-<v t="newlife.20110211142831.1267"><vh>新鲜事平台</vh></v>
+<v t="newlife.20110211142831.1267" a="E"><vh>新鲜事平台</vh>
 <v t="newlife.20110211142831.1268" a="E"><vh>前期准备</vh>
 <v t="newlife.20110211142831.1269"><vh>需要处理的平台信息</vh></v>
 <v t="newlife.20110211142831.1271" a="E"><vh>当前流程</vh>
@@ -54,9 +54,33 @@
 <v t="newlife.20110212113018.1310"><vh>send_openStage_feed</vh></v>
 <v t="newlife.20110212113018.1311"><vh>send_feed_auto</vh></v>
 </v>
+<v t="newlife.20110216113034.1366"><vh>@file /home/newlife/bubblefish/paopaoyu/templates/sns/renren.html</vh>
+<v t="newlife.20110216113034.1367"><vh>renren declarations</vh></v>
+<v t="newlife.20110216113034.1368"><vh>html</vh>
+<v t="newlife.20110216113034.1369"><vh>head</vh></v>
+<v t="newlife.20110216113034.1370"><vh>body</vh>
+<v t="newlife.20110216113034.1371"><vh>div</vh>
+<v t="newlife.20110216113034.1372"><vh>div</vh></v>
+</v>
+<v t="newlife.20110216113034.1373"><vh>div</vh></v>
+<v t="newlife.20110216113034.1374"><vh>div</vh></v>
+<v t="newlife.20110216113034.1375"><vh>div</vh></v>
+<v t="newlife.20110216113034.1376"><vh>div</vh></v>
+<v t="newlife.20110216113034.1377"><vh>div</vh></v>
+<v t="newlife.20110216113034.1378"><vh>div</vh></v>
+<v t="newlife.20110216113034.1379"><vh>div</vh></v>
+<v t="newlife.20110216113034.1380"><vh>div</vh></v>
+<v t="newlife.20110216113034.1381"><vh>div</vh>
+<v t="newlife.20110216113034.1382"><vh>div</vh></v>
+</v>
+<v t="newlife.20110216113034.1383"><vh>div</vh></v>
+</v>
+</v>
+</v>
 <v t="newlife.20110214113902.1342"><vh>/bubblefish/paopaoyu/templates/sns/renren_feeds.js</vh>
 <v t="newlife.20110214113902.1343"><vh>renren_feeds declarations</vh></v>
 <v t="newlife.20110214113902.1344"><vh>feedCallback</vh></v>
+<v t="newlife.20110217105337.1405"><vh>分析feedCallback</vh></v>
 </v>
 </v>
 </v>
@@ -68,9 +92,12 @@
 <v t="newlife.20110215113939.1360" a="M"><vh>结论</vh></v>
 </v>
 <v t="newlife.20110215113939.1358"><vh>需要沟通的需求</vh></v>
+<v t="newlife.20110217105337.1402"><vh>更改</vh></v>
+<v t="newlife.20110217105337.1406"><vh>md5</vh></v>
+</v>
 </vnodes>
 <tnodes>
-<t tx="newlife.20110211142831.1267">这个东西是啥目前还不清楚：
+<t tx="newlife.20110211142831.1267">看上去很美
 </t>
 <t tx="newlife.20110211142831.1268"></t>
 <t tx="newlife.20110211142831.1269">所有新鲜事的平台：
@@ -542,7 +569,15 @@ function sendUserFeed(feedType, sns_id, style, val){
     var body_data = "";
 
     if(feedType == "login") {
-        var contentArray = [["","带着精良的装备和战斗小队顺着神秘的泡泡海洋漩涡，潜入了那片远古归墟。", "", "", "尾随进去……"], ["泡泡海洋的温暖麻木了", "的战斗神经，突然一阵洋流袭来，潘多拉海域的斗士危险了！", "", "", "前去增援！"], ["全球变暖使极地冰川地区海平面急速上升，", "的使命—保护即将灭绝的鱼儿。", "", "", "加入战斗……"], ["","潜入泡泡鱼海洋，终于在暗黑的海底见识到了剧毒海怪石头鱼！", "", "", "我想看看……"], ["一条褐色的长长的东西从海底洞穴里撞了出来，嗖一下把","卷走了！", "", "", "那是什么……"], ["","一头扎进了海里，蹬了一下腿，嗖，没影了……", "", "", "潜入深海……"], ["巨大的章鱼那双小眼睛在泡泡鱼海底环顾了一圈，盯上了正在潜水的","……", "", "", "前去帮忙……"], ["","背着先进的潜水设备开始了深海冒险，身后的模糊的巨大黑影紧紧地跟着TA……", "", "", "跟着游进去……"]];
+        var contentArray = [["","带着精良的装备和战斗小队顺着神秘的泡泡海洋漩涡，潜入了那片远古归墟。", "", "", "尾随进去……"], 
+                            ["泡泡海洋的温暖麻木了", "的战斗神经，突然一阵洋流袭来，潘多拉海域的斗士危险了！", "", "", "前去增援！"], 
+                            ["全球变暖使极地冰川地区海平面急速上升，", "的使命—保护即将灭绝的鱼儿。", "", "", "加入战斗……"], 
+                            ["","潜入泡泡鱼海洋，终于在暗黑的海底见识到了剧毒海怪石头鱼！", "", "", "我想看看……"], 
+                            ["一条褐色的长长的东西从海底洞穴里撞了出来，嗖一下把","卷走了！", "", "", "那是什么……"], 
+                            ["","一头扎进了海里，蹬了一下腿，嗖，没影了……", "", "", "潜入深海……"], 
+                            ["巨大的章鱼那双小眼睛在泡泡鱼海底环顾了一圈，盯上了正在潜水的","……", "", "", "前去帮忙……"], 
+                            ["","背着先进的潜水设备开始了深海冒险，身后的模糊的巨大黑影紧紧地跟着TA……", "", "", "跟着游进去……"]
+                           ];
 
         var index = Math.floor(Math.random()*10)%8;
         title_name = ["", "进入了泡泡鱼游戏，玩的不亦乐乎。"];
@@ -607,6 +642,9 @@ function sendUserFeed(feedType, sns_id, style, val){
     } else {
         return;
     }
+# 以上确定的变量有：title_name,content,body_data,images
+
+只有在合成的时候有title_1,title_2,content_1,content_2,content_3,content_4
 
     if(feedType=="synthesis" || feedType=="trollfish" || feedType=="wtb") {
         title_1 = "&lt;a href='{{ sns_url }}?sns_id="+sns_id+"'&gt;"+title_name[0]+"&lt;/a&gt;";
@@ -637,6 +675,9 @@ function sendUserFeed(feedType, sns_id, style, val){
     "callback": feedCallback,
     "user_message_prompt": "随便写点什么吧"
     };
+    &lt;!--
+    以上就是人人的接口的问题，
+    //--&gt;
 
     XN.Connect.showFeedDialog(feedSettings);
 };
@@ -784,6 +825,7 @@ class Click_Count(models.Model):
     newsfeed-----&gt;   哪个新鲜事，
     date_created ------&gt;
     
+
     class Meta:
         unique_together = ("user","newsfeed")
 
@@ -791,11 +833,12 @@ class Click_Count(models.Model):
 class  Feed_Sort(models.Model):
     name ----&gt;就是消息分类
     content ----&gt; 消息内容
+    link
     pic----&gt;新鲜事图片
     click_reward -------&gt; 点击用户获取的奖励
     send_reward ------&gt;发布新鲜事用户获取奖励
 </t>
-<t tx="newlife.20110215113939.1361">处理，
+<t tx="newlife.20110215113939.1361">处理，伪码描述
    #处理点击用户奖励
    if Click_Count.get(user=user,feed=feed):
        pass
@@ -809,5 +852,186 @@ class  Feed_Sort(models.Model):
 
 
 </t>
+<t tx="newlife.20110216113034.1366">@language xml
+@tabwidth -4
+@others
+@ignore</t>
+<t tx="newlife.20110216113034.1367">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+</t>
+<t tx="newlife.20110216113034.1368">&lt;html xmlns="http://www.w3.org/1999/xhtml" xmlns:xn="http://www.renren.com/2009/xnml"&gt;
+@others
+&lt;/html&gt;
+</t>
+<t tx="newlife.20110216113034.1369">&lt;head&gt;
+&lt;style&gt;
+.menuxn0{ width:790px; height:42px; overflow:hidden;padding-top:5px; font-size:12px; padding-left:13px; }
+.menuxn0 img{margin:0px 0px 0px 0px; border: medium none;}
+.menuxn0 div{margin:4px 11px 4px 4px; overflow:hidden;}
+.menuxn1{ float:left; height:33px; overflow:hidden; width:79px; padding-right:3px;}
+.menuxn2{ float:left;  height:33px; overflow:hidden; width:79px; padding-right:3px;}
+.menuxn3{ float:left;  height:33px; overflow:hidden; width:79px; padding-right:3px;}
+.menuxn4{ float:left; height:33px; width:79px; background:url({{ media_url }}images/xinxi.gif) no-repeat ; overflow:hidden;}
+.menuxn5{ float:left; height:33px; overflow:hidden; width:87px; padding-right:3px;}
+.menuxn6{ float:left; height:33px; overflow:hidden; width:79px; padding-right:3px;}
+.menuxn7{ float:left; height:33px; overflow:hidden; width:79px; padding-right:3px;}
+.menuxn8{ float:left; height:33px; overflow:hidden; width:79px; padding-right:3px;}
+.menuxn9{ float:left; height:33px; overflow:hidden; width:79px; padding-right:3px;}
+.menuxn210{ padding-left:8px; padding-top:8px;}
+.menuxn213{ padding-left:5px; padding-top:8px;}
+.menuxn214{padding-left:21px; padding-top:8px;}
+#scrollBox { float:left; width:405px; height:20px; line-height:20px; overflow:hidden; margin-left:0px;  padding-left:10px;margin-top:5px; }
+&lt;/style&gt;
+
+&lt;script type="text/javascript" src="http://static.connect.renren.com/js/v1.0/FeatureLoader.jsp"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+  XN_RequireFeatures(["EXNML"], function()
+  {
+    XN.Main.init("51632e54302f4796aa4eb73236e39b6f", "http://xiaonei.paopaoyu.cn/xd_receiver.html");
+  });
+&lt;/script&gt;
+
+&lt;/head&gt;
+</t>
+<t tx="newlife.20110216113034.1370">&lt;body&gt;
+@others
+&lt;iframe scrolling="no" frameborder="0" src="http://www.connect.renren.com/widget/liveWidget?api_key=51632e54302f4796aa4eb73236e39b6f&amp;xid=default&amp;desp=%E5%A4%A7%E5%AE%B6%E6%9D%A5%E8%AE%A8%E8%AE%BA" style="width: 760px;height: 400px;"&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+{% include "sns/renren_feeds.js" %}
+
+&lt;/body&gt;
+</t>
+<t tx="newlife.20110216113034.1371">&lt;div class="menuxn0"&gt;
+    @others
+</t>
+<t tx="newlife.20110216113034.1372">&lt;div class="menuxn3"&gt;
+    &lt;a href="{{ sns_url }}/recharge/" target="_blank" &gt;
+        &lt;img src="{{ media_url }}images/chzh-small.jpg" onmouseover="this.src='{{ media_url }}images/chzh.jpg'" onmouseout="this.src='{{ media_url }}images/chzh-small.jpg'" /&gt;
+    &lt;/a&gt;
+&lt;/div&gt;
+</t>
+<t tx="newlife.20110216113034.1373">&lt;div class="menuxn6"&gt;
+    &lt;a href="http://page.renren.com/paopaoyu" target="_blank" &gt;
+        &lt;img src="{{ media_url }}images/fx-small.jpg" onmouseover="this.src='{{ media_url }}images/fx.jpg'" onmouseout="this.src='{{ media_url }}images/fx-small.jpg'" /&gt;
+    &lt;/a&gt;
+&lt;/div&gt;
+</t>
+<t tx="newlife.20110216113034.1374">&lt;div class="menuxn2"&gt;
+    &lt;a href="{{ sns_url }}/invite/isinfo/" target="_blank" &gt;
+        &lt;img src="{{ media_url }}images/yq-small.jpg" onmouseover="this.src='{{ media_url }}images/yq.jpg'" onmouseout="this.src='{{ media_url }}images/yq-small.jpg'" /&gt;
+      &lt;/a&gt;
+  &lt;/div&gt;
+</t>
+<t tx="newlife.20110216113034.1375">&lt;div class="menuxn8"&gt;
+    &lt;a href="{{sns_url}}/lucky/" target="_blank" &gt;
+        &lt;img src="{{ media_url }}images/jf-small.jpg" onmouseover="this.src='{{ media_url }}images/jf.jpg'" onmouseout="this.src='{{ media_url }}images/jf-small.jpg'" /&gt;
+    &lt;/a&gt;
+&lt;/div&gt;
+</t>
+<t tx="newlife.20110216113034.1376">&lt;div class="menuxn1"&gt;
+    &lt;a href="http://group.renren.com/GetTribe.do?id=283371586" target="_blank"&gt;
+        &lt;img src="{{ media_url }}images/lt-small.jpg" onmouseover="this.src='{{ media_url }}images/lt.jpg'" onmouseout="this.src='{{ media_url }}images/lt-small.jpg'" /&gt;
+    &lt;/a&gt;
+&lt;/div&gt;
+</t>
+<t tx="newlife.20110216113034.1377">&lt;div class="menuxn5"&gt;
+    &lt;a href="http://group.renren.com/GetThread.do?id=330586086&amp;parentpage=0&amp;curpage=0&amp;label=&amp;tribeId=283371586" target="_blank" &gt;
+        &lt;img src="{{ media_url }}images/shjb-small.jpg" onmouseover="this.src='{{ media_url }}images/shjb.jpg'" onmouseout="this.src='{{ media_url }}images/shjb-small.jpg'" /&gt;
+    &lt;/a&gt;
+&lt;/div&gt;
+</t>
+<t tx="newlife.20110216113034.1378">&lt;div class="menuxn9"&gt;
+    &lt;a href="{{sns_url}}/fansgift/?xn_sig_session_key={{ skey }}" target="_blank" &gt;
+        &lt;img src="{{ media_url }}images/fans-small.jpg" onmouseover="this.src='{{ media_url }}images/fans.jpg'" onmouseout="this.src='{{ media_url }}images/fans-small.jpg'" /&gt;
+    &lt;/a&gt;
+&lt;/div&gt;
+</t>
+<t tx="newlife.20110216113034.1379">&lt;div class="menuxn7"&gt;
+    &lt;a href="http://kf.raytoon.cn/maine.htm" target="_blank" &gt;
+        &lt;img src="{{ media_url }}images/bzh-small.jpg" onmouseover="this.src='{{ media_url }}images/bzh.jpg'" onmouseout="this.src='{{ media_url }}images/bzh-small.jpg'" /&gt;
+    &lt;/a&gt;
+&lt;/div&gt;
+</t>
+<t tx="newlife.20110216113034.1380">&lt;/div&gt;
+
+&lt;div id="flash_div" style="margin:0 auto; width:756px;"&gt;
+  &lt;object id='forIE' classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="756" height="640"&gt;
+      &lt;param name="movie" value="{{ media_url }}swf/v20/gameMain.swf"/&gt;
+      &lt;param name="flashVars" value="skey={{ skey }}&amp;sns=renren&amp;feed_fun=sendUserFeed&amp;snsid={{ sns_id }}"/&gt;
+      &lt;param name="wmode" value="window" /&gt;
+      &lt;param name="quality" value="high" /&gt;
+      &lt;param name="allowScriptAccess" value="always" /&gt;
+      &lt;embed name="forIE" src="{{ media_url }}swf/v20/gameMain.swf" width="756" height="640" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="window" flashVars="skey={{ skey }}&amp;sns=renren&amp;feed_fun=sendUserFeed&amp;snsid={{ sns_id }}" allowScriptAccess="always" &gt;&lt;/embed&gt;
+  &lt;/object&gt;
+&lt;/div&gt;
+</t>
+<t tx="newlife.20110216113034.1381">&lt;!--
+&lt;DIV style=" width:791px; height:100px; margin:auto; margin-top:10PX;"&gt;
+&lt;DIV style="width:591px; height:100px;  float:left;"&gt;&lt;a  href="http://kf.raytoon.cn/" target="_blank" &gt;&lt;img class="star" src="{{ media_url }}images/forth_stage.gif" /&gt;&lt;/a&gt;&lt;/DIV&gt;
+&lt;DIV style="width:200px; height:100px;  float:left;"&gt;&lt;a  href="http://group.renren.com/GetThread.do?id=329592190&amp;parentpage=&amp;curpage=0&amp;label=758397&amp;tribeId=283371586" target="_blank" &gt;&lt;img class="star" src="{{ media_url }}images/zhaopin02.jpg" /&gt;&lt;/a&gt;&lt;/DIV&gt;
+&lt;/DIV&gt;
+
+&lt;DIV style=" width:800px; height:100px; margin:auto; margin-top:10PX;"&gt;
+    &lt;DIV style="width:800px; height:100px; float:left;"&gt;
+        &lt;a href="http://track.yx.renren.com/statmop/dfa1?dfaid=4751" target="_blank" &gt;
+            &lt;img class="star" src="http://60.29.241.40/xiaonei_media/images/mengniu_ads.jpg" /&gt;
+        &lt;/a&gt;
+    &lt;/DIV&gt;
+&lt;/DIV&gt;
+--&gt;
+&lt;div style="width:760px; height:580px; padding-top:7px; overflow:hidden; margin:auto; "&gt;
+  @others
+</t>
+<t tx="newlife.20110216113034.1382">&lt;div style="float:left"&gt;
+  &lt;a href="http://page.renren.com/699025049/note/708402900?ref=minifeed&amp;sfet=2012&amp;fin=0&amp;ff_id=699025049&amp;feed=page_blog&amp;tagid=708402900" target="_blank"&gt;
+    &lt;img src="http://60.29.241.40/xiaonei_media/images/gg04.jpg" border="0" width="620" height="90" /&gt;
+  &lt;/a&gt;
+&lt;/div&gt;
+</t>
+<t tx="newlife.20110216113034.1383">&lt;div style="float:left"&gt;
+  &lt;a href="http://page.renren.com/paopaoyu/index" target="_blank"&gt;
+    &lt;img src="http://60.29.241.40/xiaonei_media/images/gg03.jpg" border="0" width="140" height="90" /&gt;
+  &lt;/a&gt;
+&lt;/div&gt;
+</t>
+<t tx="newlife.20110217105337.1402">一切都是为了性能。
+这个东西要看悟性啊，
+
+充分利用url的优势，减少数据库操作。
+@##寻找新鲜事各个field的最大值##，
+组建model
+
+
+用一个表来描述新鲜事，
+日志文件：
+    记录谁click，
+    md5值作为key，
+    新鲜事
+    
+    
+核心的问题####
+
+人人字段；
+
+title_1,title_2,content_1,content_2,content_3,content_4
+
+生成的链接参数包括：
+uid：新鲜事的发送者，
+time_stamp:时间戳，
+feed_type新鲜事种类，表明返回后如何处理，就是确定callback，
+sig_code,根据以上值生成的验证码，防止fake url
+
+
+
+
+</t>
+<t tx="newlife.20110217105337.1405">下面强势分析这个文件，分析出其中的模板需要的字段：
+</t>
+<t tx="newlife.20110217105337.1406">md5的使用：
+
+根据字段生成md5值作为记录的key，而且这个值是放缓存里的。
+
+
+减少数据库操作。</t>
 </tnodes>
 </leo_file>

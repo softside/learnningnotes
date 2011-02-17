@@ -33,7 +33,7 @@ python cook book,
 
 maybe I should make a list of my books ,
 
-then I can find a way to know when I should study what in night.</t>
+then I can find a way to know what I should study  in night.</t>
 <t tx="newlife.20101122115731.1245"></t>
 <t tx="newlife.20101122115731.1246">4.1. Naming and binding
 命名和绑定
