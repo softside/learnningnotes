@@ -11,7 +11,7 @@
 <vnodes>
 <v t="newlife.20110215113939.1354"><vh>文档</vh></v>
 <v t="newlife.20110211142831.1267" a="E"><vh>新鲜事平台</vh>
-<v t="newlife.20110211142831.1268" a="E"><vh>前期准备</vh>
+<v t="newlife.20110211142831.1268"><vh>前期准备</vh>
 <v t="newlife.20110211142831.1269"><vh>需要处理的平台信息</vh></v>
 <v t="newlife.20110211142831.1271" a="E"><vh>当前流程</vh>
 <v t="newlife.20110211142831.1285"><vh>baidu</vh></v>
@@ -19,7 +19,7 @@
 </v>
 <v t="newlife.20110214113902.1345"><vh>分析</vh></v>
 </v>
-<v t="newlife.20110212113018.1285" a="E"><vh>优先</vh>
+<v t="newlife.20110212113018.1285"><vh>优先</vh>
 <v t="newlife.20110211142831.1270" a="E"><vh>sina微博</vh>
 <v t="newlife.20110211142831.1274"><vh>get_member_bindblog_info</vh></v>
 <v t="newlife.20110211142831.1278" a="M"><vh>is_send_feed</vh></v>
@@ -85,7 +85,8 @@
 </v>
 </v>
 <v t="newlife.20110214113902.1347"><vh>问题</vh></v>
-<v t="newlife.20110214113902.1346" a="E"><vh>分析model</vh>
+<v t="newlife.20110218115009.1409"><vh>model</vh>
+<v t="newlife.20110214113902.1346"><vh>分析model</vh>
 <v t="newlife.20110215113939.1357"><vh>关于奖励</vh></v>
 <v t="newlife.20110215113939.1359"><vh>链接目标</vh></v>
 <v t="newlife.20110215113939.1361"><vh>点击处理</vh></v>
@@ -94,6 +95,12 @@
 <v t="newlife.20110215113939.1358"><vh>需要沟通的需求</vh></v>
 <v t="newlife.20110217105337.1402"><vh>更改</vh></v>
 <v t="newlife.20110217105337.1406"><vh>md5</vh></v>
+<v t="newlife.20110218115009.1408"><vh>链接分析</vh></v>
+</v>
+<v t="newlife.20110218115009.1410" a="E"><vh>结论</vh>
+<v t="newlife.20110218115009.1411"><vh>新鲜事的发送</vh></v>
+<v t="newlife.20110218115009.1412"><vh>新鲜事的处理</vh></v>
+</v>
 </v>
 </vnodes>
 <tnodes>
@@ -831,12 +838,20 @@ class Click_Count(models.Model):
 
 
 class  Feed_Sort(models.Model):
-    name ----&gt;就是消息分类
-    content ----&gt; 消息内容
-    link
-    pic----&gt;新鲜事图片
+    kind ----&gt;就是消息分类
+    content1 ----&gt; 消息内容
+    link1
+    content2
+    link2
+    content2
+    link3
+    content3
+    content4    
+    pic----&gt;
     click_reward -------&gt; 点击用户获取的奖励
     send_reward ------&gt;发布新鲜事用户获取奖励
+
+
 </t>
 <t tx="newlife.20110215113939.1361">处理，伪码描述
    #处理点击用户奖励
@@ -1007,6 +1022,7 @@ class  Feed_Sort(models.Model):
     记录谁click，
     md5值作为key，
     新鲜事
+    uid
     
     
 核心的问题####
@@ -1022,6 +1038,8 @@ feed_type新鲜事种类，表明返回后如何处理，就是确定callback，
 sig_code,根据以上值生成的验证码，防止fake url
 
 
+新鲜事的发送者，作为url的一部分传递，
+
 
 
 </t>
@@ -1033,5 +1051,113 @@ sig_code,根据以上值生成的验证码，防止fake url
 
 
 减少数据库操作。</t>
+<t tx="newlife.20110218115009.1408">&lt;p style="margin-left:0px;"&gt;
+
+&lt;a href="http://www.connect.renren.com/redirect?type=originStatis&amp;app_id=25049&amp;origin=3421&amp;url=http%3A%2F%2Fapps.renren.com%2Fpaopaoyu" target="_blank"&gt;巨大的章鱼那双小眼睛在泡泡鱼海底环顾了一圈，盯上了正在潜水的&lt;/a&gt;
+&lt;a href="http://www.connect.renren.com/redirect?type=originStatis&amp;app_id=25049&amp;origin=3421&amp;url=http%3A%2F%2Fwww.renren.com%2Fprofile.do%3Fid%3D32531172" target="_blank"&gt;张磊&lt;/a&gt;
+&lt;a href="http://www.connect.renren.com/redirect?type=originStatis&amp;app_id=25049&amp;origin=3421&amp;url=http%3A%2F%2Fapps.renren.com%2Fpaopaoyu" target="_blank"&gt;&amp;hellip;&amp;hellip;&lt;/a&gt;
+&lt;a href="http://www.connect.renren.com/redirect?type=originStatis&amp;app_id=25049&amp;origin=3421&amp;url=http%3A%2F%2Fapps.renren.com%2Fpaopaoyu" target="_blank"&gt;&lt;/a&gt;
+&lt;a href="http://www.connect.renren.com/redirect?type=originStatis&amp;app_id=25049&amp;origin=3421&amp;url=http%3A%2F%2Fapps.renren.com%2Fpaopaoyu" target="_blank"&gt;&lt;/a&gt;&lt;br&gt;
+&lt;a href="http://www.connect.renren.com/redirect?type=originStatis&amp;app_id=25049&amp;origin=3421&amp;url=http%3A%2F%2Fapps.renren.com%2Fpaopaoyu" target="_blank"&gt;前去帮忙&lt;/a&gt;
+
+&lt;/p&gt;
+
+&lt;p style="color:#515151;margin:0 0 5px 0px;"&gt;
+&lt;a href="http://www.connect.renren.com/redirect?type=originStatis&amp;app_id=25049&amp;origin=3420&amp;url=http%3A%2F%2Fapps.renren.com%2Fpaopaoyu" target="_blank"&gt;&lt;/a&gt;
+&lt;a href="http://www.connect.renren.com/redirect?type=originStatis&amp;app_id=25049&amp;origin=3420&amp;url=http%3A%2F%2Fwww.renren.com%2Fprofile.do%3Fid%3D32531172" target="_blank"&gt;张磊&lt;/a&gt;
+&lt;a href="http://www.connect.renren.com/redirect?type=originStatis&amp;app_id=25049&amp;origin=3420&amp;url=http%3A%2F%2Fapps.renren.com%2Fpaopaoyu" target="_blank"&gt;进入了泡泡鱼游戏，玩的不亦乐乎。&lt;/a&gt;&lt;img src="http://app.renren.com/statistics/feedStatistics/?appId=25049&amp;type=connect_custom" height="1" width="1"&gt;&lt;/p&gt;
+
+</t>
+<t tx="newlife.20110218115009.1409"></t>
+<t tx="newlife.20110218115009.1410">#! /usr/bin/env python
+#coding=utf-8
+
+from django.db import models
+ 
+class FeedLog(models.Model):
+    feed = models.ForeignKey('Feed')
+    sender = models.IntegerField()
+    clicker = models.IntegerField()
+    num_reward = models.IntegerField()
+    valued = models.BooleanField()
+    date_created = models.DateTimeField()
+    date_click = models.DateTimeField(auto_now=True)    
+    
+
+FEED_TYPE = (
+        (1,u'召唤清理'),
+        (1,u'开图鉴'),
+        (1,u'开全套图鉴'),
+        (1,u'闯过第一大关'),
+        (1,u'升级'),
+        (1,u'请求派遣帮助'),
+        (1,u'登录'),
+        (1,u'请求削弱BOSS的道具牌'),
+        (1,u'请求强力扫帚'),
+        (1,u'请求战斗号角'),
+        (1,u'邀请好友'),
+    )    
+class Feed(models.Model):
+    kind = models.CharField(max_length = 50,choice = FEED_TYPE)#新鲜事分类
+    content1 = models.CharField(max_length = 200)
+    content4 = models.CharField(max_length = 200)
+    content4 = models.CharField(max_length = 200)
+    content4 = models.CharField(max_length = 200)
+    link1 = models.CharField(max_length = 200)
+    link2 = models.CharField(max_length = 200)
+    pic = models.ImageField(uploade_to = "")
+    click_reward = models.CharField(max_length = 100)
+    send_reward = models.CharField(max_length = 200)
+    num_reward = models.IntegerField()
+    
+    
+    
+    
+    
+</t>
+<t tx="newlife.20110218115009.1411">用户发送
+
+关于新鲜事分类：
+    第一类，用户控制，主动发送，比如求助，
+    第二类，系统控制，检测发送，比如登录，
+
+
+这个用户发送新鲜事如何限制；
+
+
+def send_feed(member,kind,):
+    #ms这个是用js发的，，还有不是js的呢。。
+    
+
+
+
+    
+    
+
+</t>
+<t tx="newlife.20110218115009.1412">定义的新鲜是的链接：
+
+http://paopaoyu.com/handle_feed/?sender=45545&amp;kind=3&amp;sig=hjkhfjkhjkhjkh
+
+
+接受的参数：
+
+sender是新鲜事的发送者，
+sig负责安全的部分，
+
+sender,kind ,确定一个md5值。
+
+也可以不存。
+
+就是发的时候生成就可以了，
+
+效率！！！！
+
+
+
+
+
+
+</t>
 </tnodes>
 </leo_file>
