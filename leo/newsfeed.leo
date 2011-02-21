@@ -11,13 +11,79 @@
 <vnodes>
 <v t="newlife.20110215113939.1354"><vh>文档</vh></v>
 <v t="newlife.20110211142831.1267" a="E"><vh>新鲜事平台</vh>
-<v t="newlife.20110211142831.1268"><vh>前期准备</vh>
+<v t="newlife.20110211142831.1268" a="E"><vh>前期准备</vh>
 <v t="newlife.20110211142831.1269"><vh>需要处理的平台信息</vh></v>
 <v t="newlife.20110211142831.1271" a="E"><vh>当前流程</vh>
 <v t="newlife.20110211142831.1285"><vh>baidu</vh></v>
 <v t="newlife.20110212113018.1282"><vh>sohu</vh></v>
+<v t="newlife.20110221101214.1418"><vh>163</vh>
+<v t="newlife.20110221101214.1419"><vh>/paopaoyu/apps/sns/sns_msg_163.py</vh>
+<v t="newlife.20110221101214.1420"><vh>sns_msg_163 declarations</vh></v>
+<v t="newlife.20110221101214.1421"><vh>send_rank_feed</vh></v>
+<v t="newlife.20110221101214.1422"><vh>send_troll_feed</vh></v>
+<v t="newlife.20110221101214.1423"><vh>send_submarine_feed</vh></v>
+<v t="newlife.20110221101214.1424"><vh>send_catchfish_feed</vh></v>
+<v t="newlife.20110221101214.1425"><vh>send_steal_notif</vh></v>
+<v t="newlife.20110221101214.1426"><vh>send_shock_notif</vh></v>
+<v t="newlife.20110221101214.1427"><vh>send_openStage_feed</vh></v>
+</v>
+<v t="newlife.20110221101214.1429"><vh>/paopaoyu/apps/sns/sns_api_163.py</vh>
+<v t="newlife.20110221101214.1430"><vh>sns_api_163 declarations</vh></v>
+<v t="newlife.20110221101214.1431"><vh>_generate_wangyi_base_params</vh></v>
+<v t="newlife.20110221101214.1432"><vh>_resolve__wangyisession_key</vh></v>
+<v t="newlife.20110221101214.1433"><vh>get_container</vh></v>
+<v t="newlife.20110221101214.1434"><vh>get_sns_id</vh></v>
+<v t="newlife.20110221101214.1435"><vh>get_sns_user</vh></v>
+<v t="newlife.20110221101214.1436"><vh>get_app_friends</vh></v>
+<v t="newlife.20110221101214.1437"><vh>get_are_friends</vh></v>
+<v t="newlife.20110221101214.1438"><vh>send_app_feed</vh></v>
+<v t="newlife.20110221101214.1439"><vh>send_app_notif</vh></v>
+<v t="newlife.20110221101214.1440"><vh>fetch_ebaccount_request</vh></v>
+<v t="newlife.20110221101214.1441"><vh>pay_reg_order</vh></v>
+<v t="newlife.20110221101214.1442"><vh>pay_is_complete</vh></v>
+<v t="newlife.20110221101214.1443"><vh>add_friends</vh></v>
+<v t="newlife.20110221101214.1444"><vh>fetch_app_order_record_request</vh></v>
+<v t="newlife.20110221101214.1445"><vh>fetch_libaryItemStatus_request</vh></v>
+<v t="newlife.20110221101214.1446"><vh>fetch_checkUserName_request</vh></v>
+<v t="newlife.20110221101214.1447"><vh>fetch_checkContent_request</vh></v>
+<v t="newlife.20110221101214.1448"><vh>fetch_neteaseGroups_request</vh></v>
+<v t="newlife.20110221101214.1449"><vh>fetch_neteaseGroups_withId</vh></v>
+</v>
+</v>
+<v t="newlife.20110221101214.1450"><vh>盛大sdo</vh>
+<v t="newlife.20110221101214.1451" a="E"><vh>/paopaoyu/apps/sns/sns_msg_sdo.py</vh>
+<v t="newlife.20110221101214.1452"><vh>sns_msg_sdo declarations</vh></v>
+<v t="newlife.20110221101214.1453"><vh>send_troll_feed</vh></v>
+<v t="newlife.20110221101214.1454"><vh>send_submarine_feed</vh></v>
+<v t="newlife.20110221101214.1455"><vh>send_catchfish_feed</vh></v>
+<v t="newlife.20110221101214.1456"><vh>send_openStage_feed</vh></v>
+<v t="newlife.20110221101214.1457"><vh>send_feed_auto</vh></v>
+<v t="newlife.20110221101214.1458"><vh>send_steal_notif</vh></v>
+<v t="newlife.20110221101214.1459"><vh>send_shock_notif</vh></v>
+</v>
+<v t="newlife.20110221101214.1460" a="E"><vh>/paopaoyu/apps/sns/sns_api_sdo.py</vh>
+<v t="newlife.20110221101214.1461"><vh>sns_api_sdo declarations</vh></v>
+<v t="newlife.20110221101214.1462"><vh>_generate_base_params</vh></v>
+<v t="newlife.20110221101214.1463"><vh>_generate_sig</vh></v>
+<v t="newlife.20110221101214.1464"><vh>_post_api_request</vh></v>
+<v t="newlife.20110221101214.1465"><vh>get_sns_id</vh></v>
+<v t="newlife.20110221101214.1466"><vh>get_sns_user</vh></v>
+<v t="newlife.20110221101214.1467"><vh>get_app_friends</vh></v>
+<v t="newlife.20110221101214.1468"><vh>get_are_friends</vh></v>
+<v t="newlife.20110221101214.1469"><vh>get_site_info</vh></v>
+<v t="newlife.20110221101214.1470"><vh>send_app_feed</vh></v>
+<v t="newlife.20110221101214.1471"><vh>send_app_notif</vh></v>
+<v t="newlife.20110221101214.1472"><vh>pay_reg_order</vh></v>
+<v t="newlife.20110221101214.1473"><vh>pay_is_complete</vh></v>
+<v t="newlife.20110221101214.1474"><vh>send_is_invitation</vh></v>
+<v t="newlife.20110221101214.1475"><vh>create_os_invitation</vh></v>
+<v t="newlife.20110221101214.1476"><vh>check_user_medal</vh></v>
+</v>
+</v>
+<v t="newlife.20110221101214.1477"><vh>4399</vh></v>
 </v>
 <v t="newlife.20110214113902.1345"><vh>分析</vh></v>
+<v t="newlife.20110221101214.1428"><vh>send_feed_auto</vh></v>
 </v>
 <v t="newlife.20110212113018.1285"><vh>优先</vh>
 <v t="newlife.20110211142831.1270" a="E"><vh>sina微博</vh>
@@ -86,7 +152,7 @@
 </v>
 <v t="newlife.20110214113902.1347"><vh>问题</vh></v>
 <v t="newlife.20110218115009.1409"><vh>model</vh>
-<v t="newlife.20110214113902.1346"><vh>分析model</vh>
+<v t="newlife.20110214113902.1346" a="E"><vh>分析model</vh>
 <v t="newlife.20110215113939.1357"><vh>关于奖励</vh></v>
 <v t="newlife.20110215113939.1359"><vh>链接目标</vh></v>
 <v t="newlife.20110215113939.1361"><vh>点击处理</vh></v>
@@ -1124,9 +1190,13 @@ class Feed(models.Model):
 
 这个用户发送新鲜事如何限制；
 
+当满足发送新鲜事的条件时，调用接口，
 
-def send_feed(member,kind,):
-    #ms这个是用js发的，，还有不是js的呢。。
+接口是啥样的？？
+分析现有的系统，
+
+
+    
     
 
 
@@ -1137,21 +1207,22 @@ def send_feed(member,kind,):
 </t>
 <t tx="newlife.20110218115009.1412">定义的新鲜是的链接：
 
-http://paopaoyu.com/handle_feed/?sender=45545&amp;kind=3&amp;sig=hjkhfjkhjkhjkh
+http://paopaoyu.com/handle_feed/?feed=3423&amp;sig=hjkhfjkhjkhjkh
 
 
 接受的参数：
 
-sender是新鲜事的发送者，
-sig负责安全的部分，
+用户点击新鲜事：
 
-sender,kind ,确定一个md5值。
-
-也可以不存。
-
-就是发的时候生成就可以了，
-
-效率！！！！
+这个应该有单独的函数处理：
+    首先登录，获取用户id，
+    获取新鲜事，
+    判断点击是否有效，
+    进行相应处理，具体就是：
+        1，计数，
+        2，给点击者发奖励，
+        3，判断发送者奖励，
+        4，返回游戏首页，弹出提示信息。    
 
 
 
@@ -1159,5 +1230,829 @@ sender,kind ,确定一个md5值。
 
 
 </t>
+<t tx="newlife.20110221101214.1418"></t>
+<t tx="newlife.20110221101214.1419"></t>
+<t tx="newlife.20110221101214.1420"># -*- coding: utf-8 -*-
+from sns_api import *
+from apps.members.cache import *
+from apps.sns.constants import FEED_LOGIN_163, FEED_PLAY_163, FEED_STAGE_163
+import random
+
+</t>
+<t tx="newlife.20110221101214.1421">def send_rank_feed(session_key, rank):
+    try:
+        template_id = '49002'
+        body_data = {"REF_JXB.SRC":"http://dream.163.com/home#apppaopaoyu",
+                     "REF_JXB.TXT":u"极限榜","rank":rank}
+
+        return send_app_feed(session_key, template_id, body_data)
+    except:
+        pass
+
+
+</t>
+<t tx="newlife.20110221101214.1422">def send_troll_feed(session_key, owner_id, price, fishname):
+    try:
+        fishname = fishname.encode('utf-8')
+        template_id = '49003'
+        body_data = {"price":int(price),"owner_id":owner_id,"fishname":fishname,
+                     "REF_PPY.SRC":"http://dream.163.com/home#apppaopaoyu",
+                     "REF_PPY.TXT":u"去泡泡鱼看热闹!"}
+
+        return send_app_feed(session_key, template_id, body_data)
+    except:
+        pass
+
+
+</t>
+<t tx="newlife.20110221101214.1423">def send_submarine_feed(session_key, fishname):
+    try:
+        fishname = fishname.encode('utf-8')
+        template_id = '49004'
+        body_data = {"REF_KQK.SRC":"http://dream.163.com/home#apppaopaoyu",
+                     "REF_KQK.TXT":u"快去看看","fishname":fishname} 
+
+        return send_app_feed(session_key, template_id, body_data)
+    except:
+        pass
+
+
+</t>
+<t tx="newlife.20110221101214.1424">def send_catchfish_feed(session_key, fishname):
+    try:
+        fishname = fishname.encode('utf-8')
+        template_id = '49005'
+        body_data = {"fishname":fishname}
+
+        return send_app_feed(session_key, template_id, body_data)
+    except:
+        pass
+
+
+</t>
+<t tx="newlife.20110221101214.1425">def send_steal_notif(session_key, thief_id, owner_id, sns_url):
+    try:
+        notification = '你的朋友&lt;ms:name uid="%s" linked="true"/&gt;趁你不在悄悄捞走了你的鱼，坏笑着溜走了。&lt;a href="%s"&gt;去TA家收鱼！&lt;/a&gt;' % (thief_id, sns_url)
+        to_ids = '%s' % owner_id
+        return send_app_notif(session_key, to_ids, notification)
+    except:
+        pass
+
+
+</t>
+<t tx="newlife.20110221101214.1426">def send_shock_notif(session_key, thief_id, owner_id, sns_url):
+    try:
+        notification = '&lt;ms:name uid="%s" linked="true"/&gt;不怀好意地“电”了你精心饲养的鱼，心满意足地拿着贝壳跑了。&lt;a href="%s"&gt;登门报复！&lt;/a&gt;' % (thief_id, sns_url)
+        to_ids = '%s' % owner_id
+        return send_app_notif(session_key, to_ids, notification)
+    except:
+        pass
+
+
+</t>
+<t tx="newlife.20110221101214.1427">def send_openStage_feed(session_key, stage=5):
+    try:
+        template_id = '52002'
+
+        body_data = {"title":FEED_STAGE_163[stage][0],"content":FEED_STAGE_163[stage][1],
+                     "REF_PPY.SRC":"http://dream.163.com/home#apppaopaoyu",
+                     "REF_PPY.TXT":FEED_STAGE_163[stage][2]}
+
+        return send_app_feed(session_key, template_id, body_data)
+    except:
+        pass
+
+
+</t>
+<t tx="newlife.20110221101214.1428">#这个是发自动信息的，就是用户登录的时候发的。
+#注意参数：body_data（dict）包含：t1,t2,c1,c2,REF_PPY.SRC,REF_PPY.TXT,
+#
+def send_feed_auto(session_key, type, val='1'):
+    try:
+        template_id = '53001'
+        if type == 'append':            
+            body_data = {"t1":"", "t2":u"加入了泡泡海洋族群！", "c1":u"好奇心鼓动着", "c2":u"开始了泡泡海洋之旅，新手入海，热烈欢迎！",
+                         "REF_PPY.SRC":"http://dream.163.com/home#apppaopaoyu",
+                         "REF_PPY.TXT":u"前去支持一下！"}
+        if type == 'login':
+            rd = random.randint(0, 7)
+            body_data = {"t1":"", "t2":u"进入了泡泡鱼游戏，玩的不亦乐乎。", "c1":FEED_LOGIN_163[rd][0], "c2":FEED_LOGIN_163[rd][1], 
+                         "REF_PPY.SRC":"http://dream.163.com/home#apppaopaoyu","REF_PPY.TXT":FEED_LOGIN_163[rd][2]}
+        if type == 'play':
+            body_data = {"t1":"", "t2":FEED_PLAY_163[val][0], "c1":FEED_PLAY_163[val][1],"c2":FEED_PLAY_163[val][2],
+                         "REF_PPY.SRC":"http://dream.163.com/home#apppaopaoyu","REF_PPY.TXT":FEED_LOGIN_163[val][3]}
+
+        return send_app_feed(session_key, template_id, body_data)
+    except:
+        pass    
+
+
+</t>
+<t tx="newlife.20110221101214.1429"></t>
+<t tx="newlife.20110221101214.1430"># -*- coding: utf-8 -*-
+from datetime import datetime
+from django.utils import simplejson
+from django.conf import settings
+
+import hashlib
+import logging
+from opensocial import *
+from django.utils import simplejson
+
+#import settings_163
+
+
+SESSION_KEY_WY = '*-*'
+
+</t>
+<t tx="newlife.20110221101214.1431">def _generate_wangyi_base_params():
+    params = {}
+    params['oauth_consumer_key'] = settings.SNS_API_KEY
+    params['server_rest_base'] = settings.SNS_API_REST_SERVER
+    params['server_rpc_base'] = settings.SERVER_RPC_BASE
+    params['oauth_consumer_secret'] = settings.SNS_SECRET_KEY
+    return params
+
+</t>
+<t tx="newlife.20110221101214.1432">def _resolve__wangyisession_key(session_key):
+    params_list = session_key.split(SESSION_KEY_WY)
+    security_token = params_list[0]
+    viewerId = params_list[1]
+
+    return security_token, viewerId
+
+
+</t>
+<t tx="newlife.20110221101214.1433">#建立连接：
+#cviewId是当前登陆客户的访问ID,
+def get_container(security_token,viewerId):
+        # 设置API Key和secret Key
+        params = _generate_wangyi_base_params()
+        config = ContainerConfig(oauth_consumer_key=params['oauth_consumer_key'],
+        oauth_consumer_secret=params['oauth_consumer_secret'],
+#       rpc是js客户端发的请求，  rest是服务端接口 
+        server_rest_base= params['server_rest_base'],
+        server_rpc_base= params['server_rpc_base'],
+#        应用上线时由平台传入token，开发人员直接从request.Parameter("st")获得由get方式获得
+        security_token=security_token,
+#        viewerId  应用上线时由平台传入登录用户ID 
+        viewerId=viewerId)
+        return ContainerContext(config)
+
+
+</t>
+<t tx="newlife.20110221101214.1434">def get_sns_id(session_key): 
+#    try:
+         security_token, viewerId=_resolve__wangyisession_key(session_key)
+         user_id=viewerId
+         container = get_container(security_token,viewerId)
+         batch = RequestBatch()
+         batch.add_request('yanzheng', request.FetchPersonRequest(user_id))
+         batch.send(container)
+         friends = batch.get('yanzheng')
+         if friends==-1:
+             return -1
+         else:
+             return user_id 
+</t>
+<t tx="newlife.20110221101214.1435">#    except:
+#         return 'SNS_API_ERROR'
+
+
+# 获取个人信息
+def get_sns_user(session_key, sns_id, fields='name,headurl'):
+#    try:
+        security_token, viewerId=_resolve__wangyisession_key(session_key)
+        container = get_container(security_token,viewerId)
+        batch = RequestBatch()
+        user_id=sns_id
+        batch.add_request('accountInfo', request.FetchPersonRequest(user_id))
+        batch.send(container)
+        accountInfo = batch.get('accountInfo') 
+    #   包含的信息。 
+    #displayName,addresses ,avatarUrl,gender,age,autopageUrl,photos,birthday,accounts,thumbnailUrl,id ,name 
+    #返回的结果是个字典，键是用户的属性，值是用户信息
+        return accountInfo.get_field('displayName'), accountInfo.get_field('thumbnailUrl')
+</t>
+<t tx="newlife.20110221101214.1436">#    except:
+#        return 'SNS_API_ERROR'
+
+
+
+
+#获取好友列表信息
+def get_app_friends(session_key):
+#    try:
+         security_token, viewerId=_resolve__wangyisession_key(session_key)
+         container = get_container(security_token,viewerId)
+         batch = RequestBatch()
+
+         batch.add_request('friends', request.FetchPeopleRequest(viewerId, '@friends',fields='id'))
+         batch.send(container)
+         friends = batch.get('friends')
+         result=[]
+         if  friends.totalResults == 0:
+             pass
+         else:
+             for ff in friends:
+                 result.append(ff.get_field('id'))
+# {"startIndex":0,"totalResults":2,"status":"ok","entry":[{"age":0,"hasApp":false,"utcOffset":0,"id":"1216039",
+#"thumbnailUrl":"http://blog.163.com/style/common/user_default_small.gif",
+#"name":{"familyName":"拖鞋妹","givenName":"qatest12"},
+#"accounts":[{"username":"qatest12","userId":"1216039","domain":"163.com"}],
+#"urls":[{"type":"profile"}],"photos":[{"value":"http://blog.163.com/style/common/user_default_small.gif","type":"thumbnail"}],
+#"displayName":"拖鞋妹"},{"age":0,"hasApp":false,"utcOffset":0,"id":"970865",
+#"thumbnailUrl":"http://blog.163.com/style/common/user_default_small.gif",
+#"name":{"familyName":"qatest6","givenName":"qatest6"},
+#"accounts":[{"username":"qatest6","userId":"970865","domain":"163.com"}],
+#"urls":[{"type":"profile"}],
+#"photos":[{"value":"http://blog.163.com/style/common/user_default_small.gif",
+#"type":"thumbnail"}],"displayName":"qatest6"}]}
+
+         return result
+</t>
+<t tx="newlife.20110221101214.1437">#    except:
+#         'SNS_API_ERROR'
+#         
+#判断是否是好友关系
+def get_are_friends(session_key, uids1, uids2): 
+    try:   
+        security_token, viewerId=_resolve__wangyisession_key(session_key)
+        container = get_container(security_token,viewerId)
+        batch = RequestBatch()
+    #   data为自定义的消息，json格式 
+    #   Pairs 好友关系对   判断两个人是不是好友 
+        data = {"pairs":[{"first":uids1,"second":uids2}]}
+        batch.add_request('arefriends', request.FetchRelationshipRequest(viewerId,'@self/@app',body=data))
+        batch.send(container) 
+        arefriends = batch.get('arefriends')
+    #   返回结果 {"startIndex":0,"totalResults":2,"status":"ok","entry":[0,1]}
+    #   0不是好友，1是好友
+    #   fields 是得到返回结果entry，它是个list。 
+        fields = arefriends['entry']
+        if fields[0]==1:
+                return True
+        else:
+                return False
+    except:
+       return False
+
+</t>
+<t tx="newlife.20110221101214.1438">#发送好友新鲜事
+def send_app_feed(session_key, template_id, body_data):
+    try:
+        security_token, viewerId=_resolve__wangyisession_key(session_key)
+        container = get_container(security_token,viewerId)
+        batch = RequestBatch()
+    #  消息体内的模板参数值templateParams
+    #   data为自定义的消息，json格式 
+    #   模板ID和变量game必须设置
+        data ={"titleId":template_id,"templateParams":body_data}
+    #   指定新鲜事接收人的发送示例
+    #   data = {"titleId":1001,"templateParams":{"game":decode("来玩泡泡鱼")},"receiverIds":["776266","14032"]}
+        batch.add_request('activity', request.FetchActivityRequest(viewerId,'@self/@app',body=data))
+    #  发送成功是true，失败是false 
+        batch.send(container)
+        activity = batch.get('activity') 
+        if  activity['status']=='ok':
+            return 1
+        else:
+            return -1
+    except:
+        return 'SNS_API_ERROR'
+
+
+</t>
+<t tx="newlife.20110221101214.1439">#  发送组件消息也就是创建应用通知 
+#  在使用本接口时请先为应用创建消息模板 ,并在此处设置消息模板的id，titleId就是为应用创建的消息模板的模板id，目前消息接口仅支持Notification（通知）类型的消息。
+def send_app_notif(session_key, to_ids, notification):
+#    try:
+        security_token, viewerId=_resolve__wangyisession_key(session_key)
+        container = get_container(security_token,viewerId)
+        batch = RequestBatch()
+    #    Create a message titleId必须和bodyId相同
+        data = {"templateParams":{"game":notification},"id" : "gsgs","recipients" : [to_ids],"sender" : { "id" : viewerId},"titleId" : "41003","bodyId" : "41003","type" : "notification"}
+    #  JSON格式的请求体
+    #{"id" : "http://example.org/inbox/message/msgid",
+    #"recipients" : ["776266", "14032"],
+    #"sender" : { "id" : "776266" },
+    #"titleId" : "66008",
+    #"type" : "notification",
+    #"appUrl" : "100",
+    #"templateParams" : {"game":"你好吗"}}
+        batch.add_request('messages', request.FetchMessagesRequest(viewerId,'@outbox',body=data))
+        batch.send(container) 
+        messagess = batch.get('messages')
+#        return messagess
+        if messagess==-1:
+            return 'SNS_API_ERROR'
+        fields = messagess['status']
+        if fields=='ok':
+            return 1
+        else:
+            return -1
+</t>
+<t tx="newlife.20110221101214.1440">#    except:
+#        return 'SNS_API_ERROR'
+
+
+#支付平台账户余额   
+def fetch_ebaccount_request(session_key):    
+    security_token, viewerId=_resolve__wangyisession_key(session_key)
+    container = get_container(security_token,viewerId)
+    batch = RequestBatch() 
+#    data参数类型 type 请求类型
+#    data采用json格式的请求类型 type ： 是否为正式接口调用，true表示调用正式接口，false表示调用测试接口 
+    data = {'type':'true'}
+    batch.add_request('getEbAccount', request.FetchEbAccountRequest(viewerId,body=data))
+    batch.send(container) 
+    getEbaccount = batch.get('getEbAccount') 
+#   返回结果  {"status":"ok","entry":1.0} 
+    return getEbaccount['entry']
+
+
+
+
+</t>
+<t tx="newlife.20110221101214.1441">def pay_reg_order(session_key, order_id, amount, desc):
+    pass
+
+
+</t>
+<t tx="newlife.20110221101214.1442">def pay_is_complete(order_id):
+    pass
+
+</t>
+<t tx="newlife.20110221101214.1443">#加好友请求
+#我查找好友的时候能不能把我邮箱里的好友给列出来，然后邀请他们
+#sailor 说:
+# 可以的，你的应用加个参数跳转到http://dream.163.com/home/#invite%3F_tjfrom=1这个页面后，再发送就可以了 
+def add_friends(user_id,friends_id,data):
+    container = get_container()
+    batch = RequestBatch()
+#   friends_id是字符串 
+#    data={"body":"hello".decode("utf-8")}
+    #添加请求，并设置返回数据并用的字段
+    batch.add_request('me', request.FetchCreateRelationRequest(user_id,'@friends',friends_id,body=data))
+
+    batch.send(container) 
+    #获取结果数据
+    me = batch.get('me')
+    return me
+
+</t>
+<t tx="newlife.20110221101214.1444">#查询应用订单
+def fetch_app_order_record_request (user_id,data):   
+     container = get_container()
+     batch = RequestBatch()
+#    data参数类型 type 请求类型,开始时间，结束时间 
+#    data采用json格式的请求类型 type ： 是否为正式接口调用，true表示调用正式接口，false表示调用测试接口 
+#    data = {'beginTime':'201004','endTime':'201005','type':'true'}
+#    FetchAppOrderRecordRequest 调用方法
+     batch.add_request('appOrderRecord', request.FetchAppOrderRecordRequest(user_id,body=data))
+     batch.send(container) 
+     appOrderRecord = batch.get('appOrderRecord')
+#返回结果 {"status":"ok","entry":"\u003c?xml version=\"1.0\" encoding=\"GBK\"?cuserName\u003elov3-mm\u003c/userName\u003e\r\n\t\t\t\u003cdetails\u003e购买了1 个 芙蓉之吻 “}
+     return appOrderRecord['entry']
+
+
+
+
+</t>
+<t tx="newlife.20110221101214.1445">#得到道具列表    
+def  fetch_libaryItemStatus_request (user_id,data):
+    container = get_container()
+    batch = RequestBatch() 
+#    data采用json格式的请求类型 type ： 是否为正式接口调用，true表示调用正式接口，false表示调用测试接口 
+#    data = {'type':'true'}
+    batch.add_request('libaryItem', request.FetchLibaryItemStatusRequest(user_id,body=data))
+    batch.send(container) 
+    getlibaryItem = batch.get('libaryItem') 
+#   返回结果  {"status":"ok","entry":1.0} 
+    return getlibaryItem ['entry']
+
+
+</t>
+<t tx="newlife.20110221101214.1446">#用户名关键词检查 
+def fetch_checkUserName_request(user_id,data):
+    container = get_container()
+    batch = RequestBatch()
+
+#    data = {"content":"小黑"}
+    batch.add_request('checkUserName', request.FetchNeteaseCheckUserNameRequest(user_id,body=data))
+    batch.send(container) 
+    checkUserName = batch.get('checkUserName')
+#   {"status":"ok","entry":false}
+#   entry内的值为false表示提交的用户名称包含非法关键词，true表示提交的用户名称通过了关键词校验
+    return  checkUserName
+
+</t>
+<t tx="newlife.20110221101214.1447">#内容关键词检查
+def fetch_checkContent_request(user_id,data):
+    container = get_container()
+    batch = RequestBatch()
+
+#   参数格式 data = {"content":'小黑'}
+    batch.add_request('checkContnet', request.FetchNeteaseCheckContentRequest(user_id,body=data))
+    batch.send(container) 
+    checkContnet = batch.get('checkContnet')
+#   {"status":"ok","entry":false}
+#   entry内的值为false表示提交的用户名称包含非法关键词，true表示提交的用户名称通过了关键词校验
+    return  checkContnet
+
+</t>
+<t tx="newlife.20110221101214.1448"># 所有用户组列表
+def fetch_neteaseGroups_request(user_id):
+    container =get_container()
+    batch = RequestBatch()
+    batch.add_request('getGroups', request.FetchNeteaseGroupsRequest(user_id))
+    batch.send(container) 
+    getGroups = batch.get('getGroups')
+#   返回结果是json： {"startIndex":0,"totalResults":2,"status":"ok","entry":[{"id":{"groupId":"xxxx","type":"groupId"},"title":"未分组"},{"id":{"groupId":"xxxx","type":"groupId"},"title":"同事"}]} 
+    return getGroups['entry']
+
+</t>
+<t tx="newlife.20110221101214.1449"># 得到指定的用户组列表
+def fetch_neteaseGroups_withId(user_id,group_id):
+    container = get_container()
+    batch = RequestBatch()
+    batch.add_request('getGroupsWithId', request.FetchNeteaseGroupsRequest(user_id,group_id=group_id))
+    batch.send(container) 
+    getGroupsWithId = batch.get('getGroupsWithId')
+#    getGroupsWithId ='[{"startIndex":0,"totalResults":2,"status":"ok"},{"entry":[{"id":{"groupId":"xxxx","type":"groupId"},"title":"未分组"},{"id":{"groupId":"xxxx","type":"groupId"},"title":"同事"}]}]'
+#    ll= batch.process_json(getGroupsWithId)
+#   返回结果是json： {"startIndex":0,"totalResults":2,"status":"ok","entry":[{"id":{"groupId":"xxxx","type":"groupId"},"title":"未分组"},{"id":{"groupId":"xxxx","type":"groupId"},"title":"同事"}]} 
+    return getGroupsWithId  
+
+</t>
+<t tx="newlife.20110221101214.1450">以发登录新鲜事为例描述发布流程：
+
+用户登录：
+    send_feed_auto(session_key, 'login')
+    
+def send_feed_auto(session_key, type, val='1'):
+    try:
+        template_id = '2000000821289394497'
+        if type == 'append':
+            body_data = {"c1":"好奇心鼓动着", "c2":"开始了泡泡海洋之旅，新手入海，热烈欢迎！", 
+                         "link":"前去支持一下！"}
+        if type == 'login':
+            rd = random.randint(0, 7)
+            body_data = {"c1":FEED_LOGIN_SDO[rd][0], "c2":FEED_LOGIN_SDO[rd][1], 
+                         "link":FEED_LOGIN_SDO[rd][2]}
+        if type == 'play':
+            body_data = {"cl":FEED_PLAY_SDO[val][0], "c2":FEED_PLAY_SDO[val][1],
+                         "link":FEED_PLAY_SDO[val][2]}
+
+        return send_app_feed(session_key, template_id, body_data)
+    except:
+        pass
+
+#template_id，预测应该是盛大设定的，不是我们系统指定的，
+#body_data(dict) 所含参数：c1,c2,link,l2,
+
+下面描述send_app_feed()：
+    这个就是2个函数：_post_api_request,（发送请求，）
+                   _generate_base_params,(生成请求的参数)
+                   _generate_sig,（生成验证码）
+                   
+                   
+    
+    </t>
+<t tx="newlife.20110221101214.1451"></t>
+<t tx="newlife.20110221101214.1452"># -*- coding: utf-8 -*-
+from sns_api import *
+from apps.members.cache import *
+from apps.sns.constants import FEED_LOGIN_SDO, FEED_PLAY_SDO, FEED_STAGE_SDO
+import random
+
+</t>
+<t tx="newlife.20110221101214.1453">def send_troll_feed(session_key, owner_id, price, fishname):
+    try:
+        fishname = fishname.encode('utf8')
+        template_id = 3
+        sns_id = get_sns_id(session_key)
+        actor = get_member_by_sns_id(sns_id).nickname
+        owner = get_member_by_sns_id(owner_id).nickname
+        body_data = '{"actor":"%s","price":"%s","owner":"%s","fishname":"%s"}' % (actor, int(price), owner, fishname)
+
+        return send_app_feed(session_key, template_id, body_data)
+    except:
+        pass
+
+
+</t>
+<t tx="newlife.20110221101214.1454">def send_submarine_feed(session_key, fishname):
+    try:
+        fishname = fishname.encode('utf8')
+        template_id = 4
+        sns_id = get_sns_id(session_key)
+        actor = get_member_by_sns_id(sns_id).nickname
+        body_data = '{"actor":"%s","fishname":"%s"}' % (actor, fishname)
+
+        return send_app_feed(session_key, template_id, body_data)
+    except:
+        pass
+
+
+</t>
+<t tx="newlife.20110221101214.1455">def send_catchfish_feed(session_key, fishname):
+    try:
+        fishname = fishname.encode('utf8')
+        template_id = 5
+        sns_id = get_sns_id(session_key)
+        actor = get_member_by_sns_id(sns_id).nickname
+        body_data = '{"actor":"%s","fishname":"%s"}' % (actor, fishname)
+
+        return send_app_feed(session_key, template_id, body_data)
+    except:
+        pass
+
+</t>
+<t tx="newlife.20110221101214.1456">def send_openStage_feed(session_key, stage=5):
+    try:
+        template_id = '2000000821289394494'
+        body_data = {"c1":"","c2":"打开了泡泡鱼新关卡",
+                     "link":"%s", "l2":"%s"} % (FEED_STAGE_SDO[stage][0], FEED_STAGE_SDO[stage][1])
+
+        return send_app_feed(session_key, template_id, body_data)
+    except:
+        pass
+
+</t>
+<t tx="newlife.20110221101214.1457">def send_feed_auto(session_key, type, val='1'):
+    try:
+        template_id = '2000000821289394497'
+        if type == 'append':
+            body_data = {"c1":"好奇心鼓动着", "c2":"开始了泡泡海洋之旅，新手入海，热烈欢迎！", 
+                         "link":"前去支持一下！"}
+        if type == 'login':
+            rd = random.randint(0, 7)
+            body_data = {"c1":FEED_LOGIN_SDO[rd][0], "c2":FEED_LOGIN_SDO[rd][1], 
+                         "link":FEED_LOGIN_SDO[rd][2]}
+        if type == 'play':
+            body_data = {"cl":FEED_PLAY_SDO[val][0], "c2":FEED_PLAY_SDO[val][1],
+                         "link":FEED_PLAY_SDO[val][2]}
+
+        return send_app_feed(session_key, template_id, body_data)
+    except:
+        pass
+
+</t>
+<t tx="newlife.20110221101214.1458">def send_steal_notif(session_key, thief_id, owner_id, sns_url):
+    pass
+
+
+</t>
+<t tx="newlife.20110221101214.1459">def send_shock_notif(session_key, thief_id, owner_id, sns_url):
+    pass</t>
+<t tx="newlife.20110221101214.1460"></t>
+<t tx="newlife.20110221101214.1461"># -*- coding: utf-8 -*-
+import time
+from django.utils import simplejson
+from django.conf import settings
+import urllib, urllib2
+import hashlib
+
+
+</t>
+<t tx="newlife.20110221101214.1462">def _generate_base_params():
+    params = {}
+    params['api_key'] = settings.SNS_API_KEY
+    params['call_id'] = int(time.time())
+    params['v'] = '1.0'
+    params['format'] = 'JSON'
+
+    return params
+
+
+</t>
+<t tx="newlife.20110221101214.1463">def _generate_sig(params, secret_key=settings.SNS_SECRET_KEY):
+    hasher = hashlib.md5(''.join(['%s=%s' % (x, params[x]) for x in sorted(params.keys())]))
+    hasher.update(secret_key)
+    return hasher.hexdigest()
+
+
+</t>
+<t tx="newlife.20110221101214.1464">def _post_api_request(params):
+    data = urllib.urlencode(params)
+    req = urllib2.Request(settings.SNS_API_REST_SERVER)
+    response = urllib2.urlopen(req, data)
+    result = response.read()
+    result = simplejson.loads(result)
+    return result
+
+
+</t>
+<t tx="newlife.20110221101214.1465">def get_sns_id(session_key):
+    """
+    Return sns id of user from the session key.
+    See http://test.wiki.dev.sdo.com/index.php?title=Users.getLoggedInUser
+    Example:
+    &gt;&gt;&gt; get_sns_id('2.d05591750139050e06ac76eeaf802302.3600.1264568400-288243096')
+    288243096
+    """
+    try:
+        params = _generate_base_params()
+        params['method'] = 'users.getLoggedInUser'
+        params['session_key'] = session_key
+        params['sig'] = _generate_sig(params)
+        result = _post_api_request(params)
+        return result['uid']
+    except:
+        return 'SNS_API_ERROR'
+
+
+</t>
+<t tx="newlife.20110221101214.1466">def get_sns_user(session_key, sns_id, fields='name,headurl'):
+    """
+    Return a dictionary, the keys are all the elements of fields parameter.
+    See http://test.wiki.dev.sdo.com/index.php?title=Users.getInfo
+    Example:
+    &gt;&gt;&gt; get_sns_user('288243096')
+    {u'uid': 288243096, u'headurl': u'http://hdn.xnimg.cn/photos/hdn511/20090827/1340/head_r82j_7787k204234.jpg', u'name': u'李响'}
+    """
+    try:
+        params = _generate_base_params()
+        params['method'] = 'users.getInfo'
+        params['uids'] = sns_id
+        params['session_key'] = session_key
+        params['fields'] = fields
+        params['sig'] = _generate_sig(params)
+        result = _post_api_request(params)
+        # The result is a list
+        return result['name'], result['headurl']
+    except:
+        return 'SNS_API_ERROR'
+
+
+</t>
+<t tx="newlife.20110221101214.1467">def get_app_friends(session_key):
+    """
+    Return friends list of current user.
+    See http://test.wiki.dev.sdo.com/index.php?title=Friends.getAppFriends
+    Example:
+    &gt;&gt;&gt; get_app_friends('2.d05591750139050e06ac76eeaf802302.3600.1264568400-288243096')
+    [{u'id': 247592008, u'headurl': u'http://hdn.xnimg.cn/photos/hdn201/20081223/08/15/head_w6YQ_29630m198107.jpg', u'name': u'金辉KinWii'}, ... , ]
+    """
+    try:
+        params = _generate_base_params()
+        params['method'] = 'friends.getAppFriends'
+        params['session_key'] = session_key
+        params['sig'] = _generate_sig(params)
+        result = _post_api_request(params)
+        # The result is a friend list
+        return map(lambda x:int(x['id']), result)
+    except:
+        return 'SNS_API_ERROR'
+
+
+</t>
+<t tx="newlife.20110221101214.1468">def get_are_friends(session_key, uids1, uids2):
+    """
+    Return 1 when given uids1 and uids2 are friends, else return 0.
+    See http://test.wiki.dev.sdo.com/index.php?title=Friends.areFriends
+    Example:
+    &gt;&gt;&gt; get_are_friends('2.f97e3a1e5a8700d7e85c760953a4976f.3600.1264575600-288243096', '288243096', '55258592')
+    1
+    &gt;&gt;&gt; get_are_friends('2.f97e3a1e5a8700d7e85c760953a4976f.3600.1264575600-288243096', '288243096', '256500065')
+    0
+    """
+    try:
+        params = _generate_base_params()
+        params['method'] = 'friends.areFriends'
+        params['session_key'] = session_key
+        params['uid1'] = uids1
+        params['uid2'] = uids2
+        params['sig'] = _generate_sig(params)
+        result = _post_api_request(params)
+        if result[0]['uid1'] and result[0]['uid2'] and result[0].has_key('are_friends'):
+            return result[0]['are_friends']
+    except:
+        return 'SNS_API_ERROR'
+
+</t>
+<t tx="newlife.20110221101214.1469">def get_site_info(session_key):
+    """
+    See http://wiki.dev.sdo.com/index.php?title=Siteinfo.get
+    """
+    try:
+        params = _generate_base_params()
+        params['method'] = 'Siteinfo.get'
+        params['session_key'] = session_key
+        params['sig'] = _generate_sig(params)
+        result = _post_api_request(params)
+        return result
+    except:
+        return 'SNS_API_ERROR'
+
+</t>
+<t tx="newlife.20110221101214.1470">def send_app_feed(session_key, template_id, body_data):
+    """
+    Return 1 if successful send.
+    See http://test.wiki.dev.sdo.com/index.php?title=Feed.publishTemplatizedAction
+    Example:
+    &gt;&gt;&gt; send_app_feed('xensDDA49403hStb0iyaP+mcKdXOJjbhYbB0pA8ydu7hbXH3Y4gPLEY/Dyq72rcfZ26FYkUaiEa50lPn+F+3vu/5lXw',1 ,'{}')
+    1
+    """
+    try:
+        params = _generate_base_params()
+        params['method'] = 'feed.publishTemplatizedAction'
+        params['session_key'] = session_key
+        params['template_id'] = template_id
+        params['body_data'] = body_data
+        params['sig'] = _generate_sig(params)
+        result = _post_api_request(params)
+        if result['result'] == 1:
+            return result
+        else:
+            return 'SNS_API_ERROR'
+    except:
+        return 'SNS_API_ERROR'
+
+
+</t>
+<t tx="newlife.20110221101214.1471">def send_app_notif(session_key, to_ids, notification):
+    pass
+
+
+</t>
+<t tx="newlife.20110221101214.1472">def pay_reg_order(session_key, order_id, amount, desc):
+    pass
+
+
+</t>
+<t tx="newlife.20110221101214.1473">def pay_is_complete(order_id):
+    pass
+
+
+</t>
+<t tx="newlife.20110221101214.1474">def send_is_invitation(session_key):
+    """
+    Return 1 if successful send.
+    See http://wiki.dev.sdo.com/index.php?title=Invitations.send
+    Example:
+    &gt;&gt;&gt; send_is_invitation('xensDDA49403hStb0iyaP+mcKdXOJjbhYbB0pA8ydu7hbXH3Y4gPLEY/Dyq72rcfZ26FYkUaiEa50lPn+F+3vu/5lXw')
+    1
+    """
+    try:
+        params = _generate_base_params()
+        params['method'] = 'Invitations.send'
+        params['session_key'] = session_key
+        params['sig'] = _generate_sig(params)
+        result = _post_api_request(params)
+        return result['result']
+    except:
+        return 'SNS_API_ERROR'
+
+
+</t>
+<t tx="newlife.20110221101214.1475">def create_os_invitation(session_key):
+    """
+    Return os invitation link
+    See http://wiki.dev.sdo.com/index.php?title=Invitations.send
+    Example:
+    &gt;&gt;&gt; send_is_invitation('xensDDA49403hStb0iyaP+mcKdXOJjbhYbB0pA8ydu7hbXH3Y4gPLEY/Dyq72rcfZ26FYkUaiEa50lPn+F+3vu/5lXw')
+    1
+    """
+    try:
+        params = _generate_base_params()
+        params['method'] = 'Invitations.createLink'
+        params['session_key'] = session_key
+        params['sig'] = _generate_sig(params)
+        result = _post_api_request(params)
+        return result
+    except:
+        return 'SNS_API_ERROR'
+
+</t>
+<t tx="newlife.20110221101214.1476">#其中状态为5中，分别是：
+# -1 : 勋章异常删除
+# 0 : 勋章任务无领取
+# 1 : 勋章任务已领取
+# 2 : 勋章任务已完成，勋章无认领
+# 3 : 勋章任务已完成，勋章已认领
+def check_user_medal(session_key, sns_id, fields='medal'):
+    try:
+        params = _generate_base_params()
+        params['method'] = 'users.getInfo'
+        params['uids'] = sns_id
+        params['session_key'] = session_key
+        params['fields'] = fields
+        params['sig'] = _generate_sig(params)
+        result = _post_api_request(params)
+
+        result = result.get('medal', {})
+        r101 = result.get('9805', {})
+        rs101 = r101.get('medal_status', 0)
+        if int(rs101)==3:    
+            return ['9805',]
+        else:
+            return []
+    except:
+        return []
+
+</t>
+<t tx="newlife.20110221101214.1477"></t>
 </tnodes>
 </leo_file>
