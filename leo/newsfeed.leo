@@ -16,7 +16,7 @@
 <v t="newlife.20110211142831.1271" a="E"><vh>当前流程</vh>
 <v t="newlife.20110211142831.1285"><vh>baidu</vh></v>
 <v t="newlife.20110212113018.1282"><vh>sohu</vh></v>
-<v t="newlife.20110221101214.1418"><vh>163</vh>
+<v t="newlife.20110221101214.1418" a="E"><vh>163</vh>
 <v t="newlife.20110221101214.1419"><vh>/paopaoyu/apps/sns/sns_msg_163.py</vh>
 <v t="newlife.20110221101214.1420"><vh>sns_msg_163 declarations</vh></v>
 <v t="newlife.20110221101214.1421"><vh>send_rank_feed</vh></v>
@@ -50,8 +50,8 @@
 <v t="newlife.20110221101214.1449"><vh>fetch_neteaseGroups_withId</vh></v>
 </v>
 </v>
-<v t="newlife.20110221101214.1450"><vh>盛大sdo</vh>
-<v t="newlife.20110221101214.1451" a="E"><vh>/paopaoyu/apps/sns/sns_msg_sdo.py</vh>
+<v t="newlife.20110221101214.1450" a="E"><vh>盛大sdo</vh>
+<v t="newlife.20110221101214.1451"><vh>/paopaoyu/apps/sns/sns_msg_sdo.py</vh>
 <v t="newlife.20110221101214.1452"><vh>sns_msg_sdo declarations</vh></v>
 <v t="newlife.20110221101214.1453"><vh>send_troll_feed</vh></v>
 <v t="newlife.20110221101214.1454"><vh>send_submarine_feed</vh></v>
@@ -61,7 +61,7 @@
 <v t="newlife.20110221101214.1458"><vh>send_steal_notif</vh></v>
 <v t="newlife.20110221101214.1459"><vh>send_shock_notif</vh></v>
 </v>
-<v t="newlife.20110221101214.1460" a="E"><vh>/paopaoyu/apps/sns/sns_api_sdo.py</vh>
+<v t="newlife.20110221101214.1460"><vh>/paopaoyu/apps/sns/sns_api_sdo.py</vh>
 <v t="newlife.20110221101214.1461"><vh>sns_api_sdo declarations</vh></v>
 <v t="newlife.20110221101214.1462"><vh>_generate_base_params</vh></v>
 <v t="newlife.20110221101214.1463"><vh>_generate_sig</vh></v>
@@ -85,7 +85,7 @@
 <v t="newlife.20110214113902.1345"><vh>分析</vh></v>
 <v t="newlife.20110221101214.1428"><vh>send_feed_auto</vh></v>
 </v>
-<v t="newlife.20110212113018.1285"><vh>优先</vh>
+<v t="newlife.20110212113018.1285" a="E"><vh>优先</vh>
 <v t="newlife.20110211142831.1270" a="E"><vh>sina微博</vh>
 <v t="newlife.20110211142831.1274"><vh>get_member_bindblog_info</vh></v>
 <v t="newlife.20110211142831.1278" a="M"><vh>is_send_feed</vh></v>
@@ -143,7 +143,7 @@
 </v>
 </v>
 </v>
-<v t="newlife.20110214113902.1342"><vh>/bubblefish/paopaoyu/templates/sns/renren_feeds.js</vh>
+<v t="newlife.20110214113902.1342" a="E"><vh>/bubblefish/paopaoyu/templates/sns/renren_feeds.js</vh>
 <v t="newlife.20110214113902.1343"><vh>renren_feeds declarations</vh></v>
 <v t="newlife.20110214113902.1344"><vh>feedCallback</vh></v>
 <v t="newlife.20110217105337.1405"><vh>分析feedCallback</vh></v>
@@ -151,7 +151,7 @@
 </v>
 </v>
 <v t="newlife.20110214113902.1347"><vh>问题</vh></v>
-<v t="newlife.20110218115009.1409"><vh>model</vh>
+<v t="newlife.20110218115009.1409" a="E"><vh>model</vh>
 <v t="newlife.20110214113902.1346" a="E"><vh>分析model</vh>
 <v t="newlife.20110215113939.1357"><vh>关于奖励</vh></v>
 <v t="newlife.20110215113939.1359"><vh>链接目标</vh></v>
@@ -717,7 +717,7 @@ function sendUserFeed(feedType, sns_id, style, val){
     }
 # 以上确定的变量有：title_name,content,body_data,images
 
-只有在合成的时候有title_1,title_2,content_1,content_2,content_3,content_4
+只有在合成，开放钓鱼，求购的时候有title_1,title_2,content_1,content_2,content_3,content_4
 
     if(feedType=="synthesis" || feedType=="trollfish" || feedType=="wtb") {
         title_1 = "&lt;a href='{{ sns_url }}?sns_id="+sns_id+"'&gt;"+title_name[0]+"&lt;/a&gt;";
@@ -1181,7 +1181,8 @@ class Feed(models.Model):
     
     
 </t>
-<t tx="newlife.20110218115009.1411">用户发送
+<t tx="newlife.20110218115009.1411">相信自己可以做出来的。
+用户发送
 
 关于新鲜事分类：
     第一类，用户控制，主动发送，比如求助，
@@ -1193,11 +1194,16 @@ class Feed(models.Model):
 当满足发送新鲜事的条件时，调用接口，
 
 接口是啥样的？？
-分析现有的系统，
 
 
-    
-    
+诶鸭，，，，我迷茫了，，，
+要一个统一的接口，
+
+我要发送，发送的内容要确定，从feedCategory中来，但是官网和人人的就有问题了，现在这俩还是主要的，
+
+
+
+
 
 
 
