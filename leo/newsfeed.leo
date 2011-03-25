@@ -10,7 +10,7 @@
 <find_panel_settings/>
 <vnodes>
 <v t="newlife.20110215113939.1354"><vh>文档</vh></v>
-<v t="newlife.20110211142831.1267" a="E"><vh>新鲜事平台</vh>
+<v t="newlife.20110211142831.1267"><vh>新鲜事平台</vh>
 <v t="newlife.20110211142831.1268" a="E"><vh>前期准备</vh>
 <v t="newlife.20110211142831.1269"><vh>需要处理的平台信息</vh></v>
 <v t="newlife.20110211142831.1271" a="E"><vh>当前流程</vh>
@@ -168,6 +168,7 @@
 <v t="newlife.20110218115009.1412"><vh>新鲜事的处理</vh></v>
 </v>
 </v>
+<v t="newlife.20110315153515.1540"><vh>shell_to_pearls</vh></v>
 </vnodes>
 <tnodes>
 <t tx="newlife.20110211142831.1267">看上去很美
@@ -2060,5 +2061,43 @@ def check_user_medal(session_key, sns_id, fields='medal'):
 
 </t>
 <t tx="newlife.20110221101214.1477"></t>
+<t tx="newlife.20110315153515.1540">   level, shell,coin
+0,  -      -     -
+1,  20   100,000 3000
+2,  15   50,000  1500  
+3   10  10,000   P1*50   
+
+def can_exchange(member,level):
+    return member.lelve &gt; exch_dict.get(level)[0] &amp;&amp; member.shell &gt; exch_dict.get(level)[1]
+    
+    
+    
+def exchange(request,skey,exchange_type):
+    if exchange_type not in ['0','1','2','3']:
+        return {'error':'unknown type'}
+    member = login_member(request, skey)
+    key = USER_EXCHANGE_INFO%member.id
+    cache_type = cache.get(key)
+    if cache_type:
+        return {'error':'exchanged'}
+    if exchange_type == '0':
+        exchange_record = Exchangerecord(member_id=member.id,
+                                         exchange_type=exchange_type)
+    can_exchange =can_exchange(member,exchange_type)
+    if not can_exchage:
+        return {'error':'require not match'}
+        
+
+def can_exchange(member,exchange_type):
+    level = get_almanac_level_info(member.id)[0]
+    shells = member.shells
+    need_info = EXCHANGE_DICT.get(exchange_type)
+    return shells &gt;= need_info[0] and level &gt;= need_info[1]
+
+
+    
+
+
+</t>
 </tnodes>
 </leo_file>

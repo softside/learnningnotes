@@ -62,3 +62,9 @@ news_id = GenericComment.objects.filter(content_type__pk=69).values('object_id')
 
 generic_relation中，event不能作为filter的关键字。
 this line has changed??
+
+关于views中不直接出现models.objects的做法的原因，处理正确的逻辑，
+更多的原因是处理正处的缓存逻辑，
+引入缓存的时候，有利自然是速度上的提升。
+必然导致逻辑的复杂性，因为处理数据库的时候需要维护缓存的crud。
+一个不错的地方，首先是有不错的人，难得有这么

@@ -23,7 +23,7 @@
 <v t="newlife.20110222161135.1269" a="O"><vh>sns_ddl/apps/help/constants.py</vh></v>
 <v t="newlife.20110223101524.1286" a="E"><vh>help_category</vh>
 <v t="newlife.20110223101524.1287"><vh>派遣</vh></v>
-<v t="newlife.20110223101524.1290"><vh>/sns_ddl/apps/webservice/assist.py</vh>
+<v t="newlife.20110223101524.1290" a="E"><vh>/sns_ddl/apps/webservice/assist.py</vh>
 <v t="newlife.20110223101524.1291"><vh>assist declarations</vh></v>
 <v t="newlife.20110223101524.1292"><vh>getDispatchedDragonsAMF</vh></v>
 <v t="newlife.20110223101524.1293"><vh>getComingSoonDragonAMF</vh></v>
@@ -37,6 +37,14 @@
 <v t="newlife.20110223101524.1288"><vh>base_fuction</vh></v>
 <v t="newlife.20110223101524.1299"><vh>数据库处理</vh></v>
 <v t="newlife.20110223101524.1300"><vh>这是啥</vh></v>
+<v t="newlife.20110225112453.1314"><vh>/sns_ddl/apps/webservice/help.py</vh>
+<v t="newlife.20110225112453.1315"><vh>help declarations</vh></v>
+<v t="newlife.20110225112453.1316"><vh>getHelpLogAMF</vh></v>
+<v t="newlife.20110225112453.1317"><vh>getHelpItemListAMF</vh></v>
+<v t="newlife.20110225112453.1318"><vh>doHelpAMF</vh></v>
+</v>
+<v t="newlife.20110225112453.1319"><vh>new_cache</vh></v>
+<v t="newlife.20110228142419.1326"><vh>函数啊，，</vh></v>
 </vnodes>
 <tnodes>
 <t tx="newlife.20110222161135.1267"># -*- coding: utf-8 -*-
@@ -624,7 +632,17 @@ get_fish_with_stylecolor()
 
 所有函数的拆分都是有意义的。
 
-取到龙，然后，获取其剩余时间。</t>
+取到龙，然后，获取其剩余时间。
+
+
+
+必须适应一种习惯，一个表，2个缓存的项目，
+
+key，生成的时候是new这个地方
+
+处理增加，
+
+习惯了处理简单的逻辑，遇到复杂的逻辑习惯啊。。</t>
 <t tx="newlife.20110223101524.1290">@language python
 @tabwidth -4
 @others
@@ -646,20 +664,21 @@ from apps.shops.cache import get_shop_product
 </t>
 <t tx="newlife.20110223101524.1292">#获取所有派遣龙的状态
 def getDispatchedDragonsAMF(request, skey, host_id):
-    member = login_member(request, skey)
+    member = login_member(request, skey)#当前用户
     host_id = int(host_id)
-    host = get_member(host_id)
-
+    host = get_member(host_id)#目标用户
+    
     dispatch_list = []
-    my_dispatch_pet_ids = get_my_dispatch_pet_ids(host.id)
+    my_dispatch_pet_ids = get_my_dispatch_pet_ids(host.id)#获取派遣龙的id
     for my_dispatch_pet_id in my_dispatch_pet_ids:
         dispatch_pet_info = get_my_dispatch_pet_info(host.id, my_dispatch_pet_id)
         my_dispatch_pet = get_my_fish(host.id, my_dispatch_pet_id)
         top_level = can_send_to_level(my_dispatch_pet, dispatch_pet_info.stage)
         if dispatch_pet_info.status == 'c':
-            if datetime.now() &gt;= dispatch_pet_info.end_time:
+            if datetime.now() &gt;= dispatch_pet_info.end_time:#如果派遣时间结束，修改状态，修改时间，
                 dispatch_pet_info.status = 'b'
                 dispatch_pet_info.end_time = None
+                #就是这里了，
                 # 计算蛋蛋龙能刷到第几大关的蛋
                 dispatch_pet_info.caught_fish = refresh_fish_to_level(dispatch_pet_info.stage, top_level)
                 dispatch_pet_info.save()
@@ -1130,7 +1149,7 @@ def new_my_helper_info(member, helper, help_type, help_id=0):
         helper_nickname=helper.nickname, help_type=help_type, help_id=help_id)
     mhr.save()
     
-    #更新cache
+    #更新cache，这里加上谁帮助了我的信息，就是更新，然后就是判断有么有，
     count = 1
     cur_day = datetime.now().day#几号int    
     key = CACHE_MY_HELPED_MEMBERS % (member.id, cur_day)
@@ -1149,7 +1168,8 @@ def new_my_helper_info(member, helper, help_type, help_id=0):
     cache.set(key, helpers, 172800)
     
     return count
- 
+
+缓存里保存的信息是：helpers,这是一个dict，key是帮助的人的id，value是二元list，[帮助者的昵称，帮助的次数]
 
 #取帮助my的用户信息，
 def get_my_helpers_info(member_id, is_today):
@@ -1180,6 +1200,193 @@ def get_my_helpers_info(member_id, is_today):
     return helpers
    说，这里完成的是啥，保存记录，就是谁帮助了我，帮助了多少次
     先看，如果缓存没有，伊保存的是，{helper.id:[nickname,1]}
-    对应第一个面板</t>
+    对应第一个面板
+    
+
+#key = CACHE_MY_HELPED_MEMBERS % (member.id, cur_day)
+key = CACHE_HELP-TIME%(member.id,dispath_id)
+考虑的问题，初始这个key，派遣的时候做的。
+维护这个key，点击的时候做的，
+
+写一个计算派遣时间的函数
+
+参数有：
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </t>
+<t tx="newlife.20110225112453.1314">@language python
+@tabwidth -4
+@others
+</t>
+<t tx="newlife.20110225112453.1315"># -*- coding: utf-8 -*-
+
+from apps.system.helper import *
+from apps.members.cache import *
+from apps.games.cache import *
+from apps.members.helper import *
+
+
+from apps.help.cache import *
+from apps.help import *
+
+</t>
+<t tx="newlife.20110225112453.1316">#取得TA人对我的帮助日志
+def getHelpLogAMF(request, skey, to_day):
+    member = login_member(request, skey)    
+    helpers = get_my_helpers_info(member.id, to_day)
+    helper_list = []
+    for key, value in helpers.items():
+        helper_list.append({'sns_id':key, 'nick_name':value[0], 'times':value[1]})
+    task_list=''
+    rewards = ''
+    return {'helper_list':helper_list,'task_list':task_list,'rewards':rewards,}
+
+
+</t>
+<t tx="newlife.20110225112453.1317">#取得TA的需要帮助列表信息
+def getHelpItemListAMF(request, skey, host_id):
+    member = login_member(request, skey)
+    host_id = int(host_id)
+    host = get_member(host_id)
+    my_dispatch_pet_ids = get_my_dispatch_pet_ids(host.id)
+    item_list = []
+    for my_dispatch_pet_id in my_dispatch_pet_ids:
+        help_type = 'G1'
+        help_id = my_dispatch_pet_id
+        dispatch_pet_info = get_my_dispatch_pet_info(host.id, my_dispatch_pet_id)
+        helped_num = dispatch_pet_info.help_num
+        sum_num = 5       
+        item_list.append({'help_type':help_type,
+                          'help_id':help_id,
+                          'helped_num':helped_num,
+                          'sum_num':sum_num}) 
+    #其他类型的帮助依次写入item_list
+    task_list=''
+    rewards = ''
+    return {'item_list':item_list,'task_list':task_list,'rewards':rewards,}
+
+</t>
+<t tx="newlife.20110225112453.1318">#帮助TA一下
+#('G1', u'派遣'),
+#('G2', u'痛扁'),
+#('M1', u'战斗号角'),
+#('P1', u'强力扫帚'),
+#('T1', u'任务'),
+def doHelpAMF(request, skey, host_id, help_type, dragon_id):
+    member = login_member(request, skey)
+    host_id = int(host_id)
+    host = get_member(host_id)
+
+    help_id = int(dragon_id)
+    task_list = ''
+    rewards = ''
+    if help_type not in ('G1', 'G2', 'M1', 'P1', 'T1'):
+        return {'error': -10001}
+
+    if help_type=='G1':
+        my_dispatch_pet = get_my_fish(host.id, dragon_id)
+        dispatch_pet_info = get_my_dispatch_pet_info(host.id, dragon_id)
+        #判断用户是否已经帮助过
+        is_helped = MyHelpedRecord.objects.filter(member_id =host_id,
+                                                  helper_member_id = member.id,
+                                                  help_type = help_type,
+                                                  help_id = dispatch_pet_info.id)
+        
+        #这里倒是可以再弄一个cache
+        if is_helped:
+            return {'error':'helped'}
+        if dispatch_pet_info.help_num &lt; 5:
+            #写日志
+            help_log = new_my_helper_info(host,member,help_type,help_id=dispatch_pet_info.id)
+            #算时间,
+            top_level = can_send_to_level(my_dispatch_pet, dispatch_pet_info.stage)
+            pet_time = 3600
+            if top_level &gt; 0 and top_level &lt; 3:
+                pet_time = 3600
+            elif top_level &gt; 2 and top_level &lt; 5:
+                pet_time = 2 * 3600
+            else:
+                pet_time = 6 * 3600
+            remove_time = int(pet_time * 0.04)
+            end_time = dispatch_pet_info.end_time - timedelta(0,remove_time)
+            dispatch_pet_info.end_time = end_time
+            #改帮助次数
+            dispatch_pet_info.help_num = dispatch_pet_info.help_num+1
+            dispatch_pet_info.save()
+            print dispatch_pet_info.end_time
+            item_count = {"helped_num":dispatch_pet_info.help_num,"sum_num":5}
+            return {'item_count':item_count,'task_list':task_list,'rewards':rewards,}
+        else:
+            item_count = {"helped_num":dispatch_pet_info.help_num,"sum_num":5}
+            return {'item_count':item_count,'task_list':task_list,'rewards':rewards,} 
+
+    elif help_type=='G2':
+        pass
+    elif help_type=='M1':
+        pass
+    elif help_type=='P1':
+        pass
+    elif help_type=='T1':
+        pass
+
+    count = new_my_helper_info(member, host, help_type, help_id)
+
+    return {'count':count}
+
+
+
+
+</t>
+<t tx="newlife.20110225112453.1319">CACHE_MY_HELPER_TYPE_MEMBERS = 'my_help_type_%s_%s_%s' #1%s is member_id, 2%s is help_type, 3%s is help_id
+
+
+
+
+
+
+</t>
+<t tx="newlife.20110228142419.1326">好东西
+
+</t>
 </tnodes>
 </leo_file>
