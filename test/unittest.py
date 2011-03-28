@@ -545,6 +545,9 @@ class TestLoader:
         if issubclass(testCaseClass, TestSuite):
             raise TypeError("Test cases should not be derived from TestSuite. Maybe you meant to derive from TestCase?")
         testCaseNames = self.getTestCaseNames(testCaseClass)
+        print testCaseClass
+        print "testCaseClass"
+        print testCaseNames
         if not testCaseNames and hasattr(testCaseClass, 'runTest'):
             testCaseNames = ['runTest']
         return self.suiteClass(map(testCaseClass, testCaseNames))
@@ -557,7 +560,7 @@ class TestLoader:
             if (isinstance(obj, (type, types.ClassType)) and
                 issubclass(obj, TestCase)):
                 tests.append(self.loadTestsFromTestCase(obj))
-        return self.suiteClass(tests)
+        return self.suiteClass(tests)#the key line
 
     def loadTestsFromName(self, name, module=None):
         """Return a suite of all tests cases given a string specifier.
@@ -825,10 +828,12 @@ Examples:
 
     def parseArgs(self, argv):
         print argv
+        print "this is the argv,just the name of python file "
         import getopt
         try:
             options, args = getopt.getopt(argv[1:], 'hHvq',
                                           ['help','verbose','quiet'])
+            print options
             for opt, value in options:
                 if opt in ('-h','-H','--help'):
                     self.usageExit()
@@ -838,7 +843,7 @@ Examples:
                     self.verbosity = 2
             if len(args) == 0 and self.defaultTest is None:
                 self.test = self.testLoader.loadTestsFromModule(self.module)
-                print self.module
+                #The individual test add in this line 
                 return
             if len(args) > 0:
                 self.testNames = args
@@ -866,7 +871,9 @@ Examples:
         else:
             # it is assumed to be a TestRunner instance
             testRunner = self.testRunner
-        result = testRunner.run(self.test)#this is the key line to invoke the testRunner`s run method
+        result = testRunner.run(self.test)
+        #this is the key line to invoke the testRunner`s run method
+        #'self.test' has been produced
         sys.exit(not result.wasSuccessful())
 
 main = TestProgram

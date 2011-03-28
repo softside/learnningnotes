@@ -147,7 +147,7 @@ def doBuyAMF(request, skey, host_id, want2sale_id, my_dragon_id):
                         DEFAULT_GIFTS_EXPIRE_DICT[BUY_BILLS_GIFTS_ID], 1, True)
     
     #卖家流程 
-    #收钱,这个钱要放到礼物包里，。。
+    #收钱,这个钱要放到礼物包里，。。。
     h_before_shells = host.shells
     host.shells += trade_shells
     host.save()
