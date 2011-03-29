@@ -20,7 +20,7 @@ class TradeTestCase(unittest.TestCase):
         self.request = HttpRequest()
         from django.contrib.sessions.backends.cache import SessionStore
         self.request.session = SessionStore()
-        self.request.session['d746c8dead85ddcbe32112d75d849635'] = TEST_MEMBER_ID
+        self.request.session['d746c8dead85ddcbe32112d75d849735'] = TEST_MEMBER_ID
         self.request.session[TEST_SESSION_KEY] = TEST_MEMBER_ID
         self.request.session.save()
 
