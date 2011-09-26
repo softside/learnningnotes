@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Created by Leo (http://webpages.charter.net/edreamleo/front.html) -->
 <?xml-stylesheet ekr_test?>
-<leo_file>
+<leo_file xmlns:leo="http://www.leo-editor.org/2011/leo" >
 <leo_header file_format="2" tnodes="0" max_tnode_index="0" clone_windows="0"/>
 <globals body_outline_ratio="0.5" body_secondary_ratio="0.5">
 	<global_window_position top="50" left="50" height="500" width="700"/>
@@ -11,7 +12,7 @@
 <vnodes>
 <v t="wjl.20100906023207.1322"><vh>@chapters</vh></v>
 <v t="wjl.20100906023207.1321"><vh>preface</vh></v>
-<v t="newlife.20110210151240.1276"><vh>models</vh>
+<v t="newlife.20110210151240.1276" a="E"><vh>models</vh>
 <v t="wjl.20100906023207.1323"><vh>how Django Process Model Classes </vh></v>
 <v t="wjl.20100906234257.1249"><vh>Setting Attributes on MOdels</vh></v>
 <v t="wjl.20100906023207.1324"><vh>Common Field Methods</vh></v>
@@ -22,7 +23,35 @@
 </v>
 </vnodes>
 <tnodes>
-<t tx="newlife.20110210151240.1276"></t>
+<t tx="newlife.20110210151240.1276">from django.db import models
+
+class Entry(models.Model):
+    title = models.CharField(max_length=225)
+    pub_date = models.DateTimeField()
+    body = models.TextField()
+    
+    def __unicode__(self):
+        return self.title
+        
+&gt;&gt;&gt;from blog.models import Entry
+&gt;&gt;&gt;Entry.objects.all()
+
+select *from blog_entry;
+
+上面是一个标准的django　orm的工作流程，更详细的流程是下面这个：
+Model
+   ||
+Manager
+   ||
+Query
+   ||
+SQLCompiler
+  ||
+Datebase backend
+  
+
+
+</t>
 <t tx="newlife.20110210151240.1277"></t>
 <t tx="newlife.20110210151240.1278">关于django的forms：
 先说程序结构：
@@ -82,7 +111,8 @@ sql 语句的主要作用是描述和访问存储在关系数据库中的关系�
 
 所有的这些问题在 web 开发中都是很普遍的，不管什么语言，对于框架来说 orm 是一个通用的方法来减轻这些问题。当然还有其他的方法来避开这些问题，比如说 sql 注入，但是 django 的 orm 在写的时候就考虑了这些问题，并且暗地里处理了很多，通过标准 python 对象来访问数据， sql 语句的数量被减少，产生问题的可能性也减少，</t>
 <t tx="wjl.20100906023207.1322">走了这么久，终于回到 pro- django 来了，这次分析的 model 这个类
-</t>
+
+绕这么一大圈，注定这个东西是要在这里处理的，这个是东西的意义是非常重大的，以后对于调优和分析其他的orm都是又很大的帮助的。</t>
 <t tx="wjl.20100906023207.1323">第二章已经描述了， Django 辨识度最高的一个特性是他的对 model 的声明式语法。有了这个， model 定义就非常简单并且精确，用 metaclasses 来实现声明式语法已经在第二章描述过了，但是处理 models 还有更具体的步骤，这些更值得关注。
 
 负责处理 model 定义的元类是 ModelBase. 提供了一些关键的特性，按照动作发生的顺序列在下面。
