@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Created by Leo (http://webpages.charter.net/edreamleo/front.html) -->
 <?xml-stylesheet ekr_test?>
-<leo_file>
+<leo_file xmlns:leo="http://www.leo-editor.org/2011/leo" >
 <leo_header file_format="2" tnodes="0" max_tnode_index="0" clone_windows="0"/>
 <globals body_outline_ratio="0.5" body_secondary_ratio="0.5">
 	<global_window_position top="50" left="50" height="500" width="700"/>
@@ -10,9 +11,9 @@
 <find_panel_settings/>
 <vnodes>
 <v t="wjl.20110108014513.1259"><vh>@chapters</vh></v>
-<v t="newlife.20101230182444.1268" a="E"><vh>haskell趣学指南</vh>
+<v t="newlife.20101230182444.1268"><vh>haskell趣学指南</vh>
 <v t="newlife.20101230182444.1269"><vh>about</vh></v>
-<v t="newlife.20110107114607.1271"><vh>类型和类型类</vh>
+<v t="newlife.20110107114607.1271" a="E"><vh>类型和类型类</vh>
 <v t="newlife.20110107114607.1273"><vh>相信类型</vh></v>
 <v t="newlife.20110107114607.1274"><vh>类型变量</vh></v>
 <v t="newlife.20110107114607.1272"><vh>类型类</vh></v>
@@ -27,7 +28,7 @@
 </vnodes>
 <tnodes>
 <t tx="newlife.20101230182444.1268">http://fleurer-lee.com/lyah/chapters.htm：中文版地址
-http://learnyouahaskell.com/chapters：英文办地址</t>
+http://learnyouahaskell.com/chapters：英文版地址</t>
 <t tx="newlife.20101230182444.1269"></t>
 <t tx="newlife.20110107114607.1270">@haskell
 
@@ -178,7 +179,7 @@ ghci&gt; let xs = [(1,3), (4,3), (2,4), (5,3), (5,6), (3,1)]
 ghci&gt; [a+b | (a,b) &lt;- xs]   
 [4,7,6,8,11,4]
 对list本身也可以使使用模式匹配，像x:xs这样的模式可以将list的头部绑定为x，尾部绑定为xs。如果这个list只有一个元素，那么xs就是一个空list。</t>
-<t tx="wjl.20110108014513.1259"></t>
+<t tx="wjl.20110108014513.1259">自从换了mac，对haskell的学习就停止了。这是非常不对的，终于找到一个合适的时机重新开始，发现以前学的东西都不记得了，这是非常危险的事情啊。</t>
 <t tx="wjl.20110108014513.1260"></t>
 <t tx="wjl.20110108014513.1261">库函数：
   Char.isLower
