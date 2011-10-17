@@ -20,13 +20,18 @@
 <v t="newlife.20111012233931.1135"><vh>sicp</vh>
 <v t="newlife.20101021104626.1287"><vh>Building Abstractions with Procedures</vh></v>
 </v>
-<v t="newlife.20111013160723.1149" a="E"><vh>lisp入门教程</vh>
+<v t="newlife.20111015012314.1157" a="E"><vh>lisp入门教程</vh>
+<v t="newlife.20111013160723.1149" a="E"><vh>common lisp hints</vh>
 <v t="newlife.20111013160723.1150"><vh>符号</vh></v>
 </v>
-<v t="newlife.20111012233931.1136"><vh>practical common lisp</vh>
+<v t="newlife.20111015012314.1155" a="E"><vh>land of lisp</vh>
+<v t="newlife.20111015012314.1156"><vh>基础语法学习</vh></v>
+</v>
+<v t="newlife.20111012233931.1136" a="E"><vh>practical common lisp</vh>
 <v t="newlife.20111013160723.1148"><vh>函数学习</vh></v>
 </v>
 <v t="newlife.20111012233931.1137"><vh>onlisp</vh></v>
+</v>
 <v t="newlife.20111012233931.1138" a="E"><vh>weblocks</vh>
 <v t="newlife.20111012233931.1139" a="E"><vh>doc</vh>
 <v t="newlife.20111013160723.1147"><vh>文档的更新</vh></v>
@@ -439,10 +444,16 @@ That is it! You can now load the newly created application and enjoy the ride:
 
 尤其是像我这样，对框架和语言都不是很熟悉的新手，一个可靠的文档是多么的有必要啊</t>
 <t tx="newlife.20111013160723.1148"></t>
-<t tx="newlife.20111013160723.1149">Lisp 入门教程(刘鑫最新翻译)，
+<t tx="newlife.20111013160723.1149">Common LISP Hints --Lisp 入门教程(刘鑫最新翻译)，
+
 该书是1993年写的，，，
+
 这本书很简单啊，只有55页，熟悉common lisp基本的语法，
-功能基本相当与python中的 a byte of python</t>
+
+功能基本相当与python中的 a byte of python
+
+
+</t>
 <t tx="newlife.20111013160723.1150">符号仅仅是字符串。你可以在符号中包含字母、数字、连接符等等,唯一的限制 就是要以字母开头。(如果你只输入数字,最多再以一个连接符开头的话,LISP 会认为你输入了一个整数而不是符号。)
 
 (setq a 5)
@@ -474,5 +485,8 @@ list操作用pop和push
 
 
 </t>
+<t tx="newlife.20111015012314.1155">其实这本才是最好的lisp入门教程</t>
+<t tx="newlife.20111015012314.1156"></t>
+<t tx="newlife.20111015012314.1157"></t>
 </tnodes>
 </leo_file>
