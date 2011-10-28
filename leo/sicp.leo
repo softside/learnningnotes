@@ -10,15 +10,12 @@
 <preferences/>
 <find_panel_settings/>
 <vnodes>
-<v t="newlife.20101021104626.1288"><vh>@chapters</vh>
+<v t="newlife.20101021104626.1288" a="E"><vh>@chapters</vh>
 <v t="newlife.20101021104626.1290"><vh>django认证机制</vh>
 <v t="newlife.20101021104626.1289"><vh>django的密码机制</vh>
 <v t="newlife.20101027175540.1249"><vh>密码生成</vh></v>
 </v>
 </v>
-</v>
-<v t="newlife.20111012233931.1135"><vh>sicp</vh>
-<v t="newlife.20101021104626.1287"><vh>Building Abstractions with Procedures</vh></v>
 </v>
 <v t="newlife.20111015012314.1157" a="E"><vh>lisp入门教程</vh>
 <v t="newlife.20111013160723.1149" a="E"><vh>common lisp hints</vh>
@@ -28,15 +25,25 @@
 <v t="newlife.20111015012314.1156"><vh>基础语法学习</vh></v>
 </v>
 <v t="newlife.20111012233931.1136" a="E"><vh>practical common lisp</vh>
+<v t="newlife.20111028223935.1169"><vh>符号学习</vh></v>
 <v t="newlife.20111013160723.1148"><vh>函数学习</vh></v>
 </v>
 <v t="newlife.20111012233931.1137"><vh>onlisp</vh></v>
 </v>
+<v t="newlife.20111012233931.1135" a="E"><vh>sicp</vh>
+<v t="newlife.20101021104626.1287"><vh>Building Abstractions with Procedures</vh></v>
+</v>
+<v t="newlife.20111017184953.1163" a="E"><vh>web framework</vh>
+<v t="newlife.20111017184953.1161" a="E"><vh>restas</vh>
+<v t="newlife.20111017184953.1162"><vh>introduction</vh></v>
+<v t="newlife.20111017184953.1164"><vh>ext-blog</vh></v>
+</v>
 <v t="newlife.20111012233931.1138" a="E"><vh>weblocks</vh>
-<v t="newlife.20111012233931.1139" a="E"><vh>doc</vh>
+<v t="newlife.20111012233931.1139"><vh>doc</vh>
 <v t="newlife.20111013160723.1147"><vh>文档的更新</vh></v>
 </v>
 <v t="newlife.20111012233931.1140"><vh>how to run a weblocks project</vh></v>
+</v>
 </v>
 </vnodes>
 <tnodes>
@@ -487,6 +494,52 @@ list操作用pop和push
 </t>
 <t tx="newlife.20111015012314.1155">其实这本才是最好的lisp入门教程</t>
 <t tx="newlife.20111015012314.1156"></t>
-<t tx="newlife.20111015012314.1157"></t>
+<t tx="newlife.20111015012314.1157">Lisp本身是有大量的函数组成，其语言标准有超过四分之三的名字用于定义函数。所有的内置数据类型纯粹是由操作他们的函数定义的。
+</t>
+<t tx="newlife.20111017184953.1161">其实很多时候，我们的选择就是简单的那个。
+
+这个框架</t>
+<t tx="newlife.20111017184953.1162">RESTAS
+
+RESTAS is a web framework, used to develop the site lisper.ru
+Homepage: RESTAS
+
+Documentation: http://restas.lisper.ru/en/
+
+Source code: http://github.com/archimag/restas
+
+Features
+
+Based on Hunchentoot
+Uses cl-routes for mapping URL (without MVC)
+Supports the reuse of web applications as plug-ins
+Pure lisp daemonization with SBCL on GNU/Linux without of GNU Screen or detachtty (tested on Gentoo and Debian)</t>
+<t tx="newlife.20111017184953.1163"></t>
+<t tx="newlife.20111017184953.1164">http://codemacro.com/index
+这是一个基于restas的基于common lisp的，写的相对完善的blog程序，通过这个程序熟悉最基础的cl语法，和restas框架。最好的地方是这个blog安装容易。
+
+</t>
+<t tx="newlife.20111028223935.1169">common lisp 中有很有多的符号，很神奇啊：
+
+关键字符号：
+    关键字符号是任何以冒号(:)开始的名字，下面是一个使用了关键字符号:a :b :c 作为属性名的示例plist:
+        (list :a 1 :b 2 :c 3)
+    获取该属性的方法：
+        (getf (list :a 1:b 2 :c 3) :a) 输出的结果是1
+formate函数：
+    (formate t "~{~a:~10t~a~%}~%"  cd )
+    formate至少接受两个实参，第一个是它原来发送输出的流，就是t；第二个是一个字符串，内容既包括字面文本，也包括告诉formate如何                   
+    插入其余参数等信息的指令，格式指令以~开始，~a是美化指令，它的意图是消耗一个实参，然后将其输出成人类可读的形式，
+    ~t指令用于制表。
+    当formate看到~{的时候，下一个被使用的参数必须一个列表，foramte在列表上循环操作，处理位于~{和}~之间的指令，同时每次需要时
+    ，从列表上使用尽可能多的元素，
+    ~%不消耗任何实参，就是换行。
+
+#‘  
+    获取函数，其名如下的意思，就是这个符号的意思获取一个函数。    
+    
+当lisp看到一个诸如field或value这样的简单名字不作为列表的第一个元素出现时，他会假设这是一个变量的名字并去查找它的值(否则是函数啊)，这对于field和value来说是正确的，但是对于诸如 equal,getf,等就是不对的了，这个时候我们需要quote，，可以简写为’，就是单引号，
+
+位于表达式之前的反引号可以像引号那样阻止表达式被求值，不同的是，在一个反引用表达式里，任何以逗号开始的子表达式都是被求值的，</t>
 </tnodes>
 </leo_file>
