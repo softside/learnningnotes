@@ -10,7 +10,7 @@
 <preferences/>
 <find_panel_settings/>
 <vnodes>
-<v t="newlife.20101021104626.1288" a="E"><vh>@chapters</vh>
+<v t="newlife.20101021104626.1288"><vh>@chapters</vh>
 <v t="newlife.20101021104626.1290"><vh>django认证机制</vh>
 <v t="newlife.20101021104626.1289"><vh>django的密码机制</vh>
 <v t="newlife.20101027175540.1249"><vh>密码生成</vh></v>
@@ -27,6 +27,7 @@
 <v t="newlife.20111012233931.1136" a="E"><vh>practical common lisp</vh>
 <v t="newlife.20111028223935.1169"><vh>符号学习</vh></v>
 <v t="newlife.20111013160723.1148"><vh>函数学习</vh></v>
+<v t="newlife.20111101232018.1171"><vh>宏学习</vh></v>
 </v>
 <v t="newlife.20111012233931.1137"><vh>onlisp</vh></v>
 </v>
@@ -495,7 +496,7 @@ list操作用pop和push
 <t tx="newlife.20111015012314.1155">其实这本才是最好的lisp入门教程</t>
 <t tx="newlife.20111015012314.1156"></t>
 <t tx="newlife.20111015012314.1157">Lisp本身是有大量的函数组成，其语言标准有超过四分之三的名字用于定义函数。所有的内置数据类型纯粹是由操作他们的函数定义的。
-</t>
+尽管宏对于lisp风格有着重要的作用，但是最终所有实际的功能还是由函数来提供的，宏运行在编译期，因此他们生成的代码，即当所有宏被展开后将实际构成程序的那些代码，将完全由对函数和特殊操作符的调用搜构成，</t>
 <t tx="newlife.20111017184953.1161">其实很多时候，我们的选择就是简单的那个。
 
 这个框架</t>
@@ -541,5 +542,18 @@ formate函数：
 当lisp看到一个诸如field或value这样的简单名字不作为列表的第一个元素出现时，他会假设这是一个变量的名字并去查找它的值(否则是函数啊)，这对于field和value来说是正确的，但是对于诸如 equal,getf,等就是不对的了，这个时候我们需要quote，，可以简写为’，就是单引号，
 
 位于表达式之前的反引号可以像引号那样阻止表达式被求值，不同的是，在一个反引用表达式里，任何以逗号开始的子表达式都是被求值的，</t>
+<t tx="newlife.20111101232018.1171">(defun primep (number)           
+     (when (&gt; number 1)                                                                                              
+             (loop for fac from 2 to (isqrt number) never (zerop (mod number fac)))))
+;;这个是判断一个数是否是素数
+
+(defun next-prime (number)                                                                                                                        
+          (loop for n from number when (primep n) return n)  )
+;;求当前数下一个素数,从这里可以看到loop可以没有to，因为后面有return可以结束循环。
+
+(do                                                                                                                                               
+          ((p (next-prime 0) (next-prime (1+ p)))) ((&gt; p 19))                                                                                              
+          (format t "~d~%" p))  
+;;这是不用宏的情况</t>
 </tnodes>
 </leo_file>
