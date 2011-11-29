@@ -10,14 +10,26 @@
 <preferences/>
 <find_panel_settings/>
 <vnodes>
-<v t="newlife.20101021104626.1288"><vh>@chapters</vh>
+<v t="newlife.20101021104626.1288" a="E"><vh>@chapters</vh>
 <v t="newlife.20101021104626.1290"><vh>django认证机制</vh>
 <v t="newlife.20101021104626.1289"><vh>django的密码机制</vh>
 <v t="newlife.20101027175540.1249"><vh>密码生成</vh></v>
 </v>
 </v>
 </v>
-<v t="newlife.20111015012314.1157" a="E"><vh>lisp入门教程</vh>
+<v t="newlife.20111129230956.1175"><vh>asdf</vh></v>
+<v t="newlife.20111017184953.1164"><vh>ext-blog</vh>
+<v t="newlife.20111103185120.1173" a="E"><vh>routers</vh>
+<v t="newlife.20111124223215.1179"><vh>流程</vh></v>
+<v t="newlife.20111124223215.1178"><vh>@file /Users/newlife/commonlisp/my-ext/ext-blog/theme/isimple/drawer.lisp</vh></v>
+</v>
+</v>
+<v t="newlife.20111012233931.1135"><vh>sicp</vh>
+<v t="newlife.20101021104626.1287"><vh>Building Abstractions with Procedures</vh></v>
+</v>
+<v t="newlife.20111017184953.1163"><vh>web framework</vh>
+<v t="newlife.20111017184953.1161" a="E"><vh>restas</vh>
+<v t="newlife.20111015012314.1157"><vh>lisp入门教程</vh>
 <v t="newlife.20111013160723.1149" a="E"><vh>common lisp hints</vh>
 <v t="newlife.20111013160723.1150"><vh>符号</vh></v>
 </v>
@@ -31,19 +43,9 @@
 </v>
 <v t="newlife.20111012233931.1137"><vh>onlisp</vh></v>
 </v>
-<v t="newlife.20111012233931.1135" a="E"><vh>sicp</vh>
-<v t="newlife.20101021104626.1287"><vh>Building Abstractions with Procedures</vh></v>
-</v>
-<v t="newlife.20111017184953.1163" a="E"><vh>web framework</vh>
-<v t="newlife.20111017184953.1161" a="E"><vh>restas</vh>
+<v t="newlife.20111106084942.1175"><vh>documation</vh></v>
 <v t="newlife.20111017184953.1162"><vh>introduction</vh></v>
-<v t="newlife.20111017184953.1164"><vh>ext-blog</vh></v>
-</v>
-<v t="newlife.20111012233931.1138" a="E"><vh>weblocks</vh>
-<v t="newlife.20111012233931.1139"><vh>doc</vh>
-<v t="newlife.20111013160723.1147"><vh>文档的更新</vh></v>
-</v>
-<v t="newlife.20111012233931.1140"><vh>how to run a weblocks project</vh></v>
+<v t="newlife.20111124223215.1177"><vh>think</vh></v>
 </v>
 </v>
 </vnodes>
@@ -61,7 +63,9 @@ thus all complex ideas are made.
 3. The third is separating them from all other ideas that accompany them in their real existence: this is called abstraction, and thus all its general ideas are made.
 
 
-思维的行动，</t>
+思维的行动，
+
+</t>
 <t tx="newlife.20101021104626.1288">关于lisp------我的小众语言之路
 
 其实我一直想学一种函数式的编程语言，以前学习的语言，不管是最开始的java还是最爱的python，都是比较传统的语言。追求特立独行是我内心深处的需求，之前学python是这样，现在学lisp也是这样。
@@ -72,7 +76,9 @@ thus all complex ideas are made.
 
 因此，这次学习common lisp，我对学习的路线做了调整。
     1，买书是必须的，最先看的是practical common lisp,预计会在十月底之前看完(在当当上定了中文版，估计是赶不上了，以后复习的时候用吧)。之后看 on lisp（paul graham)写的，预期十一，十二月看完，排期这么久是因为要回头看practical common lisp,温故而知新。
-    2，weblocks。经过我几天的折腾，这个东西已经搭起来了。因为我相对熟悉web开发，期望这东西就是带我前进的lisp里面的django吧。其实我是一个django fan，=|=。</t>
+    2，weblocks。经过我几天的折腾，这个东西已经搭起来了。因为我相对熟悉web开发，期望这东西就是带我前进的lisp里面的django吧。其实我是一个django fan，=|=。
+
+</t>
 <t tx="newlife.20101021104626.1289">    def set_password(self, raw_password):
         import random
         algo = 'sha1'
@@ -208,250 +214,14 @@ except ImportError:
 <t tx="newlife.20111012233931.1135"></t>
 <t tx="newlife.20111012233931.1136"></t>
 <t tx="newlife.20111012233931.1137"></t>
-<t tx="newlife.20111012233931.1138">这个是目前可以看到的相对比较完善的，并且还有人维护，持续更新的一个基于common lisp的web框架。
-
-https://bitbucket.org/S11001001/weblocks-dev
-
-这个框架是谁写的：
-    Weblocks was created by Slava Akhmechet. It is now maintained by Stephen Compall and Leslie Polzer, and developed by volunteers around the globe.
-
-框架的期望：lisp中的django。
-
-通过使用这个框架做些简单的东西，进而熟悉这个框架，然后是cl，对照看书所得，</t>
-<t tx="newlife.20111012233931.1139">Introduction
-##介绍
-There is nothing special about Weblocks. It is merely one possible logical solution to a subset of problems faced in web application development. To get familiar with Weblocks and its approach let us start with breaking the ice.
-
-##Weblocks没有什么特殊的，他只是一个旨在解决web开发中的一些问题。为了熟悉Weblocks和他的流程，来，开始我们的破冰之旅。
-
-Breaking the Ice
-##破冰之旅
-To learn how to obtain and install Weblocks see ObtainingAndInstalling.
-##
-Once Weblocks has been installed it can be loaded into the Lisp image like this:
-
-&gt; (push #p"/usr/lib/sbcl/site/cl-weblocks/" asdf:*central-registry*)
-&gt; (asdf:operate 'asdf:load-op 'weblocks)
-
-Replace /usr/lib/sbcl/site/cl-weblocks/ with the path to your weblocks installation.
-
-We can then start the webserver (Weblocks uses Hunchentoot) and the framework on the default port (8080) like this:
-
-&gt; (weblocks:start-weblocks)
-
-Point the web browser to  http://localhost:8080/weblocks-demo/. If all went well we should see a welcome page. We are now running Weblocks!
-##
-
-Our First Weblocks Application
-When weblocks starts up it sets up a hook that processes all client requests. The hook looks for two things - a web application definition, and a callback function named 'init-user-session' that initializes the application every time a new session is created (sessions are managed by Weblocks automatically). If these are not provided, Weblocks uses default values that point to the welcome page.
-
-To create our own Weblocks application we need to override the defaults. We can do it by typing the following code snippet into the REPL:
-
-&gt; (weblocks:defwebapp our-application :prefix "/")
-&gt; (defun init-user-session (comp)
-    (setf (weblocks:composite-widgets comp)
-          (list "Hello!")))
-Now let  tell Weblocks to reset all sessions so it picks up the new application:
-
-&gt; (weblocks:reset-sessions)
-Refresh the browser. Instead of the welcome page you should now see the word "Hello!" printed on the screen.
-
-What did we do? We told Weblocks that our application is named 'our-application'. Weblocks will look for 'init-user-session' in the same package where the symbol 'our-application' is interned. Before we can figure out how 'init-user-session' works we need to explain the concept of 'widgets' - this will be done in the next section.
-##我们做啥了？我们告诉Weblocks我们的应用叫“our-application”,Weblocks会在同一个包寻找“init-user-session”，在我们描述“init-user-session”之前，我们要先介绍“widgets”这个东西，"init-user-session"下面的章节会解释这个。
-
-Widgets
-Weblocks applications are not organized into pages. They are organized into 'widgets'. A widget can potentially be anything that is rendered to the browser. Widgets can be very simple or very complex.
-
-##Weblocks应用不是由页面组织的，他是由widgets组织的。widget可以是任何传递到浏览器的东西，他可以是简单的也可以是复杂的。
-Weblocks defines a generic function 'render-widget-body' along with a number of methods that accept different objects. Any object that can be passed to 'render-widget-body' can be called a widget. New widgets can be created by adding methods to this generic function.
-##
-
-There is a method added to 'render-widget-body' that accepts a vector of characters. That means the simplest possible widget is a string:
-
-&gt; (weblocks:render-widget-body "Hello World!")
-When 'render-widget-body' is called on a string, the string is simply outputted as an HTML paragraph.
-
-Functions can also be treated as widgets. When 'render-widget-body' is called with a function an appropriate method is invoked that simply calls the function:
-
-&gt; (weblocks:render-widget-body (lambda (&amp;rest args)
-                                 (weblocks:with-html
-			           (:p "test"))))
-The macro 'with-html' is a wrapper that weblocks provides for CL-WHO macro 'with-html-output'. For each client request Weblocks sets up a stream available via a special variable *weblocks-output-stream*. By writing to this stream the application can send HTML to the client. However, using 'with-html' is preferred - it automatically redirects output to *weblocks-output-stream* and takes full advantage of CL-WHO which alleviates the need to format HTML strings or to use template engines. (Many people argue that template engines are a good thing since they enforce MVC. Weblocks takes a different approach by using 'views' - pieces of code that generically serialize data structures into different types of HTML.)
-
-One of the widgets that Weblocks defines is a 'composite' widget. A composite is a CLOS object that contains a list of other widgets. A composite provides a simple and convenient way to group widgets. Rendering a composite renders each widget in the list, one by one:
-
-(setf my-composite
-      (make-instance 'weblocks:composite
-                     :widgets (list "a" "b")))
-(weblocks:render-widget-body my-composite)
-
-*Please note*, all code snippets that aren't prepended with &gt; (including the one above) will singal an error when evaluated in the REPL. These snippets need a dynamic session environment set up in order to work properly. When they are called as part of the HTTP request, the session environment is present. When they are called from the REPL, the session environment is missing. If you would like to experiment with these snippets in the REPL, see macro 'with-request' defined in 'weblocks-test'. The macro sets up a dummy environment for testing, debugging, and experimenting purposes.
-
-In this case two paragraphs will be rendered. The first one will say "a" and the second one will say "b". Composites can be recursive - they can contain other composites.
-
-Most widgets defined by Weblocks are CLOS objects. The fact that strings and functions are widgets are an exception made for convenience, rather than the rule. The base class for widgets is 'widget'. It contains a number of slots that are common to all widgets. One of these slots is 'name'. If the name of the widget isn't given during the instantiation, a unique name is generated automatically.
-
-Widgets map to HTML really well. The way widgets are normally rendered is via a function 'render-widget', not via 'render-widget-body'. The function 'render-widget' wraps the widget body in a 'div' element. The id of the div is set to the widget name and the classes of the div are set to the CLOS hierarchy class names. For example, the header for the composite widget will be rendered something like this:
-
-&lt;div id="g2345" class="widget composite"&gt; ... &lt;/div&gt;
-This works very well for CSS styling too.
-
-Widgets that don't derive from CLOS class 'widget' like strings and functions are handled in a similar manner, except they lack the "id" attribute.
-
-The magic behind 'init-user-session'
-We're now ready to understand how 'init-user-session' works.
-
-When weblocks sees an HTTP request that does not yet have a session associated with it, a session is created. A new composite widget is instantiated and is associated with this session. This composite widget is called a 'root' - all other widgets of the application will be stored in it.
-
-The root composite is then passed to 'init-user-session'. It's up to 'init-user-session' to add other widgets to the root composite. When it's time for Weblocks to render HTML to the client it simply calls 'render-widget' on the root composite, which ends up rendering all widgets that were added to the root in 'init-user-session'.
-
-Recall our 'init-user-session' code:
-
-&gt; (defun init-user-session (comp)
-    (setf (weblocks:composite-widgets comp)
-          (list "Hello!")))
-The argument 'comp' is the root composite that Weblocks will pass to 'init-user-session'. The accessor 'composite-widgets' gives access to the slot of the root composite that contains a list of widgets. We simply set the slot to a new list of one element - a string "Hello!". We can get away with this because strings are also widgets.
-
-We can add other widgets to this list, including other strings, functions, composites, etc (Be sure to reset the session or redefining 'init-user-session' will have no effect. You can do this by restarting the browser or by calling 'weblocks::reset-sessions').
-
-Views
-A major criticism of the above approach is that it steers away from the MVC model since HTML (or the CL-WHO alternative) is mixed with the code. This does not have to be true. In principle, nothing stops you from writing widgets that invoke a template engine. However, Weblocks does not go down this path.
-
-Weblocks treats HTML as a serialization format. Weblocks' philosophy is that neither the programmer nor the designer should have to write HTML - most of the time HTML should be generated automatically. The programmer's job is to define the data structures, the high level UI components, and the business logic. The designer's job is to create appropriate stylesheets. The actual HTML markup generation is the job of the framework.
-
-In practice this isn't always possible because of CSS quirks and limitations, but Weblocks tries to stay true to this approach whenever the current state of W3C affairs permits. In order to make this possible Weblocks defines a set of 'views' - pieces of code that serialize data structures to different types of HTML.
-
-Let's illustrate this approach by defining a data structure for a person:
-
-&gt; (defclass person ()
-    ((weblocks:id)
-     (first-name :accessor first-name
-   	         :initarg :first-name
-	         :initform nil)
-     (last-name :accessor last-name
-   	        :initarg :last-name
-	        :initform nil)
-     (age :accessor age
-          :initarg :age
-	  :initform nil)))
-&gt; (setf joe (make-instance 'person
-                           :first-name "Joe"
-	                   :last-name "Average"
-			   :age 31))
-Normally, to render information about the person to the screen we'd create a number of templates that we'd use throughout the application. We would probably create a template for rendering the data, a template for rendering the form, and perhaps a template for rendering a table of people. This wouldn't be too difficult except we have to do this again and again for every new data structure we come up with. We end up generating nearly the same HTML manually - all that's changing is a list of fields. Weblocks automates this work:
-
-&gt; (weblocks:render-object-view joe '(data person))
-&gt; (weblocks:render-object-view (list joe) '(table person))
-The first line renders our data structure into a list of fields. The second line renders a table of one row. In similar manner weblocks provides a view for serializing data structures into forms. We specify the class of the object (person) to allow the scaffolding infrastructure to generate an appropriate view. Other views can be added if the need arises.
-
-Views are designed to output high quality, validating HTML. Special care is taken to ensure the generated HTML follows accessibility guidelines. Due to CSS limitations views generate somewhat heavy HTML - extra tags and classes are put in place to allow for sufficient freedom in styling. Much of this markup will disappear when CSS3 is supported by all mainstream browsers (much of the extra markup would disappear if CSS2 was supported by IE6).
-
-Views try to respect the rules of the language. For example, if a slot has no reader, by default this slot will be omitted from rendering.
-
-Views provide an extremely flexible customization mechanism to easily rename, rearrange, hide/show, and custom render slots (see example code for details). Most widgets that deal with rendering data structures (dataform widget, grid widget, etc.) use views to render data. Weblocks tries to provide views that satisfy commonly used customization cases. The programmer should resort to custom HTML only in rare special cases when there is no way to configure the view to generate sufficient HTML.
-
-Actions
-Everything we've discussed above has been about rendering data to the client. So far we haven't discussed interactivity - the user's ability to change the state of the UI and to modify the data.
-
-Weblocks allows the programmer to deal with client interaction without having to worry about the limitations of HTTP protocol. In Weblocks the programmer can 'render' a function, a generic function, or a closure into a link (or a button in a form). When the user clicks on the appropriate link (or button), Weblocks maps the click back to the callback. If the callback is a lexical closure, the programmer will have the full context in which the closure was created despite the fact that it was created during a completely different HTTP request:
-
-(weblocks:render-link (lambda (&amp;rest args)
-                        (do-something))
-                      "Modify")
-In this case the action is rendered into a link named 'Modify' via 'render-link'. When the user clicks 'Modify', the lambda function is called (in the appropriate lexical context, if there is one), and 'do-something' is evaluated. A similar mechanism can be invoked for rendering form buttons.
-
-Note, 'render-link' renders an AJAX-friendly link. The callback will be made via an AJAX request if JavaScript is available. Otherwise, Weblocks will fall back to a regular request. Because Weblocks applications aren't organized by pages, links change the state of widgets, rather than move between pages. This is why rendering a non-AJAX link doesn't make sense in the context of Weblocks.
-
-Weblocks does have a mechanism to allow for friendly URLs. This mechanism is exposed to the programmer via the 'navigation' widget. The navigation widget takes very special care to hide the fact that Weblocks applications aren't organized into pages from the user. This way the user can enjoy the rich UI that follows established conventions, while the programmer can code the application using the widget paradigm. See reference documentation for the navigation widget for more details.
-
-Stores
-Many of the built in widgets operate on data peristed to a backend store. Weblocks supports a number of stores including SQL databases (via CLSQL) and XML files (via cl-prevalence). New stores can easily be added by implementing a simple API.
-
-In this tutorial we will use a memory store for simplicity (in this case the data does not get persisted after the application quits). Before we can go on to use advanced widgets we need to define out store:
-
-&gt; (weblocks:defstore *scratch-store* :memory)
-This line will create a memory store, bind it to *scratch-store*, and make it a default store for the application to use. A similar command can be used to define a SQL store in a production system. Defined stores will be opened automatically when the server is started and closed when the sever is stopped.
-
-*Please note*, once you define a new store you should stop and start Weblocks to ensure the store is opened and ready to operate.
-
-More on Widgets
-So far we've only seen stateless widgets - string, function, and composite. However, we've hinted that widgets can have state. The simplest example of a stateful widget is a closure that increments a counter every time it's evaluated.
-
-Some of the more complex Weblocks widgets have state associated with them. One such widget is 'dataform'. We'll talk about it here to put together everything we've discussed so far.
-
-Dataform widget models a fairly common behavior of web applications. It renders a datastructure to HTML so the user can see some data. Below the data it renders a "Modify" link. If the user clicks on the link, the widget changes its state from 'data' to 'form' and renders a form for the user to modify the data along with a 'Submit' and 'Cancel' buttons. If the user clicks 'Submit', any changes are submitted and the state is changed back to 'data'. If the user clicks 'Cancel', the changes are discarded and the state is changed to 'data' as well.
-
-Dataform widget is composed of everything we've discussed so far. It uses a data view to render the data, and a form view to render the form. It also uses actions to render the 'Modify' link and the buttons. Since dataform is a CLOS object, it stores its current state (whether it's displaying the structure as data or form) inside a slot. When the actions are invoked by the user this state is changed appropriately. We can change 'init-user-session' to take advantage of the dataform widget, and to finally add some interactivity to our application:
-
-&gt; (defun init-user-session (comp)
-    (setf (weblocks:composite-widgets comp)
-          (list (make-instance 'weblocks:dataform :data joe))))
-If we reset the session and refresh the page, we will see information about Joe displayed in the browser. We can click on 'Modify', change some of the data in the form, and click submit or cancel.
-
-Since each dataform widget encapsulates and manages its own state, we can add as many dataform widgets to our page as we like. We can play with their states and they will all behave correctly. This is an enormous benefit about componetized approach - once we've created a widget, we can reuse it to our heart's content.
-
-AJAX
-Because actions are rendered to be AJAX-friendly, the dataform widget also ends up being updated in an AJAX request. How does this work? Why does the dataform widget redraw if 'Modify' is called asynchronously?
-
-Weblocks uses the power of Lisp to fully automate this behavior. Every time a value of any slot of the widget changes, Weblocks detects the change using a hook in MOP and marks the widget as dirty (it is of course possible to turn this behavior off for some slots). Once the action is fully evaluated, Weblocks sends a list of dirty widgets back to the client, and each dirty widget is updated on the browser via JavaScript. Since the 'Modify' action changes the state of the dataform widget, the dataform is marked by Weblocks as dirty and the newly rendered version is sent to the client.
-
-Note that this behavior scales back very well if the user has JavaScript turned off. Instead of sending a list of dirty widgets to the client, the entire page is redrawn. Most of the time the web programmer, and even the widget designer, need not care about AJAX at all - everything is managed by Weblocks (Some widgets take care to specifically turn off AJAX. For example, the navigation widget renders non-AJAX links to allow for friendly URLs).
-
-Useful Hints
-Troubleshooting
-
-If anything goes wrong during this tutorial (or during development), the 'Internal Server Error' message does not give great insight into why an error has occurred. Fortunately, it is very simple to turn on debug mode, so that the exact error, along with the stack trace, are displayed in the browser. Instead of
-
-&gt; (weblocks:start-weblocks)
-run
-
-&gt; (weblocks:start-weblocks :debug t)
-Note, if Weblocks is running you need to stop it first with 'stop-weblocks'.
-
-Creating a New Project
-
-When you are ready to do more than just play around in the REPL, Weblocks provides a script to help you get started. The ASDF operation 'make-app-op' located in the 'wop' package allows you to quickly create an asdf-based project with necessary files, default stylesheets, etc. that you can start modifying.
-
-First, load weblocks:
-
-(asdf:operate 'asdf:load-op :weblocks)
-You can then create a new project like this:
-
-(asdf:operate 'wop:make-app-op :weblocks :name 'myapp :target "/home/coffeemug/projects/")
-Or, if you don't like ASDF syntax, you can use the 'make-app' shortcut:
-
-(wop:make-app 'myapp "/home/coffeemug/projects/")
-This will create a directory '/home/coffeemug/projects/my-app/' and add necessary weblocks files to it. Note, some Lisp implementations don not understand shell-based shortcuts (like tilde for home directory), so you might have to type the directory in full. Alternatively you can change into the directory where you want to create the new project in your implementation (in slime, switch to REPL and type ,cd RET), and omit the target argument to the operation.
-
-Now, all you have left to do is add your project source directory to ASDF central registry. You can do it by adding the following line to your implementation init file:
-
-(push #p"/home/coffeemug/projects/my-app/" asdf:*central-registry*)
-That is it! You can now load the newly created application and enjoy the ride:
-
-(asdf:operate 'asdf:load-op :my-app)
-(my-app:start-my-app)                 ; an alias for 'start-weblocks'</t>
-<t tx="newlife.20111012233931.1140">如何启动一个weblocks项目
-
-(asdf:operate 'asdf:load-op :weblocks)
-    引入weblcoks包
-
-(wop:make-app 'myapp "/Users/newlife/commonlisp/newlife/")
-    
-    执行这句会在该目录下穿一个一个myapp的文件，该项目所有的文件都在这里面，然后操作这个目录下的文件
-    
-(push #p"/Users/newlife/commonlisp/newlife/myapp/" asdf:*central-registry*)
-    注册项目，
-    
-(asdf:operate 'asdf:load-op :myapp)
-    引入项目
-
-
-(myapp:start-myapp)
-    启动项目</t>
-<t tx="newlife.20111013160723.1147">可以看出，这个软件的更新还是很频繁的，对应的文档的更新就是个问题，我看的还是一个相对较新的文档，但是依然落后了许多。
-
-尤其是像我这样，对框架和语言都不是很熟悉的新手，一个可靠的文档是多么的有必要啊</t>
-<t tx="newlife.20111013160723.1148"></t>
+<t tx="newlife.20111013160723.1148">(ash 11 1)
+这是一个处理位操作的函数，
+第一个参数的二进制形式，接受第二个参数的个数。
+这两个参数必须是整数，
+比如11的二进制形式：1011
+第二个参数为正数，则想左移1位(2就左移2位咯)，左移后面的位数补0，即10110，就是22，
+
+若为负数，比如（ash 11 -1）则右移一位，右移直接抹去最后一位，就是101，就是5，</t>
 <t tx="newlife.20111013160723.1149">Common LISP Hints --Lisp 入门教程(刘鑫最新翻译)，
 
 该书是1993年写的，，，
@@ -496,8 +266,18 @@ list操作用pop和push
 <t tx="newlife.20111015012314.1155">其实这本才是最好的lisp入门教程</t>
 <t tx="newlife.20111015012314.1156"></t>
 <t tx="newlife.20111015012314.1157">Lisp本身是有大量的函数组成，其语言标准有超过四分之三的名字用于定义函数。所有的内置数据类型纯粹是由操作他们的函数定义的。
-尽管宏对于lisp风格有着重要的作用，但是最终所有实际的功能还是由函数来提供的，宏运行在编译期，因此他们生成的代码，即当所有宏被展开后将实际构成程序的那些代码，将完全由对函数和特殊操作符的调用搜构成，</t>
+尽管宏对于lisp风格有着重要的作用，但是最终所有实际的功能还是由函数来提供的，宏运行在编译期，因此他们生成的代码，即当所有宏被展开后将实际构成程序的那些代码，将完全由对函数和特殊操作符的调用搜构成，
+
+
+好的程序员都是写出来的，不是看出来的，但是要先看，认真的看。
+
+common lisp是我第一个认真学习的语言，当初学python的时候都没有这么认真的看过哪本书。
+
+现在静心想想，cl的神奇的地方有哪些，clos，macro,还是它诡异的语法，
+</t>
 <t tx="newlife.20111017184953.1161">其实很多时候，我们的选择就是简单的那个。
+
+
 
 这个框架</t>
 <t tx="newlife.20111017184953.1162">RESTAS
@@ -514,7 +294,13 @@ Features
 Based on Hunchentoot
 Uses cl-routes for mapping URL (without MVC)
 Supports the reuse of web applications as plug-ins
-Pure lisp daemonization with SBCL on GNU/Linux without of GNU Screen or detachtty (tested on Gentoo and Debian)</t>
+Pure lisp daemonization with SBCL on GNU/Linux without of GNU Screen or detachtty (tested on Gentoo and Debian)
+
+
+其实不管从哪个角度分析，这个2个应用都不是什么复杂的东西，毕竟原型简单，处理的逻辑相对比较容易，
+
+现在为缺乏的就是多写，毕竟看这些代码都没有那么的陌生了，
+</t>
 <t tx="newlife.20111017184953.1163"></t>
 <t tx="newlife.20111017184953.1164">http://codemacro.com/index
 这是一个基于restas的基于common lisp的，写的相对完善的blog程序，通过这个程序熟悉最基础的cl语法，和restas框架。最好的地方是这个blog安装容易。
@@ -542,7 +328,7 @@ formate函数：
 当lisp看到一个诸如field或value这样的简单名字不作为列表的第一个元素出现时，他会假设这是一个变量的名字并去查找它的值(否则是函数啊)，这对于field和value来说是正确的，但是对于诸如 equal,getf,等就是不对的了，这个时候我们需要quote，，可以简写为’，就是单引号，
 
 位于表达式之前的反引号可以像引号那样阻止表达式被求值，不同的是，在一个反引用表达式里，任何以逗号开始的子表达式都是被求值的，</t>
-<t tx="newlife.20111101232018.1171">(defun primep (number)           
+<t tx="newlife.20111101232018.1171">   (defun primep (number)           
      (when (&gt; number 1)                                                                                              
              (loop for fac from 2 to (isqrt number) never (zerop (mod number fac)))))
 ;;这个是判断一个数是否是素数
@@ -554,6 +340,252 @@ formate函数：
 (do                                                                                                                                               
           ((p (next-prime 0) (next-prime (1+ p)))) ((&gt; p 19))                                                                                              
           (format t "~d~%" p))  
-;;这是不用宏的情况</t>
+;;这是不用宏的情况
+
+由于传递给宏的实参是代表宏调用源代码的lisp对象，因此任何宏的第一步工作就是提取出哪些对象中用于计算展开式的部分。对于哪些简单的直接降实参直接插入到模板的宏而言，这一步很简单，</t>
+<t tx="newlife.20111103185120.1173">/Users/newlife/commonlisp/klprj/ext-blog/src/routers.lisp
+
+这个是处理url的文件，这是所有程序的入口，以后就看它了，
+
+
+
+(restas:define-route index ("index")
+    (format-args :normal))
+#这是定义了一个叫index的url，对应处理的逻辑就是(format-args :normal)
+(defun format-args (type &amp;rest args)
+   (list :blog *blog* :args args :type type))
+#这个函数的实际意义就是返回如下所以的list，
+109EXT-BLOG&gt; (format-args :normal)
+110(:BLOG #&lt;BLOG {100297DCC3}&gt; :ARGS NIL :TYPE :NORMAL)
+看这个意思，应该是有哪个函数处理这个问题，但是问题是那个函数呢？、这个问题ms要看文档了，可是那个发指的文档那个也没看见啊
+纠结啊
+
+这个文档从来没有认真看过一遍，真是快的那条路就是我们当初认为最慢的
+
+
+
+
+ext-blog里的每个route都返回的是一些数据，不是单纯的字符串。因为我要把ext-blog核心模块与具体的渲染隔离开（因为具体的渲染涉及到博客页面在浏览器端怎样显示），所以我把渲染工作交给所谓的theme去做。
+
+总之，大概的流程就是：
+
+[http client]   --http request--&gt;   [restas]  ----&gt; [your route function result] ---&gt; [drawer]  --http response --&gt; [http client]
+
+</t>
+<t tx="newlife.20111106084942.1175">定义了route后，route的返回值将被返回给浏览器。但这些结果需要经过一点加工。这个加工者就是http://restas.lisper.ru/en/manual/view.html#view这篇文档里描述的drawer。默认的drawer可以处理字符串、静态文件之类。如果需要进行更复杂的渲染，可以通过设置restas:*default-render-method*来重写这个规则，例如ext-blog里：
+
+;; drawer-dispatch.lisp
+
+(defmethod restas:render-object ((drawer drawer-dispatcher) (data list))
+  (let* ((blog (getf data :blog))
+         (theme (get-theme blog data)))
+    (if theme
+      (render-page blog theme (restas:route-symbol restas:*route*) (getf data :args))
+      (car (getf data :args)))))
+
+(setf *default-render-method* (make-instance 'drawer-dispatcher))
+
+@doc
+从这里可以看出，restas的意图很明显，router返回的数据是交给*default-render-method*处理的，但是我们可以重写这个东西，
+这里有一个疑问，就是我们重写了这个函数会不会影响其他的处理比如路径名，状态码等等的东西。
+
+(defgeneric restas:render-object (drawer object)
+  (:documentation "Render object via drawer"))
+
+
+It is always called for processing the data returned by route handlers (defined with restas:define-route). 
+route返回的数据都是由这个广义函数处理的，
+As you see here, two objects are used for content generation: a drawer and a data object, so one can speak about full-fledged logic and view separation, and CL multimethods make this approach quite powerful. 
+
+The drawer to use is specified in module variable *default-render-method* and is set to nil by default.
+这个drawer有moduel变量*default-render-method*设定，默认被设为nil
+RESTAS defines specialized restas:render-object methods, which can accept the following types:</t>
+<t tx="newlife.20111124223215.1177">关于这个框架，我要学习到什么程度呢，
+可以用它熟练的写出一个blog，还是更多？
+其实目前这个框架于我而言，最多的是体会更多的书上描述的哪些，对整个语法和函数库的熟悉，目前就是这个功能</t>
+<t tx="newlife.20111124223215.1178">@ignore
+@doc
+##because leo will show cl code using python syntax
+
+@language common lisp
+;;;;
+;;;; iSimple theme, ported by Kevin Lynx for ext-blog.
+;;;; 6.12.2011
+;;;; drawer.lisp
+;;;;
+;;;; in django`s properstive,it is the view part 
+(in-package #:ext-blog.theme.isimple)
+
+(defconstant +page-cnt+ 3)
+
+(defgeneric render-content (blog route args)
+  (:documentation "Generic function to render page content."))
+
+(defun get-post-by-args (blog args)
+  "Get a post object by args"
+  (let ((id (car args)))
+   (if id 
+     (or (get-nth-post blog id)
+         (get-1st-post blog))
+     (get-1st-post blog))))
+
+(defun get-post-title-by-args (blog args)
+  (let ((id (car args))
+        (post))
+    (when id
+      (setf post (get-nth-post blog id)))
+    (if post
+      (concatenate 'string (post-title post) " - " (blog-title blog))
+      (blog-title blog))))
+
+(defun render-comment (blog route args)
+ (if (has-post-p blog)
+   (if (and (not (eql route 'index))
+            (not (eql route 'view)))
+     nil
+     (isimple.view:comment
+       (let ((post (get-post-by-args blog args)))
+         (list :comment_cnt (get-post-comments-cnt blog post)
+               :comments (get-post-comments-data blog post)
+               :postid (post-id post)))))
+   nil))
+
+(defun render-sidebar (blog route args)
+  (declare (ignore route args))
+  (isimple.view:sidebar 
+    (list :posts (get-recent-posts-brief blog 5)
+          :comments (get-recent-comments-brief blog 5)
+          :feedurl (ext-blog:make-full-feed-url))))
+
+(defmethod ext-blog:render-page (blog (theme theme) route args)
+  (let ((content (render-content blog route args))
+        (sidebar (render-sidebar blog route args))
+        (header (isimple.view:header (get-head-data blog)))
+        (footer (isimple.view:footer (get-footer-data blog))))
+    (isimple.view:finalize-page 
+      (list :title (blog-title blog)
+            :header header
+            :sidebar sidebar
+            :content content
+            :footer footer))))
+
+(defmethod ext-blog:render-page (blog (theme theme) (route (eql 'view)) args)
+  (let ((content (render-content blog route args))
+        (comment (render-comment blog route args))
+        (sidebar (render-sidebar blog route args))
+        (header (isimple.view:header (get-head-data blog)))
+        (footer (isimple.view:footer (get-footer-data blog))))
+    (isimple.view:finalize-page 
+      (list :title (get-post-title-by-args blog args)
+            :header header
+            :sidebar sidebar
+            :comment comment
+            :content content
+            :footer footer))))
+
+(defmethod render-content (blog (route (eql 'index)) args)
+  (declare (ignore args))
+  (isimple.view:page
+    (get-page-data blog +page-cnt+ 0)))
+
+(defmethod render-content (blog (route (eql 'page)) args)
+  (isimple.view:page
+    (get-page-data blog +page-cnt+ (car args))))
+
+(defmethod render-content (blog (route (eql 'view)) args)
+  (let* ((post (get-post-by-args blog args)))
+     (isimple.view:single
+       (if post
+         (get-post-data blog post)
+         (list :title "None" :content "No entry")))))
+
+</t>
+<t tx="newlife.20111124223215.1179">由route handler返回的数据总是由restas:render-object这个广义函数来处理：
+    (defgeneric restas:render-object (drawer object)
+        (:documentation "Render object via drawer"))
+我们可以看到有2个对象哟个俩生成内容，一个drawer和一个data对象，
+
+这个drawer是有module变量*default-render-method*指定的，并且默认被设置为nil，
+默认的处理很多情况，restas定义了特殊的render-object方法，可以接受string ,array,pathname,interger，
+我们可以指定*default-render-method*
+
+If you follow a small agreement and give templates the same names as routes have, then you can specify as *default-render-method* the package containing template functions, and RESTAS for processing a data generated by a route handler will automatically call a template function with the same name as the route, but from package with templates. 
+
+如果你遵循templates和route名称一致的原则，你可以制定一个*defaulte-render-method*包含模板函数的包，然后，restas就会自动调用和route含有相同名字的模板函数来处理route handler返回的数据。</t>
+<t tx="newlife.20111129230956.1175">@doc
+Introduction
+
+Purpose of this document
+文档的目的
+The aim of this document is to give a brief introduction to the use of ASDF, Another System Definition Facility. It is not about the arcane tricks and tips, and is not about the design of ASDF itself nor about system definition tools in general.
+
+这篇文章的目的是简要介绍asdf的用法。不是关于她神秘的技巧和用法，也不是asdf的设计或者系统定义工具。
+
+A system definition file is nothing else than a description of dependencies between files of source code in such a way that they can be compiled and loaded in the right order. A file A.lisp depends on a file B.lisp if the latter contains definitions and/or code that is used by A.lisp1.
+系统定义文件就是关于源文件之间的依赖的描述，通过这个文件他们可以以正确的顺序加载并编译
+
+Solving this problem is in the vast majority of cases fairly trivial, so hacking up some minimal script will usually work. Learning the right tool, however, will save you a lot of time down the road. In this minitutorial we will concentrate on the simple cases and on the general usage of a fairly well known tool, ASDF. We leave the more advanced features of this tool to the ASDF manual2.
+学习正确的工具会节省你大量的时间，这个迷你的教程里，我们会说明一些简单的案例，关于一些简单的使用，关于一个众所周知的工具asdf，我们留下更高级的特性介绍到asdf的手册里。
+
+What problem does ASDF solve?
+asdf解决了什么问题？
+
+When you download the source code of some software from the Internet, or get it from some other source, you usually do not get an amorphous bunch of files, but instead get a system of components that depend on each other in some particular way. The consequence of this is that, if you want to build the software (be it a library, or be it an application), you will probably have to build these components, and the components of these components in order, perhaps giving some special treatment to some of them. You would, of course, be very grateful if the developer had prepared everything, and you could trigger the build process by a single command.
+
+当你通过internet下载了某些软件的源码，一般不是一堆混乱的文件，而是一个组件的系统，这些组建用某些方式相互依赖。
+
+
+If you are a developer working in a project with a few components, you will probably want some mechanism that keeps track of the dependencies between these components, so that if you change one component, triggering a rebuild only recompiles and reloads the components which are affected.
+
+如果你是一个工作在有几个组件的项目的开发者，你或许会想要一些机制来记录组件之间的的依赖。这样，当你改变一个组件，重新生成使只要重新编译和加载他影响的组件，
+
+Finally, you probably want a consistent way of dealing with the dependencies between components and of building and loading software systems, simply because it saves everyone time when installing software and using software.
+
+ASDF is, roughly speaking, an extensible facility for defining the dependencies between software components, and specifying eventual details of the build process. It is also in fairly wide use, so that you can assume that your system definition will be understood by many others.
+
+The same can be said about mk:defsystem, which has fans as well as detractors. We will only concentrate here on ASDF, since we have to start somewhere. In any case, the actual differences between these two only become apparent for the power user.
+
+
+How to use system definition files
+如何使用系统定义文件(就是.asd文件)
+
+System definition files live in the directory where the corresponding piece of software lives. However, you do not need to have that directory as your working directory to be able to build and load said software. You only need to put a symbolic link to the system definition file in a directory where ASDF searches.
+系统定义文件就在对应的软件的根目录下。当然，你不用用那个目录作为你的工作目录来编译或者加载这个软件，你只要放一个符号链接到asdf搜寻的的目录就可以了，
+
+The usual setup is as follows. To begin with, you need to have ASDF loaded. In some implementations ASDF is already loadad. In others, it is just a matter of writing
+
+  (require 'asdf)
+whereas in others you might need to install it yourself first. You can get it, in a single file, from here, and put it somewhere reasonable. For instance, if your login name was foo, in the directory /home/foo/lisp/utils/. You may also want to compile that file.
+一般安装是这样的，
+就是安装，，
+
+Now, somewhere in the init file of your Common Lisp implementation (for CMUCL it would be .cmucl-init.lisp in your home directory) a 
+variation of the following passage should appear.
+
+(load "/home/foo/lisp/utils/asdf")
+
+(setf asdf:*central-registry*
+   ;; Default directories, usually just the ``current directory''
+  '(*default-pathname-defaults*
+
+    ;; Additional places where ASDF can find
+    ;; system definition files
+    #p"/home/foo/lisp/systems/"
+    #p"/usr/share/common-lisp/systems/"))
+The command to build and load system cow is
+
+(asdf:operate 'asdf:load-op 'cow)
+然后就是这个命令了
+If the file cow.asd happens to be in the current working directory, the build and load process will start there. If not, ASDF will search through the directories in the central registry, and look for a system definition file named cow.asd, or for a symbolic link to one. If it finds the latter, it will follow the link to the original file, and run the build process in the corresponding directory. If it finds the file, it will run the build process in the directory where it finds it.
+如果cow.asd正好在这个目录下，编译和加载的过程就开始了，没有的话，asdf就去*central-registry*这个地方去找去了，或者文件，或者符号链接，
+
+
+So, if you make a symbolic link in /home/foo/lisp/systems/ to the cow system definition file, by executing (for example)
+
+$ cd &lt;where-your-system-defs-are&gt;
+$ ln -s /home/foo/code/cow/cow.asd
+Then you can build and load the cow software without having to be in the directory where this software lives simply by issuing the command
+
+(asdf:operate 'asdf:load-op 'cow)</t>
 </tnodes>
 </leo_file>
