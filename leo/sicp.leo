@@ -10,26 +10,39 @@
 <preferences/>
 <find_panel_settings/>
 <vnodes>
-<v t="newlife.20101021104626.1288" a="E"><vh>@chapters</vh>
+<v t="newlife.20101021104626.1288"><vh>@chapters</vh>
 <v t="newlife.20101021104626.1290"><vh>django认证机制</vh>
 <v t="newlife.20101021104626.1289"><vh>django的密码机制</vh>
 <v t="newlife.20101027175540.1249"><vh>密码生成</vh></v>
 </v>
 </v>
 </v>
-<v t="newlife.20111129230956.1175"><vh>asdf</vh></v>
-<v t="newlife.20111017184953.1164"><vh>ext-blog</vh>
-<v t="newlife.20111103185120.1173" a="E"><vh>routers</vh>
+<v t="newlife.20111129230956.1175" a="E"><vh>asdf</vh>
+<v t="newlife.20111130230003.1177"><vh>asdf intro</vh></v>
+<v t="newlife.20111130230003.1178"><vh>load-system</vh></v>
+<v t="newlife.20111204034558.1181"><vh>quicklisp</vh></v>
+</v>
+<v t="newlife.20111017184953.1164" a="E"><vh>ext-blog</vh>
+<v t="newlife.20111103185120.1173"><vh>routers</vh>
 <v t="newlife.20111124223215.1179"><vh>流程</vh></v>
 <v t="newlife.20111124223215.1178"><vh>@file /Users/newlife/commonlisp/my-ext/ext-blog/theme/isimple/drawer.lisp</vh></v>
+<v t="newlife.20111208221053.1185"><vh>src</vh></v>
+</v>
+<v t="newlife.20111219151241.1196"><vh>templates</vh></v>
+<v t="newlife.20111208221053.1186" a="E"><vh>TODO</vh>
+<v t="newlife.20111208221053.1187"><vh>分类</vh></v>
+<v t="newlife.20111219151241.1195"><vh>tag</vh></v>
 </v>
 </v>
-<v t="newlife.20111012233931.1135"><vh>sicp</vh>
+<v t="newlife.20111012233931.1135" a="E"><vh>sicp</vh>
 <v t="newlife.20101021104626.1287"><vh>Building Abstractions with Procedures</vh></v>
 </v>
-<v t="newlife.20111017184953.1163"><vh>web framework</vh>
+<v t="newlife.20111208221053.1183" a="E"><vh>onlisp</vh>
+<v t="newlife.20111208221053.1184"><vh>chap06</vh></v>
+</v>
+<v t="newlife.20111017184953.1163" a="E"><vh>web framework</vh>
 <v t="newlife.20111017184953.1161" a="E"><vh>restas</vh>
-<v t="newlife.20111015012314.1157"><vh>lisp入门教程</vh>
+<v t="newlife.20111015012314.1157" a="E"><vh>lisp入门教程</vh>
 <v t="newlife.20111013160723.1149" a="E"><vh>common lisp hints</vh>
 <v t="newlife.20111013160723.1150"><vh>符号</vh></v>
 </v>
@@ -48,6 +61,7 @@
 <v t="newlife.20111124223215.1177"><vh>think</vh></v>
 </v>
 </v>
+<v t="newlife.20111215103224.1193"><vh>python-lisp</vh></v>
 </vnodes>
 <tnodes>
 <t tx="newlife.20101021104626.1287">The acts of the mind, wherein it exerts its power over simple ideas, are chiefly
@@ -577,6 +591,7 @@ The command to build and load system cow is
 (asdf:operate 'asdf:load-op 'cow)
 然后就是这个命令了
 If the file cow.asd happens to be in the current working directory, the build and load process will start there. If not, ASDF will search through the directories in the central registry, and look for a system definition file named cow.asd, or for a symbolic link to one. If it finds the latter, it will follow the link to the original file, and run the build process in the corresponding directory. If it finds the file, it will run the build process in the directory where it finds it.
+
 如果cow.asd正好在这个目录下，编译和加载的过程就开始了，没有的话，asdf就去*central-registry*这个地方去找去了，或者文件，或者符号链接，
 
 
@@ -587,5 +602,113 @@ $ ln -s /home/foo/code/cow/cow.asd
 Then you can build and load the cow software without having to be in the directory where this software lives simply by issuing the command
 
 (asdf:operate 'asdf:load-op 'cow)</t>
+<t tx="newlife.20111130230003.1177">@doc
+
+What it is
+asdf是神马
+ASDF is a tool for describing how source files are organized: what depends on which and when.
+asdf一个藐视源文件如何组织的工具：谁，何时依赖什么
+It is roughly what Common Lisp hackers use to build software where C hackers would use say GNU Make.
+它大致就是cl用户原来创建软件，c用户称之为GNU make
+
+ASDF stands for Another System Definition Facility, in the continuity of the Lisp DEFSYSTEM of yore.
+asdf是Another System Definition Facility的缩写。
+
+What it is not
+asdf不是神马
+ASDF will not download missing software components for you. For that, you want Quicklisp, that builds upon ASDF, and is great for pulling and installing tarballs of packages you may depend upon; 
+asdf不会为你下载缺少的软件包。对于这个需求，你需要quicklisp,它基于asdf，是一个强大的下载安装工具，
+we also recommend clbuild, that now builds upon Quicklisp, as a great tool for pulling from version control packages you need to modify or want to contribute to. 
+##这个还不用
+We recommend you should not use ASDF-Install anymore, as it is an older similar piece of software that is both unmaintained and obsolete.
+我们建议你不再使用asdf-install，这个东西已经废弃，不被维护了，
+
+If you're unsatisfied with ASDF, other actively maintained build systems for Common-Lisp that may or may not satisfy you include: François-René Rideau's XCVB (trying to build object and image files deterministically and in parallel), or its polar opposite, Drew McDermott's YTools (trying maintain coherence of the current Lisp image at a fine grain). Older systems that are not maintained anymore include Mark Kantrowitz's mk-defsystem (free software successor of the old proprietary DEFSYSTEM's and predecessor of ASDF), Sean Ross's mudballs (aborted attempt at making things cleaner than in ASDF), Peter Jetter's faslpath (a much simpler system integrating mapping packages to files), Alexander Kahl's evol (a reimplementation of the GNU autotools stack in Lisp), and probably more. However, none of these systems seems to ever have had the traction of ASDF.</t>
+<t tx="newlife.20111130230003.1178">@doc
+4.1 Loading a system
+
+The system foo is loaded (and compiled, if necessary) by evaluating the following Lisp form:
+
+     (asdf:load-system :foo)
+On some implementations (namely recent versions of ABCL, Clozure CL, CLISP, CMUCL, ECL, SBCL and SCL), ASDF hooks into the CL:REQUIRE facility and you can just use:
+     (require :foo)
+软件foo被加载（如果需要就编译）通过下面的语句：
+   (asdf:load-system :foo)
+在一些lisp实现（）上，asdf被cl：require实现，直接用(require :foo)就可以了
+
+In older versions of ASDF, you needed to use (asdf:oos 'asdf:load-op :foo). If your ASDF is too old to provide asdf:load-system though we recommend that you upgrade to ASDF 2. See Loading an otherwise installed ASDF.
+
+在一些老的版本，你需要使用(asdf:oos 'asdf:load-op :foo)，如果你的asdf太老不提供asdf:load-system，我们建议你升级到asdf2，
+
+Note the name of a system is specified as a string or a symbol, typically a keyword. If a symbol (including a keyword), its name is taken and lowercased. The name must be a suitable value for the :name initarg to make-pathname in whatever filesystem the system is to be found. The lower-casing-symbols behaviour is unconventional, but was selected after some consideration. Observations suggest that the type of systems we want to support either have lowercase as customary case (unix, mac, windows) or silently convert lowercase to uppercase (lpns), so this makes more sense than attempting to use :case :common, which is reported not to work on some implementations</t>
+<t tx="newlife.20111204034558.1181">quicklisp是commonlisp的包管理工具，类似aptget或者pip的一个东西。
+
+在我所运行的环境上，所有的lisp文件都会被编译成为fasl文件存放在用户目录下的.cache目录下，
+当每次作(ql:update-all-dists)这个操作以后，都要删除这个目录，重新编译生成，</t>
+<t tx="newlife.20111208221053.1183">on lisp绝对是一本相当值得一读的书，这个坑的意义就在于认真的看完这本书。
+我相信，看完这本的时候，我对lisp的宏的理解会到达一个新的高度，lisp的本质就是宏，不是末？
+</t>
+<t tx="newlife.20111208221053.1184">通常来说，数据结构被原来描述事物。可以用数组来描述坐标变换，用树结构表示命令的层次结构，而用图来表示铁路网。
+
+
+</t>
+<t tx="newlife.20111208221053.1185">auth.lisp      
+drawer-dispatch.lisp 
+model                
+routes.lisp          
+rss.tmpl             
+themes.lisp          
+verify-code.lisp
+defmodule.lisp       
+ext-blog.lisp        
+params.lisp          
+rss.lisp             
+rsstmpl.lisp         
+utils.lisp           
+xmlrpc.lisp
+</t>
+<t tx="newlife.20111208221053.1186">要想熟悉一个语言，一个项目，首先就是要做些什么东西，
+我改进ext-blog对post
+    增加分类的支持，
+    然后tag的支持
+    对数据库的支持</t>
+<t tx="newlife.20111208221053.1187">分类作为一个首要的支持在于简单，
+
+这个东西耦合的ms很严重啊。
+比如我要增加一个category的东西，我要修改的地方很多啊，这玩意和django比起来，那差的可不是一点半点啊，这也就充分说明了我还由很大的发挥的空间，今天fp有个讨论很合我的心意</t>
+<t tx="newlife.20111215103224.1193">http://norvig.com/python-lisp.html
+这篇文章写的是相当的神奇啊，有时间翻译一下
+
+这是一篇给lisp程序员的python的简单介绍（虽然这不是我的初衷，但是python程序员告诉我这个页面帮助他们学习了lisp,囧）
+简单的说，python可以看做是一个有着传统语法(就是中缀表达式吧)的lisp方言，comp.lang.python有句话，我从来没有发现lisp的好，知道我开始玩python。python支持lisp的所有的核心特性，除了宏，并且你不会错过太多，因为python有eval，运算符重载，正则，，，，
+
+我研究python是因为我在考虑lisp code翻译成java，一些学生想要java的因为：
+    1，他们在别的课程里学过java
+    2，他们希望有图形应用
+    3，少数人希望浏览器里的applet
+    4，有一些在他们有限的时间内不能熟悉lisp
+    
+但是，我们第一次尝试用java写是非常的不成功。（开始了，）java太繁琐了，而且书中的伪码和java代码之间的差异很大，
+我寻找一种看起来想书中的伪码的语言，发现python是最接近的，更进一步，还有jython。。
+
+结论
+    </t>
+<t tx="newlife.20111219151241.1195">关于标签的定义部分已经结束，现在的问题是如何处理模板的继承问题，</t>
+<t tx="newlife.20111219151241.1196">就是cl-closure-template
+
+这个东西的继承是如何实现的？？
+
+我们先分析/manage/new
+
+
+先看drawer.lisp这个东西是怎么写的，，
+
+先有一个广义函数：manage-render-content,,,
+
+
+还有一个函数  render-manage-page,在这个函数里，调用了manage-render-content这个函数，
+
+然后处理的是post参数的问题，
+这个ms没有什么需要特别注意的，看demo就是了</t>
 </tnodes>
 </leo_file>
