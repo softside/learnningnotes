@@ -416,7 +416,7 @@ Example master configuration file
 # A dict for the test module:
 #test.baz: {spam: sausage, cheese: bread}</t>
 <t tx="newlife.20120222162657.1133"></t>
-<t tx="newlife.20120222162657.1134">这个就是sls文件的编写
+<t tx="newlife.20120222162657.1134">
 
 States
 
